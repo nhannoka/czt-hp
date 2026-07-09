@@ -266,7 +266,7 @@ p { color: var(--color-text-light); }
 .service-card__icon { font-size: 34px; margin-bottom: 16px; }
 .service-card h3 { margin-bottom: 10px; }
 .service-card p { margin-bottom: 16px; font-size: 14.5px; }
-.service-card > a { font-weight: 700; color: var(--color-primary); font-size: 14px; }
+.service-card > a:not(.btn) { font-weight: 700; color: var(--color-primary); font-size: 14px; }
 .service-card--cta {
   background: linear-gradient(135deg, var(--color-navy), var(--color-navy-soft));
   display: flex; flex-direction: column; justify-content: center;
