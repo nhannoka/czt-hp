@@ -215,6 +215,7 @@ p { color: var(--color-text-light); }
 .fab:hover { transform: scale(1.08); }
 .fab--zalo { background: #0068ff; }
 .fab--mess { background: #0084ff; }
+.fab--tiktok { background: #010101; }
 .fab--phone { background: var(--color-primary); animation: pulse 2s infinite; }
 .fab--top { background: var(--color-navy); opacity: 0; pointer-events: none; transform: translateY(10px); }
 .fab--top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
@@ -225,6 +226,7 @@ p { color: var(--color-text-light); }
 [data-icon="mail"]::before { content: "\2709"; }
 [data-icon="zalo"]::before { content: "Z"; font-weight: 800; }
 [data-icon="messenger"]::before { content: "M"; font-weight: 800; }
+.fab--tiktok svg { display: block; }
 [data-icon="up"]::before { content: "\2191"; }
 
 /* ============ About ============ */
