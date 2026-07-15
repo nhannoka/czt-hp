@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close mobile nav after clicking a link
+    // Close mobile nav after clicking a real link (skip dropdown toggle links)
     nav.querySelectorAll('a').forEach((link) => {
+      if (link.parentElement.classList.contains('has-dropdown')) return;
       link.addEventListener('click', () => {
         if (window.innerWidth <= 860) {
           nav.classList.remove('is-open');
