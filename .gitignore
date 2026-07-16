@@ -2,3 +2,7 @@
 node_modules/
 *.log
 .vscode/
+
+# Tài liệu khách hàng cá nhân - không đưa lên repo public
+/L1_*.xlsx
+/L2_*.pdf

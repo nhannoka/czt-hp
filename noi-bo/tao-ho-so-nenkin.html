@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>[Nội bộ] Tạo hồ sơ Nenkin - CZT</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  body { background: var(--color-bg-gray); }
+  .tool-wrap { max-width: 880px; margin: 0 auto; padding: 40px 24px 90px; }
+  .tool-header { text-align: center; margin-bottom: 32px; }
+  .tool-header .tag { background: rgba(200,16,46,0.1); color: #c8102e; }
+  .tool-card { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 32px; margin-bottom: 24px; }
+  .tool-card h3 { margin-bottom: 4px; }
+  .tool-card > p.hint { margin-bottom: 20px; font-size: 13.5px; }
+  .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+  .f-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
+  .f-full { grid-column: 1 / -1; }
+  label { display: block; font-size: 13.5px; font-weight: 600; color: var(--color-navy); margin-bottom: 6px; }
+  label.opt::after { content: " (tuỳ chọn)"; font-weight: 400; color: var(--color-text-light); }
+  input, select { width: 100%; padding: 10px 12px; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-size: 14px; font-family: inherit; margin-bottom: 14px; }
+  input:focus, select:focus { outline: none; border-color: var(--color-primary); }
+  .history-row { display: grid; grid-template-columns: 1.4fr 1.6fr 1fr 1fr; gap: 12px; align-items: end; margin-bottom: 6px; }
+  .history-row label { font-size: 12px; }
+  #submitBtn { width: 100%; padding: 16px; font-size: 16px; }
+  #resultNote { margin-top: 18px; padding: 14px 16px; border-radius: var(--radius-sm); font-size: 14px; display: none; }
+  #resultNote.success { display: block; background: #e9f8ee; color: #1b7a3d; border: 1px solid #b9e8c6; }
+  #resultNote.error { display: block; background: #fdeceb; color: #b3271f; border: 1px solid #f7c7c3; }
+  .disclaimer { font-size: 13px; color: var(--color-text-light); background: #fff8e6; border: 1px solid #f0dca0; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 24px; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 14px; color: var(--color-primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="tool-wrap">
+  <a href="../index.html" class="back-link">&larr; Về trang chủ</a>
+
+  <div class="tool-header">
+    <span class="tag">Nội bộ CZT</span>
+    <h2>Tạo hồ sơ hoàn thuế Nenkin</h2>
+    <p>Nhập thông tin khách hàng, hệ thống tự điền vào 2 mẫu đơn (L1 - Đơn xin hoàn Nenkin, L2 - Đơn khai thuế) và xuất file để tải về.</p>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ <strong>Lưu ý bắt buộc trước khi nộp:</strong> Công cụ này tự động điền vào đúng vị trí đã đo trên 2 mẫu gốc, nhưng <strong>vẫn phải mở lại file sau khi xuất để kiểm tra kỹ</strong> trước khi nộp cho cơ quan Nhật Bản — đặc biệt các trường: SWIFT/BIC, Số lương hưu cơ bản, và Lịch sử tham gia bảo hiểm. Toàn bộ xử lý chạy ngay trên trình duyệt của bạn, không gửi dữ liệu khách hàng lên bất kỳ máy chủ nào.
+  </div>
+
+  <form id="nenkinForm">
+
+    <div class="tool-card">
+      <h3>1. Thông tin cá nhân</h3>
+      <p class="hint">Điền theo đúng hộ chiếu, viết hoa không dấu.</p>
+      <div class="f-grid">
+        <div>
+          <label>Họ và tên (chữ La-tinh, như hộ chiếu) *</label>
+          <input type="text" id="fullName" placeholder="NGUYEN VAN A" required>
+        </div>
+        <div>
+          <label>Phiên âm Katakana *</label>
+          <input type="text" id="furigana" placeholder="グエン　バン　アー" required>
+        </div>
+        <div>
+          <label>Ngày sinh *</label>
+          <input type="date" id="dob" required>
+        </div>
+        <div>
+          <label>Quốc tịch *</label>
+          <input type="text" id="nationality" value="VIET NAM" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>2. Địa chỉ sau khi về nước</h3>
+      <div class="f-grid">
+        <div class="f-full">
+          <label>Số nhà, đường, thông tin khác *</label>
+          <input type="text" id="addrStreet" required>
+        </div>
+        <div>
+          <label>Thành phố / Huyện *</label>
+          <input type="text" id="addrCity" required>
+        </div>
+        <div>
+          <label>Tỉnh *</label>
+          <input type="text" id="addrProvince" required>
+        </div>
+        <div>
+          <label class="opt">Mã bưu điện</label>
+          <input type="text" id="addrZip">
+        </div>
+        <div>
+          <label>Quốc gia *</label>
+          <input type="text" id="addrCountry" value="VIET NAM" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>3. Thông tin lương hưu (Nenkin)</h3>
+      <div class="f-grid f-grid--3">
+        <div>
+          <label>Số lương hưu cơ bản (10 số) *</label>
+          <input type="text" id="pensionNo" maxlength="10" placeholder="1170883324" required>
+        </div>
+        <div>
+          <label>Số năm tham gia bảo hiểm *</label>
+          <input type="number" id="years" min="1" step="1" value="5" required>
+        </div>
+        <div>
+          <label>Ngày điền đơn *</label>
+          <input type="date" id="fileDate" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>4. Tài khoản nhận tiền</h3>
+      <div class="f-grid">
+        <div>
+          <label>Tên ngân hàng *</label>
+          <input type="text" id="bankName" required>
+        </div>
+        <div>
+          <label>Tên chi nhánh *</label>
+          <input type="text" id="bankBranch" required>
+        </div>
+        <div class="f-full">
+          <label>Địa chỉ chi nhánh *</label>
+          <input type="text" id="bankAddress" required>
+        </div>
+        <div>
+          <label>Mã SWIFT / BIC (8 hoặc 11 ký tự) *</label>
+          <input type="text" id="swift" maxlength="11" placeholder="ICBVVNVX" required>
+        </div>
+        <div>
+          <label>Số tài khoản *</label>
+          <input type="text" id="accountNo" required>
+        </div>
+        <div class="f-full">
+          <label>Tên chủ tài khoản (La-tinh, đúng tên đăng ký ngân hàng) *</label>
+          <input type="text" id="accountName" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>5. Số tiền hoàn thuế</h3>
+      <p class="hint">Số tiền lương hưu trọn gói (Nenkin) khách hàng nhận được từ Japan Pension Service.</p>
+      <div class="f-grid f-grid--3">
+        <div>
+          <label>Số tiền Nenkin nhận được (JPY) *</label>
+          <input type="number" id="incomeAmount" min="0" step="1" required>
+        </div>
+        <div>
+          <label>Thuế đã khấu trừ (JPY)</label>
+          <input type="number" id="withholdingTax" min="0" step="1">
+        </div>
+        <div>
+          <label class="opt">Số hiệu bưu điện (nếu nhận qua 郵便局)</label>
+          <input type="text" id="postalSymbol" placeholder="17790-19038381">
+        </div>
+      </div>
+      <p class="hint">Để trống ô "Thuế đã khấu trừ" nếu muốn hệ thống tự tính theo mức 20.42%.</p>
+    </div>
+
+    <button type="submit" id="submitBtn" class="btn btn--primary">Xuất file L1 (.xlsx) &amp; L2 (.pdf)</button>
+    <div id="resultNote"></div>
+  </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="tao-ho-so.js"></script>
+</body>
+</html>
