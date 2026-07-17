@@ -129,21 +129,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const nkCalcBtn = document.getElementById('nkCalcBtn');
   if (nkCalcBtn) {
     nkCalcBtn.addEventListener('click', () => {
-      const yearStart = parseInt(document.getElementById('nkYearStart').value, 10);
-      const yearEnd = parseInt(document.getElementById('nkYearEnd').value, 10);
+      const months = parseInt(document.getElementById('nkMonths').value, 10);
       const salary = parseInt(document.getElementById('nkSalary').value, 10);
       const resultEl = document.getElementById('nkResult');
 
-      if (!yearStart || !yearEnd || !salary || yearEnd <= yearStart) {
-        alert('Vui lòng nhập đầy đủ và đúng: Năm kết thúc phải lớn hơn Năm bắt đầu.');
+      if (!months || !salary || months < 6) {
+        alert('Vui lòng nhập số tháng đóng Nenkin (tối thiểu 6 tháng) và mức lương trung bình.');
         return;
       }
 
-      // Công thức ước tính đơn giản hoá (KHÔNG phải công thức chính thức của Cơ quan Nenkin):
-      // Số tháng tham gia (tối đa 60 tháng theo quy định hiện hành) x 5% mức lương trung bình.
-      // CZT có thể điều chỉnh hệ số 0.05 này khi có bảng tỷ lệ chính xác hơn.
-      const months = Math.min((yearEnd - yearStart) * 12, 60);
-      const nenkin1 = Math.round(salary * 0.05 * months);
+      // Hệ số theo bảng của Cơ quan Nenkin (脱退一時金): số tháng đóng -> hệ số nhân với lương trung bình chưa trừ.
+      // Nenkin lần 1 (dự kiến) = Mức lương trung bình chưa trừ x hệ số.
+      const coefFor = (m) => {
+        if (m < 6) return 0;
+        if (m < 12) return 0.5;
+        if (m < 18) return 1.1;
+        if (m < 24) return 1.6;
+        if (m < 30) return 2.2;
+        if (m < 36) return 2.7;
+        if (m < 42) return 3.3;
+        if (m < 48) return 3.8;
+        if (m < 54) return 4.4;
+        if (m < 60) return 4.9;
+        return 5.5; // trên 60 tháng
+      };
+
+      const nenkin1 = Math.round(salary * coefFor(months));
       const tax = Math.round(nenkin1 * 0.2042);
       const total = nenkin1 - tax;
 
