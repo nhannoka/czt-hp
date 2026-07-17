@@ -294,33 +294,69 @@
         <div>
           <h4>Nenkin là gì?</h4>
           <p>Nenkin là khoản bảo hiểm hưu trí mà người lao động nước ngoài đóng trong thời gian làm việc tại Nhật Bản. Khi về nước, bạn có thể làm thủ tục hoàn lại một phần số tiền đã đóng.</p>
-          <h4>Điều kiện</h4>
-          <ul class="check-list">
-            <li>Đã tham gia đóng bảo hiểm Nenkin tại Nhật</li>
-            <li>Đã về nước và không còn địa chỉ cư trú tại Nhật</li>
-            <li>Làm thủ tục trong vòng 2 năm kể từ ngày xuất cảnh</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Hồ sơ cần chuẩn bị</h4>
-          <ul class="check-list">
-            <li>Sổ Nenkin (年金手帳)</li>
-            <li>Hộ chiếu (bản sao trang có visa/xuất cảnh)</li>
-            <li>Giấy xác nhận đã xuất cảnh</li>
-            <li>Thông tin tài khoản ngân hàng nhận tiền</li>
-            <li>Giấy ủy quyền (nếu nhờ CZT đại diện)</li>
-          </ul>
-          <h4>Thời gian & Chi phí</h4>
-          <p>Thời gian xử lý: khoảng 3-6 tháng. Chi phí: liên hệ CZT để được báo giá chính xác theo hồ sơ.</p>
         </div>
       </div>
-      <h4>Quy trình thực hiện</h4>
-      <div class="process-steps process-steps--sm">
-        <div class="process-step"><span>1</span>Tư vấn & kiểm tra điều kiện</div>
-        <div class="process-step"><span>2</span>Chuẩn bị hồ sơ, giấy ủy quyền</div>
-        <div class="process-step"><span>3</span>Nộp hồ sơ lên cơ quan Nenkin</div>
-        <div class="process-step"><span>4</span>Theo dõi & nhận kết quả</div>
-        <div class="process-step"><span>5</span>Bàn giao tiền hoàn cho khách hàng</div>
+
+      <div class="nenkin-tools">
+
+        <!-- 1. Tính số tiền nenkin dự kiến -->
+        <div class="nenkin-tool-card">
+          <h4 class="nenkin-tool-card__title">💰 Tính số tiền Nenkin dự kiến</h4>
+          <div class="nenkin-calc__grid">
+            <label>Năm bắt đầu làm
+              <input type="number" id="nkYearStart" placeholder="2019" min="1990" max="2035">
+            </label>
+            <label>Năm kết thúc
+              <input type="number" id="nkYearEnd" placeholder="2024" min="1990" max="2035">
+            </label>
+            <label>Mức lương trung bình / tháng (円)
+              <input type="number" id="nkSalary" placeholder="220000" min="0" step="1000">
+            </label>
+          </div>
+          <button type="button" id="nkCalcBtn" class="btn btn--primary btn--sm">Tính dự kiến</button>
+          <div id="nkResult" class="nenkin-calc__result" hidden>
+            <div><span>Nenkin lần 1 (dự kiến)</span><strong id="nkOut1">-</strong></div>
+            <div><span>Thuế Nenkin (20.42%)</span><strong id="nkOut2">-</strong></div>
+            <div class="nenkin-calc__total"><span>Tổng thực nhận (dự kiến)</span><strong id="nkOut3">-</strong></div>
+          </div>
+          <p class="nenkin-tool-card__note"><em>Đây chỉ là số tiền ước tính, không phải số tiền chính thức từ Cơ quan Nenkin.</em></p>
+          <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--outline btn--sm">📩 Muốn tính chính xác → Gửi Messenger</a>
+        </div>
+
+        <!-- 2. Hồ sơ cần chuẩn bị -->
+        <div class="nenkin-tool-card">
+          <h4 class="nenkin-tool-card__title">📋 Hồ sơ cần chuẩn bị</h4>
+          <ul class="nenkin-doc-list">
+            <li><span class="nenkin-doc-list__icon">🪪</span>Thẻ cư trú 2 mặt <em>(có ảnh minh hoạ)</em></li>
+            <li><span class="nenkin-doc-list__icon">📘</span>Sổ Nenkin hoặc Giấy báo số Nenkin <em>(có ảnh minh hoạ)</em></li>
+            <li><span class="nenkin-doc-list__icon">🛂</span>Passport <em>(có ảnh minh hoạ)</em></li>
+            <li><span class="nenkin-doc-list__icon">📄</span>Giấy xác nhận xuất cảnh <em>(có ảnh minh hoạ)</em></li>
+            <li><span class="nenkin-doc-list__icon">🏦</span>Thông tin tài khoản Nhật hoặc Việt Nam <em>(có ảnh minh hoạ)</em></li>
+          </ul>
+        </div>
+
+        <!-- 3. Điều kiện được nhận Nenkin -->
+        <div class="nenkin-tool-card">
+          <h4 class="nenkin-tool-card__title">Điều kiện được nhận Nenkin</h4>
+          <ul class="check-list nenkin-condition-list">
+            <li>Đã cắt địa chỉ về Việt Nam và xuất cảnh khỏi Nhật</li>
+            <li>Đã cắt Nenkin và bảo hiểm (đã nghỉ việc)</li>
+            <li>Trong vòng 2 năm sau khi xuất cảnh khỏi Nhật</li>
+            <li>Đã đóng Nenkin trên 6 tháng</li>
+          </ul>
+        </div>
+
+        <!-- 4. Tra cứu tình trạng hồ sơ -->
+        <div class="nenkin-tool-card">
+          <h4 class="nenkin-tool-card__title">🔍 Tra cứu tình trạng hồ sơ</h4>
+          <label>Nhập mã hồ sơ
+            <input type="text" id="nkLookupCode" placeholder="VD: CZT2507012">
+          </label>
+          <button type="button" id="nkLookupBtn" class="btn btn--primary btn--sm">Tra cứu</button>
+          <p id="nkLookupMsg" class="nenkin-tool-card__note" hidden></p>
+          <ul id="nkStatusList" class="nenkin-status-list" hidden></ul>
+        </div>
+
       </div>
     </div>
 

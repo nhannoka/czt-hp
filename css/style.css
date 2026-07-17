@@ -295,6 +295,50 @@ p { color: var(--color-text-light); }
 .service-detail__grid h4 { margin: 16px 0 10px; }
 .service-detail__grid h4:first-child { margin-top: 0; }
 
+/* ============ Nenkin interactive tools ============ */
+.nenkin-tools { display: grid; grid-template-columns: 1fr; margin-top: 8px; }
+.nenkin-tool-card { padding: 28px 0; border-top: 1px solid var(--color-border); }
+.nenkin-tool-card__title { margin-bottom: 16px; font-size: 19px; }
+.nenkin-tool-card__note { font-size: 12.5px; color: var(--color-text-light); margin: 10px 0 14px; }
+.nenkin-tool-card label { display: block; font-size: 13.5px; font-weight: 600; color: var(--color-text); margin-bottom: 12px; }
+.nenkin-tool-card input {
+  display: block; width: 100%; margin-top: 6px; padding: 12px 14px;
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
+  font-size: 14.5px; font-family: inherit; font-weight: 400; color: var(--color-text); background: #fff;
+}
+.nenkin-tool-card input:focus { outline: none; border-color: var(--color-primary); }
+.nenkin-tool-card input::placeholder { color: var(--color-text-light); font-weight: 400; opacity: 0.55; }
+.nenkin-calc__grid { margin-bottom: 6px; }
+.nenkin-tool-card .btn--sm { margin: 4px 6px 4px 0; }
+.nenkin-calc__result { background: var(--color-bg-gray); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 14px; }
+.nenkin-calc__result > div { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-size: 14px; color: var(--color-text); }
+.nenkin-calc__result strong { font-family: var(--font-display); color: var(--color-navy); }
+.nenkin-calc__total { border-top: 1px dashed rgba(18,29,58,0.2); margin-top: 4px; padding-top: 10px !important; }
+.nenkin-calc__total strong { color: var(--color-primary); font-size: 17px; }
+
+.nenkin-doc-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14.5px; color: var(--color-text); }
+.nenkin-doc-list__icon { font-size: 18px; flex-shrink: 0; }
+.nenkin-doc-list em { display: block; font-size: 12px; font-style: normal; color: var(--color-text-light); }
+
+.nenkin-condition-list li { color: var(--color-text); font-size: 14.5px; }
+
+.nenkin-status-list { margin-top: 16px; }
+.nenkin-status-list li {
+  display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 14px; color: var(--color-text-light);
+}
+.nenkin-status-list li::before {
+  content: ""; width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(18,29,58,0.15);
+}
+.nenkin-status-list li.is-done { color: var(--color-navy); font-weight: 600; }
+.nenkin-status-list li.is-done::before { background: #2ba84a; }
+.nenkin-status-list li.is-current { color: var(--color-navy); font-weight: 700; }
+.nenkin-status-list li.is-current::before { background: var(--color-gold); }
+
+@media (max-width: 720px) {
+  .nenkin-tools { grid-template-columns: 1fr; }
+}
+
 .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
 .process-steps--sm { margin-top: 16px; }
 .process-step {
