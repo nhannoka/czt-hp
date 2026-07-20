@@ -173,6 +173,8 @@ p { color: var(--color-text-light); }
 }
 .nav > ul > li > a:hover::after { width: 100%; }
 .nav > ul > li > a:hover { color: var(--color-primary); }
+.nav > ul > li > a.is-active { color: var(--color-primary); }
+.nav > ul > li > a.is-active::after { width: 100%; }
 
 .has-dropdown { position: relative; }
 .dropdown {
@@ -331,6 +333,8 @@ p { color: var(--color-text-light); }
 .service-detail__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 24px; }
 .service-detail__grid h4 { margin: 16px 0 10px; }
 .service-detail__grid h4:first-child { margin-top: 0; }
+.nenkin-intro { margin-bottom: 28px; }
+.nenkin-intro h4 { margin-bottom: 10px; }
 
 /* Visa section: single column + emphasized headings (matches Nenkin tool titles) */
 #service-visa .service-detail__grid { grid-template-columns: 1fr; gap: 8px; }
@@ -548,6 +552,31 @@ p { color: var(--color-text-light); }
 .footer__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 13px; }
 
+/* ============ Sub-page hero ============ */
+.page-hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-soft) 100%);
+  color: #fff; padding: 56px 0 60px;
+}
+.page-hero::after {
+  content: ""; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(28,80,200,0.35), transparent 70%);
+}
+.page-hero__inner { position: relative; z-index: 1; }
+.page-hero .tag { background: rgba(255,255,255,0.14); color: #fff; }
+.page-hero h1 { color: #fff; font-size: clamp(28px, 4vw, 42px); margin-bottom: 14px; }
+.page-hero p { color: rgba(255,255,255,0.82); font-size: 17px; }
+.breadcrumb { font-size: 13.5px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+.breadcrumb a { color: rgba(255,255,255,0.7); }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { margin: 0 8px; opacity: 0.6; }
+
+/* ============ CTA band ============ */
+.cta-band { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.cta-band__text h2 { color: #fff; margin-bottom: 8px; }
+.cta-band__text p { color: rgba(255,255,255,0.85); max-width: 520px; }
+.cta-band__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
 /* ============ Responsive ============ */
 @media (max-width: 1024px) {
   .hero__inner { grid-template-columns: 1fr; }
@@ -593,6 +622,8 @@ p { color: var(--color-text-light); }
 @media (max-width: 720px) {
   .section { padding: 44px 0; }
   .hero { padding: 32px 0 36px; }
+  .page-hero { padding: 34px 0 38px; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
   .section__head { margin-bottom: 32px; }
   .service-cards, .why-grid, .news-grid, .team__grid, .jobs-grid, .docs-grid { grid-template-columns: 1fr; }
   .process-steps, .other-services, .form-row { grid-template-columns: 1fr; }
