@@ -1,0 +1,13 @@
+<svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="30" width="220" height="130" rx="14" fill="#e7f6f2" stroke="#a9dbcb" stroke-width="2" transform="rotate(-4 150 95)"/>
+  <rect x="52" y="46" width="220" height="130" rx="14" fill="#ffffff" stroke="#cfd8e3" stroke-width="2"/>
+  <rect x="52" y="46" width="220" height="30" rx="14" fill="#0f9d78"/>
+  <rect x="52" y="60" width="220" height="16" fill="#0f9d78"/>
+  <text x="66" y="66" font-family="Arial, sans-serif" font-size="12" fill="#fff" font-weight="700">通帳 BANK BOOK</text>
+  <rect x="66" y="92" width="120" height="9" rx="3" fill="#c7ccd6"/>
+  <rect x="66" y="110" width="150" height="9" rx="3" fill="#c7ccd6"/>
+  <rect x="66" y="128" width="90" height="9" rx="3" fill="#c7ccd6"/>
+  <rect x="66" y="150" width="180" height="1" fill="#e3e6ec"/>
+  <rect x="66" y="160" width="60" height="8" rx="3" fill="#0f9d78" opacity="0.6"/>
+  <rect x="200" y="160" width="46" height="8" rx="3" fill="#0f9d78" opacity="0.6"/>
+</svg>

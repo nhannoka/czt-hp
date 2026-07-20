@@ -1,0 +1,15 @@
+<svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="20" width="300" height="180" rx="16" fill="#fce8ea" stroke="#e8a8b0" stroke-width="2"/>
+  <rect x="10" y="20" width="300" height="34" rx="16" fill="#d9536a"/>
+  <rect x="10" y="38" width="300" height="16" fill="#d9536a"/>
+  <text x="26" y="42" font-family="Arial, sans-serif" font-size="13" fill="#fff" font-weight="700">在留カード RESIDENCE CARD</text>
+  <rect x="26" y="68" width="66" height="82" rx="6" fill="#fff" stroke="#ccc"/>
+  <circle cx="59" cy="96" r="16" fill="#c9d4e0"/>
+  <path d="M40 138 Q59 114 78 138 Z" fill="#c9d4e0"/>
+  <rect x="106" y="72" width="150" height="10" rx="3" fill="#c7ccd6"/>
+  <rect x="106" y="90" width="180" height="10" rx="3" fill="#c7ccd6"/>
+  <rect x="106" y="108" width="140" height="10" rx="3" fill="#c7ccd6"/>
+  <rect x="106" y="126" width="160" height="10" rx="3" fill="#c7ccd6"/>
+  <rect x="26" y="164" width="120" height="9" rx="3" fill="#e3aab2"/>
+  <rect x="200" y="164" width="86" height="9" rx="3" fill="#e3aab2"/>
+</svg>

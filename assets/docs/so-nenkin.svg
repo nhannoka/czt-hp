@@ -1,0 +1,13 @@
+<svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="118" y="30" width="80" height="160" rx="6" fill="#2f6bff" transform="rotate(-6 158 110)"/>
+  <rect x="128" y="24" width="80" height="160" rx="6" fill="#3d7bff" transform="rotate(3 168 104)"/>
+  <rect x="132" y="30" width="72" height="148" rx="4" fill="#4a86ff" transform="rotate(3 168 104)"/>
+  <g transform="rotate(3 168 104)">
+    <rect x="140" y="46" width="56" height="8" rx="2" fill="#dbe6ff"/>
+    <rect x="140" y="60" width="40" height="6" rx="2" fill="#bcd0ff"/>
+    <circle cx="168" cy="100" r="20" fill="#ffffff" opacity="0.9"/>
+    <text x="168" y="107" font-family="'Noto Serif JP', serif" font-size="18" fill="#2f6bff" text-anchor="middle" font-weight="700">年金</text>
+    <rect x="146" y="140" width="44" height="6" rx="2" fill="#bcd0ff"/>
+    <rect x="146" y="152" width="44" height="6" rx="2" fill="#bcd0ff"/>
+  </g>
+</svg>
