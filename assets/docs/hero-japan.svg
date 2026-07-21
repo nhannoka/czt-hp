@@ -1,0 +1,127 @@
+<svg width="1440" height="620" viewBox="0 0 1440 620" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <linearGradient id="fujiBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.18"/>
+    </linearGradient>
+    <!-- reusable sakura blossom -->
+    <g id="blossom">
+      <g fill="#ffd0e0">
+        <ellipse cx="0" cy="-9" rx="6" ry="9"/>
+        <ellipse cx="8.6" cy="-2.8" rx="6" ry="9" transform="rotate(72 8.6 -2.8)"/>
+        <ellipse cx="5.3" cy="7.3" rx="6" ry="9" transform="rotate(144 5.3 7.3)"/>
+        <ellipse cx="-5.3" cy="7.3" rx="6" ry="9" transform="rotate(216 -5.3 7.3)"/>
+        <ellipse cx="-8.6" cy="-2.8" rx="6" ry="9" transform="rotate(288 -8.6 -2.8)"/>
+      </g>
+      <circle cx="0" cy="0" r="3.4" fill="#ff9ec2"/>
+      <g fill="#ffe6a0">
+        <circle cx="0" cy="-3" r="1.1"/><circle cx="2.9" cy="-0.9" r="1.1"/>
+        <circle cx="1.8" cy="2.4" r="1.1"/><circle cx="-1.8" cy="2.4" r="1.1"/><circle cx="-2.9" cy="-0.9" r="1.1"/>
+      </g>
+    </g>
+    <g id="bud" fill="#ff9ec2">
+      <circle cx="0" cy="0" r="4"/>
+      <circle cx="3" cy="-2" r="3" fill="#ffc2d6"/>
+    </g>
+  </defs>
+
+  <!-- soft sun -->
+  <circle cx="760" cy="150" r="150" fill="#ffffff" opacity="0.07"/>
+
+  <!-- distant hills -->
+  <path d="M0 620 L230 480 L470 620 Z" fill="#ffffff" opacity="0.06"/>
+  <path d="M1030 620 L1240 500 L1440 620 Z" fill="#ffffff" opacity="0.06"/>
+
+  <!-- ===== Mt Fuji ===== (larger, centered, clearer) -->
+  <!-- body: flared, gently concave slopes -->
+  <path d="M330 620
+           C 460 450, 610 270, 725 176
+           C 840 270, 990 450, 1120 620 Z"
+        fill="url(#fujiBody)"/>
+  <!-- right-side shading for depth -->
+  <path d="M725 176 C 840 270, 990 450, 1120 620 L800 620 C 782 450, 755 300, 725 176 Z"
+        fill="#0a1f52" opacity="0.10"/>
+  <!-- snow cap with drips -->
+  <path d="M636 274
+           C 660 256, 695 236, 725 176
+           C 756 238, 792 258, 816 276
+           L800 292 L786 272 L768 296 L752 270 L736 302 L722 270 L708 300 L692 272 L676 294 L660 272 L648 288 Z"
+        fill="url(#snow)"/>
+  <!-- snow streaks running down -->
+  <g stroke="#ffffff" stroke-opacity="0.30" stroke-width="3.5" stroke-linecap="round">
+    <path d="M690 276 L680 322"/>
+    <path d="M710 284 L706 336"/>
+    <path d="M725 286 L725 344"/>
+    <path d="M742 284 L748 334"/>
+    <path d="M762 276 L772 320"/>
+  </g>
+  <!-- summit crater hint -->
+  <path d="M706 182 C 715 176, 735 176, 744 182" stroke="#0a1f52" stroke-opacity="0.12" stroke-width="3" fill="none"/>
+
+  <!-- five-story pagoda at the foot -->
+  <g opacity="0.16" fill="#ffffff" transform="translate(250,450)">
+    <rect x="44" y="150" width="24" height="60"/>
+    <path d="M30 148 h52 l-10 -16 h-32 Z"/>
+    <rect x="38" y="112" width="36" height="26"/>
+    <path d="M22 110 h68 l-11 -18 h-46 Z"/>
+    <rect x="42" y="80" width="28" height="24"/>
+    <path d="M28 78 h56 l-10 -16 h-36 Z"/>
+    <rect x="46" y="52" width="20" height="22"/>
+    <path d="M34 50 h44 l-8 -14 h-28 Z"/>
+    <rect x="52" y="30" width="8" height="20"/>
+  </g>
+
+  <!-- ===== Sakura branch — top-left ===== -->
+  <g>
+    <path d="M-20 60 C 120 30, 260 70, 360 40" stroke="#8a5a3a" stroke-width="5" fill="none" stroke-opacity="0.55" stroke-linecap="round"/>
+    <path d="M120 52 C 150 90, 175 100, 210 96" stroke="#8a5a3a" stroke-width="4" fill="none" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M250 60 C 265 30, 290 18, 320 20" stroke="#8a5a3a" stroke-width="3.5" fill="none" stroke-opacity="0.5" stroke-linecap="round"/>
+    <use href="#blossom" transform="translate(70,50) scale(1.1)"/>
+    <use href="#blossom" transform="translate(150,44) scale(1.35)"/>
+    <use href="#blossom" transform="translate(215,98) scale(1.15)"/>
+    <use href="#blossom" transform="translate(255,58) scale(1.0)"/>
+    <use href="#blossom" transform="translate(322,20) scale(1.25)"/>
+    <use href="#bud" transform="translate(110,80)"/>
+    <use href="#bud" transform="translate(300,44)"/>
+  </g>
+
+  <!-- ===== Sakura branch — top-right ===== -->
+  <g>
+    <path d="M1460 70 C 1330 40, 1210 80, 1110 50" stroke="#8a5a3a" stroke-width="5" fill="none" stroke-opacity="0.55" stroke-linecap="round"/>
+    <path d="M1250 62 C 1230 100, 1205 112, 1170 108" stroke="#8a5a3a" stroke-width="4" fill="none" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M1150 56 C 1135 26, 1110 16, 1082 20" stroke="#8a5a3a" stroke-width="3.5" fill="none" stroke-opacity="0.5" stroke-linecap="round"/>
+    <use href="#blossom" transform="translate(1380,60) scale(1.1)"/>
+    <use href="#blossom" transform="translate(1300,48) scale(1.35)"/>
+    <use href="#blossom" transform="translate(1170,110) scale(1.15)"/>
+    <use href="#blossom" transform="translate(1210,58) scale(1.0)"/>
+    <use href="#blossom" transform="translate(1082,22) scale(1.25)"/>
+    <use href="#bud" transform="translate(1330,82)"/>
+    <use href="#bud" transform="translate(1120,44)"/>
+  </g>
+
+  <!-- ===== Sakura sprig — top-center (visible on mobile crop) ===== -->
+  <g>
+    <path d="M560 40 C 660 78, 780 78, 880 44" stroke="#8a5a3a" stroke-width="4.5" fill="none" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M660 66 C 670 96, 690 106, 715 104" stroke="#8a5a3a" stroke-width="3.5" fill="none" stroke-opacity="0.45" stroke-linecap="round"/>
+    <use href="#blossom" transform="translate(600,52) scale(1.15)"/>
+    <use href="#blossom" transform="translate(690,64) scale(1.3)"/>
+    <use href="#blossom" transform="translate(720,106) scale(1.05)"/>
+    <use href="#blossom" transform="translate(800,60) scale(1.2)"/>
+    <use href="#bud" transform="translate(650,44)"/>
+    <use href="#bud" transform="translate(850,50)"/>
+  </g>
+
+  <!-- falling petals -->
+  <g fill="#ffd0e0" opacity="0.75">
+    <ellipse cx="360" cy="150" rx="7" ry="4" transform="rotate(30 360 150)"/>
+    <ellipse cx="520" cy="240" rx="6" ry="3.5" transform="rotate(-25 520 240)"/>
+    <ellipse cx="900" cy="120" rx="6.5" ry="4" transform="rotate(40 900 120)"/>
+    <ellipse cx="1000" cy="250" rx="7" ry="4" transform="rotate(-35 1000 250)"/>
+    <ellipse cx="640" cy="320" rx="6" ry="3.5" transform="rotate(15 640 320)"/>
+    <ellipse cx="1180" cy="200" rx="6.5" ry="4" transform="rotate(-15 1180 200)"/>
+  </g>
+</svg>

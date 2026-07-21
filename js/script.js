@@ -68,20 +68,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Testimonials slider ---------- */
+  /* ---------- Testimonials slider (auto-scroll + loop) ---------- */
   const track = document.getElementById('testimonials-track');
   const prevBtn = document.getElementById('testiPrev');
   const nextBtn = document.getElementById('testiNext');
   if (track && prevBtn && nextBtn) {
-    const scrollByCard = (dir) => {
+    const AUTOPLAY_MS = 4000;
+    let autoplayTimer = null;
+
+    const cardStep = () => {
       const card = track.querySelector('.testimonial');
-      if (!card) return;
+      if (!card) return 0;
       const gap = 24;
-      const distance = card.offsetWidth + gap;
+      return card.offsetWidth + gap;
+    };
+
+    const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+
+    const scrollByCard = (dir) => {
+      const distance = cardStep();
+      if (!distance) return;
+      if (dir > 0 && atEnd()) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+        return;
+      }
+      if (dir < 0 && track.scrollLeft <= 2) {
+        track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+        return;
+      }
       track.scrollBy({ left: dir * distance, behavior: 'smooth' });
     };
-    prevBtn.addEventListener('click', () => scrollByCard(-1));
-    nextBtn.addEventListener('click', () => scrollByCard(1));
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+    const startAutoplay = () => {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => scrollByCard(1), AUTOPLAY_MS);
+    };
+    const restartAutoplay = () => { stopAutoplay(); startAutoplay(); };
+
+    prevBtn.addEventListener('click', () => { scrollByCard(-1); restartAutoplay(); });
+    nextBtn.addEventListener('click', () => { scrollByCard(1); restartAutoplay(); });
+
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    track.addEventListener('touchstart', stopAutoplay, { passive: true });
+    track.addEventListener('touchend', startAutoplay, { passive: true });
+
+    startAutoplay();
   }
 
   /* ---------- Booking form ---------- */
