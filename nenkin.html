@@ -17,20 +17,6 @@
 </head>
 <body>
 
-<!-- ============ TOP BAR ============ -->
-<div class="topbar">
-  <div class="container topbar__inner">
-    <div class="topbar__info">
-      <a href="tel:0900000000"><i data-icon="phone"></i> Hotline: 090 000 0000</a>
-      <a href="mailto:info@czt.com.vn"><i data-icon="mail"></i> info@czt.com.vn</a>
-    </div>
-    <div class="topbar__lang">
-      <span>🇻🇳 Tiếng Việt</span>
-      <span>🇯🇵 日本語</span>
-    </div>
-  </div>
-</div>
-
 <!-- ============ HEADER / NAV ============ -->
 <header class="header" id="header">
   <div class="container header__inner">
@@ -91,6 +77,7 @@
       </div>
 
       <div class="nk-hero__actions">
+        <a href="#tra-cuu-ho-so" class="btn btn--purple btn--lg">🔍 Tra cứu hồ sơ</a>
         <a href="#tinh-tien-nenkin" class="btn btn--accent btn--lg">💰 Tính tiền Nenkin ngay</a>
         <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--white btn--lg">💬 Chat Messenger</a>
       </div>
@@ -112,38 +99,46 @@
 <!-- ============ QUICK ACCESS CARDS ============ -->
 <section class="nk-quick">
   <div class="container">
-    <div class="nk-quick__grid">
-      <a href="#tinh-tien-nenkin" class="nk-quick__card">
-        <span class="nk-quick__ic nk-quick__ic--blue">🧮</span>
-        <div>
+    <div class="nk-quick__list">
+      <a href="#tinh-tien-nenkin" class="nk-quick__card nk-quick__card--blue">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M7.5 6.5h9"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="11" r="1"/><circle cx="16" cy="11" r="1"/><circle cx="8" cy="15" r="1"/><circle cx="12" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><circle cx="8" cy="19" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="16" cy="19" r="1"/></svg>
+        </span>
+        <span class="nk-quick__body">
           <strong>Tính tiền Nenkin</strong>
-          <p>Ước tính số tiền bạn sẽ nhận được</p>
+          <span class="nk-quick__desc">Ước tính số tiền bạn sẽ nhận được</span>
           <span class="nk-quick__link">Tính ngay →</span>
-        </div>
+        </span>
       </a>
-      <a href="#ho-so-can-chuan-bi" class="nk-quick__card">
-        <span class="nk-quick__ic nk-quick__ic--green">📋</span>
-        <div>
+      <a href="#ho-so-can-chuan-bi" class="nk-quick__card nk-quick__card--green">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5a1.5 1.5 0 0 0-1.5 1.5v16a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7"/><path d="M8.5 16h7"/><path d="M8.5 19.5h4"/></svg>
+        </span>
+        <span class="nk-quick__body">
           <strong>Hồ sơ cần chuẩn bị</strong>
-          <p>Xem danh sách và ảnh mẫu giấy tờ</p>
+          <span class="nk-quick__desc">Xem danh sách và ảnh mẫu giấy tờ</span>
           <span class="nk-quick__link">Xem ngay →</span>
-        </div>
+        </span>
       </a>
-      <a href="#tra-cuu-ho-so" class="nk-quick__card">
-        <span class="nk-quick__ic nk-quick__ic--purple">🔍</span>
-        <div>
+      <a href="#tra-cuu-ho-so" class="nk-quick__card nk-quick__card--purple">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+        </span>
+        <span class="nk-quick__body">
           <strong>Tra cứu hồ sơ</strong>
-          <p>Kiểm tra tiến độ xử lý hồ sơ của bạn</p>
+          <span class="nk-quick__desc">Kiểm tra tiến độ xử lý hồ sơ của bạn</span>
           <span class="nk-quick__link">Tra cứu →</span>
-        </div>
+        </span>
       </a>
-      <a href="https://m.me/" target="_blank" rel="noopener" class="nk-quick__card">
-        <span class="nk-quick__ic nk-quick__ic--orange">🎧</span>
-        <div>
-          <strong>Tư vấn miễn phí</strong>
-          <p>Đội ngũ hỗ trợ sẵn sàng giải đáp cho bạn</p>
-          <span class="nk-quick__link">Nhắn ngay →</span>
-        </div>
+      <a href="#quy-trinh" class="nk-quick__card nk-quick__card--orange">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M5 8.5V13a4 4 0 0 0 4 4h6.5"/><path d="M12 6h4.5a2.5 2.5 0 0 1 0 5H12"/></svg>
+        </span>
+        <span class="nk-quick__body">
+          <strong>Quy trình làm Nenkin</strong>
+          <span class="nk-quick__desc">Xem các bước làm hồ sơ Nenkin tại CZT</span>
+          <span class="nk-quick__link">Xem quy trình →</span>
+        </span>
       </a>
     </div>
   </div>
@@ -152,80 +147,121 @@
 <!-- ============ NENKIN ============ -->
 <section class="section">
   <div class="container">
-    <div class="nenkin-intro">
-      <h4>Nenkin là gì?</h4>
-      <p>Nenkin là khoản bảo hiểm hưu trí mà người lao động nước ngoài đóng trong thời gian làm việc tại Nhật Bản. Khi về nước, bạn có thể làm thủ tục hoàn lại một phần số tiền đã đóng.</p>
-    </div>
-
     <div class="nenkin-tools">
 
       <!-- 1. Tính số tiền nenkin dự kiến -->
-      <div class="nenkin-tool-card" id="tinh-tien-nenkin">
-        <h4 class="nenkin-tool-card__title">💰 Tính số tiền Nenkin dự kiến</h4>
-        <div class="nenkin-calc__grid">
-          <label>Tổng số tháng đóng Nenkin
-            <input type="number" id="nkMonths" placeholder="36" min="0" max="600" step="1">
-          </label>
-          <label>Mức lương trung bình / tháng chưa trừ (円)
-            <input type="number" id="nkSalary" placeholder="220000" min="0" step="1000">
-          </label>
-        </div>
-        <button type="button" id="nkCalcBtn" class="btn btn--primary btn--sm">Tính dự kiến</button>
-        <div id="nkResult" class="nenkin-calc__result" hidden>
-          <div><span>Nenkin lần 1 (dự kiến)</span><strong id="nkOut1">-</strong></div>
-          <div><span>Thuế Nenkin (20.42%)</span><strong id="nkOut2">-</strong></div>
-          <div class="nenkin-calc__total"><span>Tổng thực nhận (dự kiến)</span><strong id="nkOut3">-</strong></div>
+      <div class="nk-calc" id="tinh-tien-nenkin">
+        <div class="nk-calc__head"><span class="nk-calc__head-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M7.5 6.5h9"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="11" r="1"/><circle cx="16" cy="11" r="1"/><circle cx="8" cy="15" r="1"/><circle cx="12" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><circle cx="8" cy="19" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="16" cy="19" r="1"/></svg></span><h4>Tính số tiền Nenkin dự kiến</h4></div>
+        <div class="nk-calc__body">
+          <div class="nk-calc__form">
+            <label>Số tháng đã đóng Nenkin
+              <input type="number" id="nkMonths" placeholder="36" min="0" max="600" step="1">
+            </label>
+            <label>Mức lương trung bình / tháng chưa trừ (円)
+              <input type="number" id="nkSalary" placeholder="220000" min="0" step="1000">
+            </label>
+            <p class="nk-calc__hint">* Vui lòng nhập mức lương trung bình trước thuế</p>
+            <button type="button" id="nkCalcBtn" class="btn btn--primary btn--block">TÍNH NGAY</button>
+          </div>
+          <div class="nk-calc__result-wrap">
+            <div id="nkPlaceholder" class="nk-calc__placeholder">
+              <span>💰</span>
+              <p>Nhập thông tin bên trái và bấm <strong>TÍNH NGAY</strong> để xem số tiền Nenkin dự kiến bạn sẽ nhận được.</p>
+            </div>
+            <div id="nkResult" class="nk-calc__result" hidden>
+              <p class="nk-calc__result-label">Kết quả dự kiến</p>
+              <div class="nk-calc__row"><span>Nenkin lần 1 (dự kiến)</span><strong id="nkOut1">-</strong></div>
+              <div class="nk-calc__row"><span>Nenkin lần 2 (hoàn thuế dự kiến)</span><strong id="nkOut2">-</strong></div>
+              <div class="nk-calc__total">
+                <span class="nk-calc__total-label">Số tiền bạn dự kiến nhận</span>
+                <span class="nk-calc__total-value"><strong id="nkOut3">-</strong><span class="nk-calc__bag">💰</span></span>
+              </div>
+            </div>
+          </div>
         </div>
         <p class="nenkin-tool-card__note"><em>Đây chỉ là số tiền ước tính, không phải số tiền chính thức từ Cơ quan Nenkin.</em></p>
-        <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--outline btn--sm">📩 Muốn tính chính xác → Gửi Messenger</a>
+<div class="nk-calc__cta">
+  <img class="nk-calc__cta-person" src="assets/docs/advisor.png" alt="Chuyên viên CZT">
+  <div class="nk-calc__cta-text">
+    <strong>Muốn tính chính xác hơn?</strong>
+    <p>Gửi hồ sơ để được tính và tư vấn chi tiết miễn phí bởi chuyên viên CZT.</p>
+  </div>
+  <a href="https://m.me/" target="_blank" rel="noopener" class="nk-calc__cta-btn">
+    <span class="nk-calc__cta-btn__ic">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.2 2 2 6.3 2 11.8c0 3.1 1.4 5.9 3.7 7.7V23l3.4-1.9c.9.3 1.9.4 2.9.4 5.8 0 10-4.3 10-9.8S17.8 2 12 2zm1 12.2l-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>
+    </span>
+    <span class="nk-calc__cta-btn__label">
+      <strong>NHẮN TIN QUA MESSENGER</strong>
+      <small>Phản hồi nhanh trong 15 phút</small>
+    </span>
+  </a>
+</div>
+
       </div>
 
       <!-- 2. Hồ sơ cần chuẩn bị -->
       <div class="nenkin-tool-card" id="ho-so-can-chuan-bi">
-        <h4 class="nenkin-tool-card__title">📋 Hồ sơ cần chuẩn bị</h4>
+        <h4 class="nenkin-tool-card__title nenkin-tool-card__title--green"><svg class="nk-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5a1.5 1.5 0 0 0-1.5 1.5v16a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7"/><path d="M8.5 16h7"/><path d="M8.5 19.5h4"/></svg>Hồ sơ cần chuẩn bị</h4>
         <div class="doc-grid">
           <div class="doc-card">
             <div class="doc-card__img"><img src="assets/docs/the-cu-tru.svg" alt="Thẻ cư trú 2 mặt" loading="lazy"></div>
             <p class="doc-card__label">Thẻ cư trú<br>(2 mặt)</p>
-            <a href="assets/docs/the-cu-tru.svg" target="_blank" rel="noopener" class="doc-card__btn">Xem mẫu</a>
+            <button type="button"
+              class="doc-card__btn doc-card__btn--modal"
+              data-doc-images='["assets/docs/anh_the_cu_tru.jpg"]'
+              data-doc-labels='["Thẻ cư trú (2 mặt)"]'
+              data-doc-title='Thẻ cư trú (2 mặt)'
+              aria-haspopup="dialog">
+              Xem mẫu
+            </button>
           </div>
           <div class="doc-card">
             <div class="doc-card__img"><img src="assets/docs/so-nenkin.svg" alt="Sổ Nenkin hoặc Giấy báo số Nenkin" loading="lazy"></div>
             <p class="doc-card__label">Sổ Nenkin hoặc<br>Giấy báo số Nenkin</p>
-            <a href="assets/docs/so-nenkin.svg" target="_blank" rel="noopener" class="doc-card__btn">Xem mẫu</a>
+            <button type="button"
+              class="doc-card__btn doc-card__btn--modal"
+              data-doc-images='["assets/docs/so_nenkin.jpg"]'
+              data-doc-labels='["Sổ Nenkin hoặc Giấy báo số Nenkin"]'
+              data-doc-title='Sổ Nenkin hoặc Giấy báo số Nenkin'
+              aria-haspopup="dialog">
+              Xem mẫu
+            </button>
           </div>
           <div class="doc-card">
             <div class="doc-card__img"><img src="assets/docs/so-ngan-hang.svg" alt="Sổ ngân hàng Nhật hoặc giấy xác nhận" loading="lazy"></div>
-            <p class="doc-card__label">Sổ ngân hàng Nhật<br>(hoặc giấy xác nhận)</p>
-            <a href="assets/docs/so-ngan-hang.svg" target="_blank" rel="noopener" class="doc-card__btn">Xem mẫu</a>
+            <p class="doc-card__label">Sổ ngân hàng Nhật hoặc Việt</p>
+            <button type="button"
+              class="doc-card__btn doc-card__btn--modal"
+              data-doc-images='["assets/docs/so_ngan_hang_nhat_ban.jpg","assets/docs/so_ngan_hang_vietinbank.jpg","assets/docs/so_ngan_hang_vietcombank.jpg"]'
+              data-doc-labels='["Mẫu Nhật Bản","Mẫu VietinBank","Mẫu Vietcombank"]'
+              data-doc-title='Sổ ngân hàng Nhật hoặc Việt'
+              aria-haspopup="dialog">
+              Xem mẫu
+            </button>
           </div>
           <div class="doc-card">
             <div class="doc-card__img"><img src="assets/docs/ho-chieu.svg" alt="Hộ chiếu, trang thông tin" loading="lazy"></div>
-            <p class="doc-card__label">Hộ chiếu<br>(Trang thông tin)</p>
-            <a href="assets/docs/ho-chieu.svg" target="_blank" rel="noopener" class="doc-card__btn">Xem mẫu</a>
+            <p class="doc-card__label">Hộ chiếu</p>
+            <button type="button"
+              class="doc-card__btn doc-card__btn--modal"
+              data-doc-images='["assets/docs/ho_chieu_trang_thong_tin.jpg","assets/docs/ho_chieu_co_dau.jpg"]'
+              data-doc-labels='["Hộ chiếu (Trang thông tin)","Hộ chiếu có dấu"]'
+              data-doc-title='Hộ chiếu (Trang thông tin)'
+              aria-haspopup="dialog">
+              Xem mẫu
+            </button>
           </div>
           <div class="doc-card">
             <div class="doc-card__img"><img src="assets/docs/mau-don.svg" alt="Mẫu đơn xin nhận Nenkin" loading="lazy"></div>
             <p class="doc-card__label">Mẫu đơn xin nhận<br>Nenkin</p>
-            <a href="assets/docs/mau-don.svg" download class="doc-card__btn">Tải mẫu</a>
+            <a href="assets/docs/mau-don-nenkin.xlsx" download class="doc-card__btn">Tải mẫu</a>
           </div>
         </div>
       </div>
 
-      <!-- 3. Điều kiện được nhận Nenkin -->
-      <div class="nenkin-tool-card">
-        <h4 class="nenkin-tool-card__title">Điều kiện được nhận Nenkin</h4>
-        <ul class="check-list nenkin-condition-list">
-          <li>Đã cắt địa chỉ về Việt Nam và xuất cảnh khỏi Nhật</li>
-          <li>Đã cắt Nenkin và bảo hiểm (đã nghỉ việc)</li>
-          <li>Trong vòng 2 năm sau khi xuất cảnh khỏi Nhật</li>
-          <li>Đã đóng Nenkin trên 6 tháng</li>
-        </ul>
-      </div>
-
-      <!-- 4. Tra cứu tình trạng hồ sơ -->
+      <!-- 3. Tra cứu tình trạng hồ sơ -->
       <div class="nenkin-tool-card" id="tra-cuu-ho-so">
-        <h4 class="nenkin-tool-card__title">🔍 Tra cứu tình trạng hồ sơ</h4>
+        <h4 class="nenkin-tool-card__title nenkin-tool-card__title--purple"><svg class="nk-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>Tra cứu tình trạng hồ sơ</h4>
         <label>Nhập mã hồ sơ
           <input type="text" id="nkLookupCode" placeholder="VD: CZT2507012">
         </label>
@@ -236,27 +272,168 @@
 
     </div>
 
-    <h4 class="service-detail__sub-heading">Quy trình làm Nenkin tại CZT</h4>
-    <div class="process-steps">
-      <div class="process-step"><span>1</span><strong>Gửi giấy tờ cho CZT</strong><p>Qua Zalo/Messenger hoặc bưu điện.</p></div>
-      <div class="process-step"><span>2</span><strong>Kiểm tra hồ sơ & báo tiền</strong><p>Kiểm tra điều kiện và báo số tiền dự kiến.</p></div>
-      <div class="process-step"><span>3</span><strong>Ký hợp đồng & thanh toán</strong><p>Ký hợp đồng dịch vụ và thanh toán phí.</p></div>
-      <div class="process-step"><span>4</span><strong>Nộp hồ sơ lên cục Nenkin</strong><p>CZT thay mặt bạn nộp hồ sơ.</p></div>
-      <div class="process-step"><span>5</span><strong>Nhận tiền Nenkin về tài khoản</strong><p>Nhận tiền sau khoảng 3–6 tháng.</p></div>
+    <h4 id="quy-trinh" class="nenkin-tool-card__title nenkin-tool-card__title--orange nk-flow-title"><svg class="nk-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M5 8.5V13a4 4 0 0 0 4 4h6.5"/><path d="M12 6h4.5a2.5 2.5 0 0 1 0 5H12"/></svg>Quy trình làm Nenkin tại CZT</h4>
+    <div class="nk-flow">
+      <div class="nk-flow__row">
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">1</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9z"/><path d="M8.5 12.5l2.2 2.2 4.2-4.6"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Kiểm tra hồ sơ và báo tiền</strong><p>Kiểm tra điều kiện và báo số tiền dự kiến</p></div>
+        </div>
+        <span class="nk-flow__arrow">→</span>
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">2</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 3.5L2.5 10.5l7 2.7 2.7 7 9.3-16.7z"/><path d="M9.5 13.2L21.5 3.5"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Gửi giấy tờ cho CZT</strong><p>Qua Fb, Line, Zalo…</p></div>
+        </div>
+        <span class="nk-flow__arrow">→</span>
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">3</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/><path d="M8.5 9h4M8.5 13h3"/><path d="M18 3.2a1.7 1.7 0 0 1 2.4 2.4l-6 6-3 .7.7-3z"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Ký hợp đồng</strong><p>Ký hợp đồng dịch vụ onl hoặc trực tiếp</p></div>
+        </div>
+        <span class="nk-flow__arrow">→</span>
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">4</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10M9 21V10M15 21V10M19 21V10"/><path d="M12 3L3.5 8.5h17z"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Nộp hồ sơ lên cục Nenkin</strong><p>CZT thay mặt bạn nộp hồ sơ lên cục Nenkin</p></div>
+        </div>
+      </div>
+      <div class="nk-flow__row">
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">5</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Nhận kết quả lần 1</strong><p>Nhận tiền sau 3–6 tháng</p></div>
+        </div>
+        <span class="nk-flow__arrow">→</span>
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">6</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8.5 7h1.5M14 7h1.5M8.5 11h1.5M14 11h1.5M8.5 15h1.5M14 15h1.5"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Nộp hồ sơ lên cục Thuế</strong><p>CZT thay mặt bạn nộp hồ sơ lên cục thuế</p></div>
+        </div>
+        <span class="nk-flow__arrow">→</span>
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">7</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6.5" rx="7" ry="3"/><path d="M5 6.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/><path d="M5 11.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Nhận kết quả lần 2</strong><p>Nhận tiền sau 1–3 tháng</p></div>
+        </div>
+        <span class="nk-flow__arrow">→</span>
+        <div class="nk-flow__step">
+          <div class="nk-flow__head"><span class="nk-flow__num">8</span><span class="nk-flow__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19"/><path d="M6 15h4"/></svg></span></div>
+          <div class="nk-flow__text"><strong>Thanh toán phí dịch vụ</strong><p>Bạn thanh toán phí dịch vụ cho CZT</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="section section--accent">
-  <div class="container cta-band">
-    <div class="cta-band__text">
-      <h2>Muốn biết bạn được hoàn bao nhiêu Nenkin?</h2>
-      <p>Nhắn tin cho CZT để được kiểm tra điều kiện và báo số tiền dự kiến chính xác hoàn toàn miễn phí.</p>
+<!-- ============ KHÁCH HÀNG ============ -->
+<section class="section section--gray" id="testimonials">
+  <div class="container">
+    <div class="section__head">
+      <span class="tag">👥 Khách hàng</span>
+      <h2>Khách hàng nói gì về CZT</h2>
     </div>
-    <div class="cta-band__actions">
-      <a href="index.html#booking" class="btn btn--accent btn--lg">Đăng ký tư vấn</a>
-      <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--messenger btn--lg">💬 Messenger</a>
+    <div class="testimonials" id="testimonials-track">
+      <div class="testimonial" style="background: white;">
+        <p>"Nhờ CZT hỗ trợ mà mình nhận được Nenkin nhanh hơn dự kiến. Rất chuyên nghiệp và nhiệt tình!"</p>
+        <div class="testimonial__author">
+          <div class="avatar">M</div>
+          <div><strong>Minh T. (Chiba)</strong><span class="nk-stars">★★★★★</span></div>
+        </div>
+      </div>
+      <div class="testimonial" style="background: white;">
+        <p>"Tư vấn rõ ràng, báo tiền trước nên mình rất yên tâm. Highly recommend!"</p>
+        <div class="testimonial__author">
+          <div class="avatar">H</div>
+          <div><strong>Hương N. (Aichi)</strong><span class="nk-stars">★★★★★</span></div>
+        </div>
+      </div>
+      <div class="testimonial" style="background: white;">
+        <p>"CZT hỗ trợ mình hoàn thuế Nenkin rất nhanh, tư vấn nhiệt tình và luôn cập nhật tiến độ đầy đủ."</p>
+        <div class="testimonial__author">
+          <div class="avatar">N</div>
+          <div><strong>Chị Ngọc (Osaka)</strong><span class="nk-stars">★★★★★</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials__nav">
+      <button id="testiPrev">‹</button>
+      <button id="testiNext">›</button>
+    </div>
+    <p class="nk-testimonials__more"><a href="index.html#testimonials">Xem thêm đánh giá của khách hàng →</a></p>
+  </div>
+</section>
+
+<!-- ============ VÌ SAO CHỌN CZT ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <span class="tag">⭐ Vì sao chọn CZT</span>
+      <h2>Vì sao chọn CZT?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-card__icon">📄</div><h3>Hợp đồng pháp lý rõ ràng</h3><p>Hợp đồng dịch vụ minh bạch, rõ ràng ngay từ đầu, không phát sinh chi phí ẩn.</p></div>
+      <div class="why-card"><div class="why-card__icon">💴</div><h3>Báo số tiền trước</h3><p>Báo số tiền dự kiến nhận được trước khi bạn quyết định làm hồ sơ.</p></div>
+      <div class="why-card"><div class="why-card__icon">📞</div><h3>Chủ động liên hệ cục Nenkin</h3><p>Gọi điện kiểm tra cục Nenkin nếu hồ sơ xử lý chậm hơn dự kiến.</p></div>
+      <div class="why-card"><div class="why-card__icon">🇯🇵</div><h3>Hỗ trợ 2 đầu cầu</h3><p>Hỗ trợ khách hàng dù đang ở Nhật Bản hay đã về Việt Nam.</p></div>
+      <div class="why-card"><div class="why-card__icon">🔍</div><h3>Theo dõi đến cùng</h3><p>Theo dõi tiến độ hồ sơ liên tục đến khi khách hàng nhận được tiền.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--gray" id="faq">
+  <div class="container">
+    <div class="section__head">
+      <span class="tag">❓ FAQ</span>
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+    <div class="accordion" id="accordion">
+      <div class="accordion__item is-open">
+        <button class="accordion__head">Điều kiện nhận Nenkin là gì? <span>+</span></button>
+        <div class="accordion__body"><p>Bạn cần đã đóng Nenkin trên 6 tháng, đã cắt địa chỉ cư trú và xuất cảnh khỏi Nhật, đã cắt bảo hiểm/nghỉ việc, và làm thủ tục trong vòng 2 năm kể từ khi xuất cảnh. CZT sẽ kiểm tra điều kiện cụ thể miễn phí cho bạn.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">Thời gian nhận nenkin mất bao lâu? <span>+</span></button>
+        <div class="accordion__body"><p>Thông thường từ 3–6 tháng kể từ khi nộp hồ sơ đầy đủ lên Cơ quan Nenkin Nhật Bản, tùy vào thời điểm nộp và khối lượng hồ sơ đang xử lý.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">Nên dùng ngân hàng nào để nhận Nenkin? <span>+</span></button>
+        <div class="accordion__body"><p>Bạn có thể nhận qua tài khoản ngân hàng Nhật Bản (giữ lại trước khi xuất cảnh) hoặc một số ngân hàng tại Việt Nam có hỗ trợ nhận ngoại tệ. CZT sẽ tư vấn phương án nhận tiền phù hợp và ít phí chuyển đổi nhất cho từng trường hợp.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">Không có số nenkin có nhận được Nenkin không? <span>+</span></button>
+        <div class="accordion__body"><p>Vẫn có thể được. Nếu bạn mất sổ Nenkin hoặc không nhớ số Nenkin, CZT có thể hỗ trợ tra cứu lại thông tin dựa trên các giấy tờ khác như hộ chiếu, thẻ cư trú, My Number.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">Bất hợp pháp tại Nhật sau khi về có nhận được Nenkin không? <span>+</span></button>
+        <div class="accordion__body"><p>Từng trường hợp cư trú bất hợp pháp có thể vẫn được xét nhận Nenkin nếu đáp ứng điều kiện đóng bảo hiểm, nhưng hồ sơ sẽ phức tạp hơn và cần xác minh kỹ. Hãy liên hệ CZT để được tư vấn riêng và kiểm tra khả năng nhận tiền của bạn.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CZT ĐỒNG HÀNH CÙNG BẠN + TƯ VẤN MIỄN PHÍ ============ -->
+<section class="section">
+  <div class="container">
+    <div class="nk-partner-card">
+      <h2 class="nk-partner-card__title">CZT – Đồng hành cùng bạn</h2>
+      <div class="nk-partner-stats">
+        <div class="nk-stat">
+          <span class="nk-stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9z"/><path d="M8.5 12.5l2.2 2.2 4.2-4.6"/></svg></span>
+          <strong>100%</strong>
+          <span>Hồ sơ được duyệt thành công</span>
+        </div>
+        <div class="nk-stat">
+          <span class="nk-stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3z"/></svg></span>
+          <strong>Hỗ trợ đa quốc gia</strong>
+          <span>Nhật Bản, Việt Nam, Indonesia, Nepal…</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nk-consult">
+      <h2>Tư vấn miễn phí</h2>
+      <p>Đội ngũ CZT luôn sẵn sàng hỗ trợ và giải đáp mọi thắc mắc của bạn về Nenkin.</p>
+      <div class="nk-consult__actions">
+        <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--white btn--lg">💬 Nhắn tin Messenger</a>
+        <a href="tel:0900000000" class="btn btn--white btn--lg">📞 090 000 0000</a>
+      </div>
+      <p class="nk-consult__hours">Thời gian hỗ trợ: 9:00 – 21:00</p>
     </div>
   </div>
 </section>
@@ -312,6 +489,15 @@
     </div>
   </div>
 </footer>
+
+<div class="doc-modal" id="docModal" hidden>
+  <div class="doc-modal__backdrop" data-close-modal></div>
+  <div class="doc-modal__content" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
+    <button type="button" class="doc-modal__close" id="docModalClose" aria-label="Đóng">×</button>
+    <h4 id="docModalTitle" class="doc-modal__title">Mẫu sổ ngân hàng</h4>
+    <div id="docModalBody" class="doc-modal__body"></div>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>

@@ -163,6 +163,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Nenkin: modal xem mẫu giấy tờ ---------- */
+  const docModal = document.getElementById('docModal');
+  const docModalBody = document.getElementById('docModalBody');
+  const docModalTitle = document.getElementById('docModalTitle');
+  const docModalClose = document.getElementById('docModalClose');
+  const docModalBackdrop = document.querySelector('.doc-modal__backdrop');
+
+  const openDocModal = (images = [], labels = [], title = 'Mẫu giấy tờ') => {
+    if (!docModal || !docModalBody) return;
+
+    if (docModalTitle) docModalTitle.textContent = title;
+    docModalBody.innerHTML = '';
+    images.forEach((src, index) => {
+      const item = document.createElement('figure');
+      item.className = 'doc-modal__item';
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = labels[index] || `Mẫu ${index + 1}`;
+      img.loading = 'lazy';
+
+      const caption = document.createElement('figcaption');
+      caption.textContent = labels[index] || `Mẫu ${index + 1}`;
+
+      item.appendChild(img);
+      item.appendChild(caption);
+      docModalBody.appendChild(item);
+    });
+
+    docModal.hidden = false;
+    document.body.classList.add('is-modal-open');
+  };
+
+  const closeDocModal = () => {
+    if (!docModal) return;
+    docModal.hidden = true;
+    document.body.classList.remove('is-modal-open');
+  };
+
+  document.querySelectorAll('[data-doc-images]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const images = JSON.parse(button.getAttribute('data-doc-images') || '[]');
+      const labels = JSON.parse(button.getAttribute('data-doc-labels') || '[]');
+      const title = button.getAttribute('data-doc-title') || labels[0] || 'Mẫu giấy tờ';
+      if (images.length) openDocModal(images, labels, title);
+    });
+  });
+
+  if (docModalClose) docModalClose.addEventListener('click', closeDocModal);
+  if (docModalBackdrop) docModalBackdrop.addEventListener('click', closeDocModal);
+  document.addEventListener('keydown', (event) => {
+    if (!docModal || docModal.hidden) return;
+    if (event.key === 'Escape') closeDocModal();
+  });
+
   /* ---------- Nenkin: tính số tiền dự kiến ---------- */
   const nkCalcBtn = document.getElementById('nkCalcBtn');
   if (nkCalcBtn) {
@@ -170,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const months = parseInt(document.getElementById('nkMonths').value, 10);
       const salary = parseInt(document.getElementById('nkSalary').value, 10);
       const resultEl = document.getElementById('nkResult');
+      const placeholderEl = document.getElementById('nkPlaceholder');
 
       if (!months || !salary || months < 6) {
         alert('Vui lòng nhập số tháng đóng Nenkin (tối thiểu 6 tháng) và mức lương trung bình.');
@@ -177,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Hệ số theo bảng của Cơ quan Nenkin (脱退一時金): số tháng đóng -> hệ số nhân với lương trung bình chưa trừ.
-      // Nenkin lần 1 (dự kiến) = Mức lương trung bình chưa trừ x hệ số.
+      // Tổng số tiền dự kiến (100%) = Mức lương trung bình chưa trừ x hệ số.
       const coefFor = (m) => {
         if (m < 6) return 0;
         if (m < 12) return 0.5;
@@ -192,14 +248,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return 5.5; // trên 60 tháng
       };
 
-      const nenkin1 = Math.round(salary * coefFor(months));
-      const tax = Math.round(nenkin1 * 0.2042);
-      const total = nenkin1 - tax;
+      // Tổng (100%) được chia làm 2 lần nhận:
+      // - Nenkin lần 1 (79.58%): Cơ quan Nenkin chi trả sau khi đã giữ lại 20.42% thuế.
+      // - Nenkin lần 2 (20.42%): phần thuế đã giữ lại, được hoàn lại sau khi CZT nộp hồ sơ khai thuế.
+      const total = Math.round(salary * coefFor(months));
+      const nenkin1 = Math.round(total * 0.7958);
+      const nenkin2 = total - nenkin1;
 
       const fmt = (n) => n.toLocaleString('ja-JP') + ' 円';
       document.getElementById('nkOut1').textContent = fmt(nenkin1);
-      document.getElementById('nkOut2').textContent = '- ' + fmt(tax);
+      document.getElementById('nkOut2').textContent = fmt(nenkin2);
       document.getElementById('nkOut3').textContent = fmt(total);
+      if (placeholderEl) placeholderEl.hidden = true;
       resultEl.hidden = false;
     });
   }
