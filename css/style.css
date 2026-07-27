@@ -138,6 +138,11 @@ p { color: var(--color-text-light); }
 
 .section__head { max-width: 640px; margin: 0 auto 50px; text-align: center; }
 .section__head--light h2 { color: #fff; }
+/* Desktop: nới rộng để tiêu đề dài không bị xuống dòng */
+@media (min-width: 768px) {
+  .section__head { max-width: 940px; }
+  .section__head h2 { white-space: nowrap; }
+}
 
 /* ============ Top bar ============ */
 .topbar { background: var(--color-navy); color: rgba(255,255,255,0.8); font-size: 13px; }
@@ -1001,4 +1006,142 @@ body.is-modal-open { overflow: hidden; }
   .service-detail__grid { gap: 18px; margin-bottom: 16px; }
   .nenkin-tool-card { padding: 20px 0; }
   .other-services__item { padding: 16px; }
+}
+
+/* ============ VISA GINO2 PAGE ============ */
+/* Hero media: passport + residence card + APPROVED stamp */
+.visa-hero__trust { margin-top: 22px; font-size: 14px; color: rgba(255,255,255,0.9); }
+.visa-hero__trust strong { color: var(--color-gold); }
+.visa-hero__media { position: relative; min-height: 360px; display: flex; align-items: center; justify-content: center; }
+.visa-hero__doc {
+  position: absolute; border-radius: 12px; box-shadow: 0 20px 44px rgba(0,0,0,0.35);
+  border: 3px solid #fff; object-fit: cover;
+}
+.visa-hero__doc--pass { width: 210px; height: 275px; transform: rotate(-9deg) translate(-120px, -34px); z-index: 1; }
+.visa-hero__doc--card { width: 340px; height: 214px; transform: rotate(6deg) translate(90px, 60px); z-index: 2; }
+.visa-hero__stamp {
+  position: absolute; z-index: 3; right: 6%; bottom: 10%;
+  font-family: var(--font-display); font-weight: 800; letter-spacing: 0.08em; font-size: 20px;
+  color: #d1233b; border: 3px solid #d1233b; border-radius: 8px; padding: 6px 14px;
+  transform: rotate(-12deg); background: rgba(255,255,255,0.82); box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Pain points: Đây có phải là bạn? */
+.pain { max-width: 900px; margin: 0 auto; }
+.pain__quote {
+  display: flex; align-items: center; gap: 18px;
+  background: #eaf1ff; border: 1px solid rgba(28,80,200,0.18); border-radius: var(--radius-md);
+  padding: 18px 24px; margin-bottom: 24px;
+}
+.pain__person {
+  flex-shrink: 0; width: 110px; height: 110px; border-radius: 50%; overflow: hidden;
+  background: linear-gradient(160deg, #dbe6ff, #b9ccf7);
+}
+.pain__person img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pain__person.is-empty { position: relative; }
+.pain__person.is-empty img { display: none; }
+.pain__person.is-empty::after { content: "👤"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 48px; opacity: 0.55; }
+.pain__quote-text { display: flex; align-items: center; gap: 12px; }
+.pain__quote-ic { font-size: 26px; flex-shrink: 0; }
+.pain__quote p { font-style: italic; font-size: 16px; color: var(--color-navy); font-weight: 500; }
+.pain__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pain__col { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 26px 24px; }
+.pain__col-title { font-size: 18px; margin-bottom: 16px; }
+.pain__col-title--yes { color: #0f9d78; }
+.pain__col-title--no { color: #d1233b; }
+.pain__list li { position: relative; padding-left: 32px; margin-bottom: 12px; color: var(--color-text); font-size: 14.5px; }
+.pain__list li::before { position: absolute; left: 0; top: -1px; font-size: 17px; }
+.pain__list--yes li::before { content: "✅"; }
+.pain__list--no li::before { content: "❌"; }
+
+/* CZT hỗ trợ Gino2 – support cards (ảnh người + nội dung) */
+.support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.support-card {
+  display: flex; gap: 18px; align-items: center;
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: 18px; box-shadow: var(--shadow-sm);
+}
+.support-card__photo {
+  flex-shrink: 0; width: 140px; height: 168px; border-radius: var(--radius-md); overflow: hidden;
+  background: linear-gradient(160deg, #dbe6ff, #b9ccf7);
+}
+.support-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.support-card__photo.is-empty { position: relative; }
+.support-card__photo.is-empty img { display: none; }
+.support-card__photo.is-empty::after {
+  content: "👤"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 58px; opacity: 0.55;
+}
+.support-card__body { flex: 1; }
+.support-card__ic { display: inline-block; margin-right: 8px; font-size: 18px; vertical-align: -2px; }
+.support-card h4 { font-size: 16px; color: var(--color-navy); margin-bottom: 6px; line-height: 1.35; }
+.support-card p { font-size: 13.5px; line-height: 1.5; }
+
+/* Đừng lo banner (green) */
+.dont-worry { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary-dark) 100%); color: #fff; padding: 30px 0; }
+.dont-worry__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.dont-worry__text strong { display: block; font-family: var(--font-display); font-size: 22px; margin-bottom: 4px; }
+.dont-worry__text p { color: rgba(255,255,255,0.92); font-size: 15px; }
+
+/* Ngành nghề */
+.industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.industry-card {
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: 26px 20px; text-align: center; transition: transform .2s ease, box-shadow .2s ease;
+}
+.industry-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.industry-card__ic { font-size: 40px; display: block; margin-bottom: 12px; }
+.industry-card h4 { font-size: 17px; color: var(--color-navy); margin-bottom: 8px; }
+.industry-card p { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+.industry-card__link { font-size: 13.5px; font-weight: 700; color: var(--color-primary); }
+.industry-card--note { background: #eaf1ff; border-color: rgba(28,80,200,0.18); grid-column: span 4; text-align: left; display: flex; align-items: center; gap: 16px; }
+.industry-card--note .industry-card__ic { margin: 0; font-size: 30px; }
+.industry-card--note h4 { margin-bottom: 4px; }
+.industry-card--note p { margin-bottom: 0; }
+
+/* Horizontal scroll galleries (kết quả / review) */
+.hscroll__hint { color: #d1568f; font-style: italic; font-size: 13.5px; margin-top: 6px; }
+.hscroll { display: flex; gap: 22px; overflow-x: auto; padding: 6px 4px 18px; scroll-snap-type: x mandatory; }
+.hscroll__item { flex: 0 0 400px; scroll-snap-align: start; margin: 0; }
+.hscroll__item img {
+  width: 100%; height: 520px; object-fit: contain; display: block;
+  background: #fff; border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+}
+.hscroll__item figcaption { margin-top: 10px; font-size: 13px; color: var(--color-text-light); text-align: center; }
+/* Review: ảnh ngang -> khung ngang, bớt khoảng trắng trên dưới */
+.hscroll--reviews .hscroll__item { flex-basis: 620px; }
+.hscroll--reviews .hscroll__item img { height: 360px; }
+.hscroll--reviews .hscroll__item.is-empty::before { height: 360px; }
+/* Placeholder khi chưa có ảnh */
+.hscroll__item.is-empty { position: relative; }
+.hscroll__item.is-empty img { display: none; }
+.hscroll__item.is-empty::before {
+  content: "🖼️ Thêm ảnh vào\00000a assets/docs/"; white-space: pre-line;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  height: 520px; border: 2px dashed var(--color-border); border-radius: var(--radius-md);
+  color: var(--color-text-light); font-size: 13px; background: #fff; padding: 20px;
+}
+
+@media (max-width: 860px) {
+  .visa-hero__media { min-height: 260px; margin-top: 10px; }
+  .support-grid { grid-template-columns: 1fr; }
+  .industry-grid { grid-template-columns: repeat(2, 1fr); }
+  .industry-card--note { grid-column: span 2; }
+  .dont-worry__inner { flex-direction: column; text-align: center; align-items: stretch; }
+}
+@media (max-width: 560px) {
+  .pain__cols { grid-template-columns: 1fr; }
+  .industry-grid { grid-template-columns: 1fr; }
+  .industry-card--note { grid-column: span 1; flex-direction: column; text-align: center; }
+  .visa-hero__media { min-height: 300px; }
+  .visa-hero__doc--card { width: 220px; height: 140px; transform: rotate(6deg) translate(46px, 44px); }
+  .visa-hero__doc--pass { width: 148px; height: 195px; transform: rotate(-8deg) translate(-58px, -30px); }
+  .visa-hero__stamp { right: 10%; bottom: 14%; font-size: 16px; padding: 5px 11px; }
+  /* Mobile: mỗi khung = 1 ảnh full chiều ngang */
+  .hscroll { gap: 14px; }
+  .hscroll__item, .hscroll--reviews .hscroll__item { flex: 0 0 100%; }
+  .hscroll__item img { height: 440px; }
+  .hscroll--reviews .hscroll__item img { height: 240px; }
+  .hscroll--reviews .hscroll__item.is-empty::before { height: 240px; }
 }
