@@ -289,13 +289,20 @@ document.addEventListener('DOMContentLoaded', () => {
     nkLookupBtn.addEventListener('click', async () => {
       const code = document.getElementById('nkLookupCode').value.trim();
       const msgEl = document.getElementById('nkLookupMsg');
-      const listEl = document.getElementById('nkStatusList');
-      msgEl.hidden = false; listEl.hidden = true;
 
-      if (!code) {
-        msgEl.textContent = 'Vui lòng nhập mã hồ sơ.';
-        return;
-      }
+      // Stepper "Quy trình xử lý hồ sơ" khớp đúng thứ tự NENKIN_STATUS_STEPS (8 trạng thái)
+      const steps = document.querySelectorAll('.nk-process__step');
+      const setStepper = (idx) => {
+        steps.forEach((el, i) => {
+          el.classList.remove('is-done', 'is-active');
+          if (idx < 0) return;
+          if (i < idx) el.classList.add('is-done');
+          else if (i === idx) el.classList.add('is-active');
+        });
+      };
+
+      msgEl.hidden = false;
+      if (!code) { setStepper(-1); msgEl.textContent = 'Vui lòng nhập mã hồ sơ.'; return; }
       if (!NENKIN_LOOKUP_API_URL) {
         msgEl.textContent = 'Chức năng tra cứu đang được thiết lập. Vui lòng liên hệ CZT qua Zalo/Messenger để biết tình trạng hồ sơ.';
         return;
@@ -309,22 +316,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!data.found) {
           msgEl.textContent = 'Không tìm thấy hồ sơ với mã này. Vui lòng kiểm tra lại hoặc liên hệ CZT.';
+          setStepper(-1);
           return;
         }
 
         const currentStatus = data.trang_thai;
-        const currentIdx = NENKIN_STATUS_STEPS.indexOf(currentStatus);
-
-        listEl.innerHTML = NENKIN_STATUS_STEPS.map((step, i) => {
-          let cls = '';
-          if (currentIdx >= 0 && i < currentIdx) cls = 'is-done';
-          else if (i === currentIdx) cls = 'is-current';
-          return `<li class="${cls}">${step}</li>`;
-        }).join('');
-
-        msgEl.textContent = `Kết quả cho mã hồ sơ ${code}:`;
-        listEl.hidden = false;
+        const idx = NENKIN_STATUS_STEPS.indexOf(currentStatus);
+        setStepper(idx);
+        msgEl.innerHTML = 'Mã <strong>' + code + '</strong> — Trạng thái hiện tại: <strong>' + currentStatus + '</strong>';
       } catch (err) {
+        setStepper(-1);
         msgEl.textContent = 'Có lỗi khi tra cứu. Vui lòng thử lại sau hoặc liên hệ CZT.';
       }
     });

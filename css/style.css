@@ -23,6 +23,7 @@
   --shadow-lg: 0 20px 50px rgba(16, 25, 43, 0.16);
   --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
   --font-display: 'Noto Serif JP', 'Be Vietnam Pro', serif;
+  --font-comfortaa: 'Comfortaa', system-ui, sans-serif;
   --header-h: 88px;
 }
 
@@ -63,7 +64,7 @@ p { color: var(--color-text-light); }
 /* ============ Utility ============ */
 .tag {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -113,7 +114,7 @@ p { color: var(--color-text-light); }
 .btn--purple { background: linear-gradient(135deg, #8a6ae0, #6a3fd6); color: #fff; box-shadow: 0 6px 18px rgba(106, 63, 214, 0.4); }
 .btn--purple:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(106, 63, 214, 0.5); }
 .btn--lg { padding: 15px 30px; font-size: 16px; }
-.btn--sm { padding: 8px 16px; font-size: 13px; }
+.btn--sm { padding: 8px 16px; font-size: 14px; }
 .btn--block { width: 100%; }
 
 .check-list li { position: relative; padding-left: 28px; margin-bottom: 10px; color: var(--color-text); }
@@ -145,7 +146,7 @@ p { color: var(--color-text-light); }
 }
 
 /* ============ Top bar ============ */
-.topbar { background: var(--color-navy); color: rgba(255,255,255,0.8); font-size: 13px; }
+.topbar { background: var(--color-navy); color: rgba(255,255,255,0.8); font-size: 14px; }
 .topbar__inner { display: flex; justify-content: space-between; align-items: center; padding: 8px 24px; }
 .topbar__info { display: flex; gap: 24px; }
 .topbar__info a { color: rgba(255,255,255,0.85); }
@@ -217,14 +218,14 @@ p { color: var(--color-text-light); }
 .hero__content > p { font-size: 17px; margin-bottom: 30px; max-width: 520px; }
 .hero__pitch { margin-bottom: 30px; max-width: 520px; }
 .hero__pitch-title { font-size: 17px; font-weight: 700; color: var(--color-navy); margin-bottom: 6px; }
-.hero__pitch-services { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 14px; }
+.hero__pitch-services { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 14px; }
 .hero__pitch-values { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
 .hero__pitch-values li { position: relative; padding-left: 22px; font-size: 14.5px; color: var(--color-text-light); }
 .hero__pitch-values li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--color-gold); font-weight: 700; }
 .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
 .hero__stats { display: flex; gap: 36px; }
 .hero__stats strong { display: block; font-family: var(--font-display); font-size: 26px; color: var(--color-navy); }
-.hero__stats span { font-size: 13px; color: var(--color-text-light); }
+.hero__stats span { font-size: 14px; color: var(--color-text-light); }
 
 .hero__media { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .hero-card {
@@ -301,7 +302,7 @@ p { color: var(--color-text-light); }
 .values-list li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: var(--color-bg-gray); border-radius: var(--radius-sm); border-left: 3px solid var(--color-primary); }
 .values-list__icon { font-size: 20px; line-height: 1.4; flex-shrink: 0; }
 .values-list strong { display: block; color: var(--color-navy); font-size: 15px; margin-bottom: 2px; }
-.values-list p { color: var(--color-text-light); font-size: 13px; margin: 0; }
+.values-list p { color: var(--color-text-light); font-size: 14px; margin: 0; }
 .about__license { margin-top: 24px; padding: 18px; background: var(--color-bg-gray); border-radius: var(--radius-sm); border-left: 4px solid var(--color-primary); }
 .about__license p { color: var(--color-text); font-size: 14px; }
 
@@ -316,7 +317,7 @@ p { color: var(--color-text-light); }
   font-family: var(--font-display); font-size: 24px; font-weight: 700;
 }
 .team__card strong { display: block; color: var(--color-navy); margin-bottom: 4px; }
-.team__card span { font-size: 13px; color: var(--color-text-light); }
+.team__card span { font-size: 14px; color: var(--color-text-light); }
 
 /* ============ Services ============ */
 .service-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -328,9 +329,9 @@ p { color: var(--color-text-light); }
 .service-card__icon { display: inline-block; vertical-align: middle; font-size: 28px; line-height: 1; margin: 0 10px 10px 0; }
 .service-card h3 { display: inline-block; vertical-align: middle; margin-bottom: 10px; }
 .service-card p { margin-bottom: 16px; font-size: 14.5px; }
-.service-card__sub { font-weight: 600; color: var(--color-text); font-size: 13.5px; margin-bottom: 10px !important; }
-.service-card__desc { font-size: 13.5px; }
-.check-list--sm li { font-size: 13.5px; padding-left: 22px; margin-bottom: 8px; }
+.service-card__sub { font-weight: 600; color: var(--color-text); font-size: 14.5px; margin-bottom: 10px !important; }
+.service-card__desc { font-size: 14.5px; }
+.check-list--sm li { font-size: 14.5px; padding-left: 22px; margin-bottom: 8px; }
 .check-list--sm li::before { width: 16px; height: 16px; font-size: 10px; }
 .service-card > a:not(.btn) { display: inline-block; margin-top: 4px; font-weight: 700; color: var(--color-primary); font-size: 14px; }
 .service-card--cta {
@@ -363,22 +364,26 @@ p { color: var(--color-text-light); }
 #service-visa .service-detail__grid h4:first-child { margin-top: 0; }
 
 /* ============ Nenkin interactive tools ============ */
-.nenkin-tools { display: grid; grid-template-columns: 1fr; margin-top: 8px; }
-.nenkin-tool-card { padding: 28px 0; border-top: 1px solid var(--color-border); }
+.nenkin-tools { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 8px; }
+/* Mỗi mục là 1 khung nổi, nền nhạt khác nhau theo màu 4 quick-access */
+.nenkin-tool-card {
+  padding: 28px 26px; border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-md);
+}
+#ho-so-can-chuan-bi { background: linear-gradient(160deg, #f2fbf7 0%, #fbfefd 100%); border-color: rgba(15,157,120,0.14); }
+#tra-cuu-ho-so     { background: linear-gradient(160deg, #f8f4fe 0%, #fdfbff 100%); border-color: rgba(124,58,237,0.14); }
 .nenkin-tool-card__title {
   margin-bottom: 18px;
-  padding-left: 14px;
-  font-family: var(--font-display);
+  font-family: var(--font-comfortaa);
   font-size: 23px;
   font-weight: 700;
   line-height: 1.3;
   text-transform: uppercase;
   color: var(--color-navy);
-  border-left: 5px solid var(--color-primary);
 }
-.nenkin-tool-card__title--green { border-left-color: #0f9d78; color: #0f9d78; }
-.nenkin-tool-card__title--purple { border-left-color: #7c3aed; color: #7c3aed; }
-.nenkin-tool-card__title--orange { border-left-color: #ef6c2f; color: #ef6c2f; }
+.nenkin-tool-card__title--green { color: #0f9d78; }
+.nenkin-tool-card__title--purple { color: #7c3aed; }
+.nenkin-tool-card__title--orange { color: #ef6c2f; }
 .nk-flow-title { margin-top: 34px; }
 /* Inline SVG icon inside section titles (inherits title color via currentColor) */
 .nk-title-ic { width: 24px; height: 24px; vertical-align: -5px; margin-right: 8px; display: inline-block; }
@@ -386,7 +391,7 @@ p { color: var(--color-text-light); }
 .nk-subheading--icon .nk-title-ic { margin-right: 0; vertical-align: middle; color: var(--color-primary); }
 .nk-calc__head-ic svg { width: 26px; height: 26px; }
 .nenkin-tool-card__note { font-size: 12.5px; color: var(--color-text-light); margin: 10px 0 14px; }
-.nenkin-tool-card label { display: block; font-size: 13.5px; font-weight: 600; color: var(--color-text); margin-bottom: 12px; }
+.nenkin-tool-card label { display: block; font-size: 14.5px; font-weight: 600; color: var(--color-text); margin-bottom: 12px; }
 .nenkin-tool-card input {
   display: block; width: 100%; margin-top: 6px; padding: 12px 14px;
   border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
@@ -404,8 +409,9 @@ p { color: var(--color-text-light); }
 
 /* ============ Nenkin calculator - nổi bật (nk-calc) ============ */
 .nk-calc {
-  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg); padding: 28px 26px 22px; margin: 8px 0 28px;
+  background: linear-gradient(160deg, #f2f6ff 0%, #fbfcff 100%);
+  border: 1px solid rgba(28,80,200,0.14); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 28px 26px 22px; margin: 0;
 }
 .nk-calc__head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
 .nk-calc__head-ic {
@@ -413,36 +419,48 @@ p { color: var(--color-text-light); }
   background: var(--color-primary); color: #fff;
   display: flex; align-items: center; justify-content: center; font-size: 22px;
 }
-.nk-calc__head h4 { font-size: 20px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--color-primary); }
+.nk-calc__head h4 { font-family: var(--font-comfortaa); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--color-primary); }
+
+/* Title góc trái dùng chung (giống nk-calc__head): icon vuông + chữ Comfortaa đậm */
+.card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.card-head__ic { width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; }
+.card-head__ic svg { width: 26px; height: 26px; }
+.card-head h2 { font-family: var(--font-comfortaa); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.01em; margin: 0; line-height: 1.2; }
+.card-head--orange .card-head__ic { background: #ef6c2f; }
+.card-head--orange h2 { color: #ef6c2f; }
+.card-head--blue .card-head__ic { background: var(--color-primary); }
+.card-head--blue h2 { color: var(--color-primary); }
 .nk-calc__body { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
-.nk-calc__form label { display: block; font-size: 13.5px; font-weight: 600; color: var(--color-text); margin-bottom: 14px; }
+.nk-calc__form label { display: block; font-size: 15px; font-weight: 600; color: var(--color-text); margin-bottom: 16px; }
 .nk-calc__form input {
-  display: block; width: 100%; margin-top: 6px; padding: 12px 14px;
+  display: block; width: 100%; margin-top: 7px; padding: 13px 15px;
   border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
-  font-size: 14.5px; font-family: inherit; font-weight: 400; color: var(--color-text); background: #fff;
+  font-size: 16px; font-family: inherit; font-weight: 500; color: var(--color-text); background: #fff;
 }
 .nk-calc__form input:focus { outline: none; border-color: var(--color-primary); }
 .nk-calc__form input::placeholder { color: var(--color-text-light); font-weight: 400; opacity: 0.55; }
-.nk-calc__hint { font-size: 12px; color: var(--color-text-light); margin: -6px 0 16px; }
+.nk-calc__hint { font-size: 14px; color: var(--color-text-light); margin: -8px 0 18px; }
+/* Nền vùng kết quả / hũ vàng: tông hồng - tím nhạt */
 .nk-calc__result-wrap {
-  background: linear-gradient(160deg, rgba(28,80,200,0.07), rgba(28,80,200,0.02));
-  border: 1px solid rgba(28,80,200,0.14); border-radius: var(--radius-md);
-  padding: 22px 20px; display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(155deg, #fdeaf4 0%, #eef0fb 55%, #e8effc 100%);
+  border: 1px solid rgba(120,80,220,0.14); border-radius: var(--radius-md);
+  padding: 24px 22px; display: flex; flex-direction: column; justify-content: center;
 }
 .nk-calc__placeholder { text-align: center; color: var(--color-text-light); }
-.nk-calc__placeholder span { font-size: 34px; display: block; margin-bottom: 10px; }
-.nk-calc__placeholder p { font-size: 13.5px; line-height: 1.5; }
+.nk-calc__moneybag { width: 165px; height: auto; display: block; margin: 0 auto 14px; mix-blend-mode: multiply; }
+.nk-calc__placeholder > span { font-size: 78px; display: block; margin-bottom: 12px; line-height: 1; filter: drop-shadow(0 8px 14px rgba(120,80,220,0.22)); }
+.nk-calc__placeholder p { font-size: 15px; line-height: 1.55; }
 .nk-calc__placeholder strong { color: var(--color-navy); }
-.nk-calc__result-label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 10px; }
-.nk-calc__row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; font-size: 14px; color: var(--color-text); }
+.nk-calc__result-label { font-size: 14.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+.nk-calc__row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 15.5px; color: var(--color-text); }
 .nk-calc__row strong { font-family: var(--font-display); color: var(--color-navy); }
 .nk-calc__total {
-  border-top: 1px dashed rgba(28,80,200,0.25); margin-top: 10px; padding-top: 14px;
+  border-top: 1px dashed rgba(120,80,220,0.3); margin-top: 12px; padding-top: 16px;
 }
-.nk-calc__total-label { display: block; font-weight: 700; color: var(--color-navy); font-size: 14px; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 6px; }
+.nk-calc__total-label { display: block; font-weight: 700; color: var(--color-navy); font-size: 15px; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 6px; }
 .nk-calc__total-value { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.nk-calc__total strong { font-family: var(--font-display); color: var(--color-primary); font-size: 34px; line-height: 1.1; }
-.nk-calc__bag { font-size: 34px; flex-shrink: 0; }
+.nk-calc__total strong { font-family: var(--font-display); color: var(--color-primary); font-size: 42px; line-height: 1.1; }
+.nk-calc__bag { font-size: 48px; flex-shrink: 0; filter: drop-shadow(0 6px 12px rgba(120,80,220,0.22)); }
 .nk-calc__cta {
   margin-top: 20px; display: flex; align-items: center; gap: 20px;
   background: #eef1fb; border-radius: var(--radius-md); padding: 14px 22px; overflow: hidden;
@@ -450,7 +468,7 @@ p { color: var(--color-text-light); }
 .nk-calc__cta-person { width: 108px; height: auto; align-self: flex-end; flex-shrink: 0; margin-bottom: -14px; }
 .nk-calc__cta-text { flex: 1 1 auto; }
 .nk-calc__cta-text strong { display: block; font-family: var(--font-display); font-size: 18px; color: var(--color-primary); margin-bottom: 4px; }
-.nk-calc__cta-text p { font-size: 13.5px; color: var(--color-text); line-height: 1.45; }
+.nk-calc__cta-text p { font-size: 14.5px; color: var(--color-text); line-height: 1.45; }
 .nk-calc__cta-btn {
   flex-shrink: 0; display: inline-flex; align-items: center; gap: 12px;
   background: linear-gradient(135deg, #ff8a3c, #f26a1b); color: #fff;
@@ -487,13 +505,31 @@ p { color: var(--color-text-light); }
   display: flex; align-items: center; justify-content: center;
 }
 .doc-card__img img { width: 100%; height: 100%; object-fit: cover; }
-.doc-card__label { font-size: 13.5px; font-weight: 600; color: var(--color-navy); line-height: 1.4; margin-bottom: 12px; min-height: 38px; }
+.doc-card__label { font-size: 14.5px; font-weight: 600; color: var(--color-navy); line-height: 1.4; margin-bottom: 12px; min-height: 38px; }
 .doc-card__btn {
   display: inline-block; width: 100%; padding: 8px 10px; border-radius: var(--radius-sm);
-  border: 1.5px solid var(--color-border); font-size: 13px; font-weight: 600; color: var(--color-primary);
+  border: 1.5px solid var(--color-border); font-size: 14px; font-weight: 600; color: var(--color-primary);
 }
 .doc-card__btn--modal { margin-top: auto; }
 .doc-card__btn:hover { border-color: var(--color-primary); background: var(--color-bg-gray); }
+
+/* Chế độ ảnh: hiện đầy đủ ảnh thật (không cắt), có nền + bo khung nổi bật */
+.doc-grid--photos { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.doc-grid--photos .doc-card { padding: 12px; box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
+.doc-grid--photos .doc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.doc-grid--photos .doc-card__img {
+  width: 100%; aspect-ratio: 4 / 5; margin-bottom: 12px;
+  background: #eef2fb; border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  box-shadow: inset 0 1px 6px rgba(18,29,58,0.06); padding: 8px;
+}
+.doc-grid--photos .doc-card__img img { width: 100%; height: 100%; object-fit: contain; }
+.doc-grid--photos .doc-card__label { min-height: 44px; margin-bottom: 6px; }
+.doc-grid--photos .doc-card--form .doc-card__img { display: flex; align-items: center; justify-content: center; }
+.doc-grid--photos .doc-card--form .doc-card__img img { width: 60%; height: auto; }
+.doc-grid--photos .doc-card__btn { margin-top: auto; }
+
+@media (max-width: 980px) { .doc-grid--photos { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px) { .doc-grid--photos { grid-template-columns: repeat(2, 1fr); } }
 
 .doc-modal {
   position: fixed; inset: 0; z-index: 900; display: flex; align-items: center; justify-content: center;
@@ -529,7 +565,7 @@ p { color: var(--color-text-light); }
   margin: 0 auto;
 }
 .doc-modal__item figcaption {
-  margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--color-primary); text-align: center;
+  margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--color-primary); text-align: center;
 }
 body.is-modal-open { overflow: hidden; }
 
@@ -577,7 +613,7 @@ body.is-modal-open { overflow: hidden; }
   background: var(--color-primary); color: #fff; font-weight: 700; font-family: var(--font-display);
 }
 .process-step strong { display: inline-block; vertical-align: middle; color: var(--color-navy); margin-bottom: 8px; }
-.process-step p { font-size: 13.5px; }
+.process-step p { font-size: 14.5px; }
 
 /* ============ Quy trình dạng flow (Nenkin) ============ */
 /* Desktop (ảnh 3): mỗi bước = [số tròn xanh] + [icon] cạnh nhau, chữ căn giữa bên dưới, mũi tên → nối ngang */
@@ -657,7 +693,7 @@ body.is-modal-open { overflow: hidden; }
 .news-card__cat { font-size: 12px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; }
 .news-card__body h3 { font-size: 17px; margin: 8px 0 10px; }
 .news-card__body p { font-size: 14px; margin-bottom: 12px; }
-.news-card__body > a { font-weight: 700; color: var(--color-navy); font-size: 13.5px; }
+.news-card__body > a { font-weight: 700; color: var(--color-navy); font-size: 14.5px; }
 .news-card--cta { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 30px; background: var(--color-bg-gray); }
 .news-card--cta p { margin-bottom: 16px; }
 
@@ -708,7 +744,7 @@ body.is-modal-open { overflow: hidden; }
 .job-card { background: var(--color-bg-gray); border-radius: var(--radius-md); padding: 26px; }
 .job-card h4 { margin-bottom: 8px; }
 .job-card p { font-size: 14px; margin-bottom: 14px; }
-.job-card a { font-weight: 700; color: var(--color-primary); font-size: 13.5px; }
+.job-card a { font-weight: 700; color: var(--color-primary); font-size: 14.5px; }
 
 /* ============ Booking ============ */
 .booking__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
@@ -719,7 +755,7 @@ body.is-modal-open { overflow: hidden; }
   display: flex; flex-direction: column; gap: 18px;
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.booking__form label { display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--color-navy); }
+.booking__form label { display: flex; flex-direction: column; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--color-navy); }
 .booking__form input, .booking__form select, .booking__form textarea {
   padding: 12px 14px; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
   font-size: 14.5px; color: var(--color-text); font-weight: 400; resize: vertical;
@@ -745,7 +781,7 @@ body.is-modal-open { overflow: hidden; }
 .footer__inner { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1.1fr; gap: 34px; padding-bottom: 50px; }
 .footer__logo { background: #fff; border-radius: var(--radius-md); padding: 14px 16px; display: inline-block; margin-bottom: 6px; }
 .footer__logo img { max-width: 240px; width: 100%; height: auto; }
-.footer__brand p { font-size: 13.5px; margin: 6px 0; color: rgba(255,255,255,0.6); }
+.footer__brand p { font-size: 14.5px; margin: 6px 0; color: rgba(255,255,255,0.6); }
 .footer__socials { display: flex; gap: 10px; margin-top: 16px; }
 .footer__socials a {
   width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08);
@@ -757,7 +793,7 @@ body.is-modal-open { overflow: hidden; }
 .footer__col a:hover { color: var(--color-gold); }
 .footer__map { border-radius: var(--radius-sm); overflow: hidden; height: 120px; }
 .footer__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); }
-.footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 13px; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 14px; }
 
 /* ============ Nenkin rich hero ============ */
 .nk-hero {
@@ -775,7 +811,7 @@ body.is-modal-open { overflow: hidden; }
   display: grid; grid-template-columns: 1.55fr 0.95fr; gap: 40px; align-items: center;
 }
 .nk-hero__pill {
-  display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+  display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 0.08em;
   text-transform: uppercase; color: #fff; background: rgba(255,255,255,0.15);
   padding: 8px 18px; border-radius: 999px; margin-bottom: 20px;
 }
@@ -791,14 +827,14 @@ body.is-modal-open { overflow: hidden; }
   width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.14);
   display: flex; align-items: center; justify-content: center; font-size: 20px;
 }
-.nk-feat span:last-child { font-size: 13.5px; line-height: 1.35; color: rgba(255,255,255,0.9); }
+.nk-feat span:last-child { font-size: 14.5px; line-height: 1.35; color: rgba(255,255,255,0.9); }
 .nk-hero__actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
 .nk-trust {
   background: #fff; color: var(--color-text); border-radius: var(--radius-lg);
   padding: 30px 32px; box-shadow: var(--shadow-lg); text-align: center;
 }
-.nk-trust__label { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-light); }
+.nk-trust__label { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-light); }
 .nk-trust__count { font-family: var(--font-display); font-size: 48px; font-weight: 700; color: var(--color-primary); line-height: 1.1; margin: 2px 0; }
 .nk-trust__avatars { display: flex; justify-content: center; gap: -6px; margin: 16px 0 18px; }
 .nk-trust__avatars span {
@@ -810,7 +846,9 @@ body.is-modal-open { overflow: hidden; }
 .nk-trust__author { font-weight: 700; color: var(--color-navy); font-size: 14px; margin-top: 10px; }
 
 /* Quick access cards */
-.nk-quick { padding: 60px 0 0px; background: var(--color-bg); }
+.nk-quick { padding: 50px 0 36px; background: var(--color-bg); }
+/* Vùng nội dung Nenkin: padding gọn & đều giữa các section */
+.nk-sec { padding: 36px 0; }
 .nk-quick__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .nk-quick__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .nk-quick__card {
@@ -827,8 +865,8 @@ body.is-modal-open { overflow: hidden; }
 .nk-quick__ic svg { width: 26px; height: 26px; }
 .nk-quick__body { display: block; }
 .nk-quick__card strong { display: block; font-size: 17px; font-family: var(--font-display); margin-bottom: 4px; letter-spacing: 0.01em; }
-.nk-quick__desc { display: block; font-size: 13.5px; color: var(--color-text-light); margin-bottom: 8px; }
-.nk-quick__link { display: block; font-size: 13.5px; font-weight: 700; color: var(--color-primary); }
+.nk-quick__desc { display: block; font-size: 14.5px; color: var(--color-text-light); margin-bottom: 8px; }
+.nk-quick__link { display: block; font-size: 14.5px; font-weight: 700; color: var(--color-primary); }
 /* Per-card colors: icon background + title text */
 .nk-quick__card--blue   .nk-quick__ic { background: var(--color-primary); }
 .nk-quick__card--blue   strong { color: var(--color-primary); }
@@ -839,7 +877,7 @@ body.is-modal-open { overflow: hidden; }
 .nk-quick__card--orange .nk-quick__ic { background: #ef6c2f; }
 .nk-quick__card--orange strong { color: #ef6c2f; }
 
-.nk-stars { display: block; color: var(--color-gold); font-size: 13px; letter-spacing: 1px; margin-top: 2px; }
+.nk-stars { display: block; color: var(--color-gold); font-size: 14px; letter-spacing: 1px; margin-top: 2px; }
 .nk-testimonials__more { text-align: center; margin-top: 22px; }
 .nk-testimonials__more a { font-weight: 700; color: var(--color-primary); }
 .nk-testimonials__more a:hover { text-decoration: underline; }
@@ -865,7 +903,7 @@ body.is-modal-open { overflow: hidden; }
 .nk-stat__ic { display: inline-flex; color: var(--color-primary); margin-bottom: 10px; }
 .nk-stat__ic svg { width: 32px; height: 32px; }
 .nk-stat strong { display: block; font-family: var(--font-display); font-size: 24px; color: var(--color-navy); margin-bottom: 4px; }
-.nk-stat span { font-size: 13px; color: var(--color-text-light); line-height: 1.4; }
+.nk-stat span { font-size: 14px; color: var(--color-text-light); line-height: 1.4; }
 
 /* Desktop: tràn full width, bỏ viền/bóng card */
 @media (min-width: 768px) {
@@ -882,7 +920,7 @@ body.is-modal-open { overflow: hidden; }
 .nk-consult h2 { color: #fff; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 10px; }
 .nk-consult p { color: rgba(255,255,255,0.88); margin: 0 auto; }
 .nk-consult__actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 24px 0 14px; }
-.nk-consult__hours { color: rgba(255,255,255,0.8); font-size: 13.5px; }
+.nk-consult__hours { color: rgba(255,255,255,0.8); font-size: 14.5px; }
 
 @media (max-width: 560px) {
   .nk-partner-card { padding: 26px 18px; }
@@ -926,7 +964,7 @@ body.is-modal-open { overflow: hidden; }
 .page-hero .tag { background: rgba(255,255,255,0.14); color: #fff; }
 .page-hero h1 { color: #fff; font-size: clamp(28px, 4vw, 42px); margin-bottom: 14px; }
 .page-hero p { color: rgba(255,255,255,0.82); font-size: 17px; }
-.breadcrumb { font-size: 13.5px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+.breadcrumb { font-size: 14.5px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
 .breadcrumb a { color: rgba(255,255,255,0.7); }
 .breadcrumb a:hover { color: #fff; }
 .breadcrumb span { margin: 0 8px; opacity: 0.6; }
@@ -1004,7 +1042,7 @@ body.is-modal-open { overflow: hidden; }
   .service-detail { padding: 24px 0; }
   .service-detail__head { margin-bottom: 18px; }
   .service-detail__grid { gap: 18px; margin-bottom: 16px; }
-  .nenkin-tool-card { padding: 20px 0; }
+  .nenkin-tool-card { padding: 20px 16px; }
   .other-services__item { padding: 16px; }
 }
 
@@ -1075,7 +1113,7 @@ body.is-modal-open { overflow: hidden; }
 .support-card__body { flex: 1; }
 .support-card__ic { display: inline-block; margin-right: 8px; font-size: 18px; vertical-align: -2px; }
 .support-card h4 { font-size: 16px; color: var(--color-navy); margin-bottom: 6px; line-height: 1.35; }
-.support-card p { font-size: 13.5px; line-height: 1.5; }
+.support-card p { font-size: 14.5px; line-height: 1.5; }
 
 /* Đừng lo banner (green) */
 .dont-worry { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary-dark) 100%); color: #fff; padding: 30px 0; }
@@ -1092,15 +1130,15 @@ body.is-modal-open { overflow: hidden; }
 .industry-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .industry-card__ic { font-size: 40px; display: block; margin-bottom: 12px; }
 .industry-card h4 { font-size: 17px; color: var(--color-navy); margin-bottom: 8px; }
-.industry-card p { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
-.industry-card__link { font-size: 13.5px; font-weight: 700; color: var(--color-primary); }
+.industry-card p { font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
+.industry-card__link { font-size: 14.5px; font-weight: 700; color: var(--color-primary); }
 .industry-card--note { background: #eaf1ff; border-color: rgba(28,80,200,0.18); grid-column: span 4; text-align: left; display: flex; align-items: center; gap: 16px; }
 .industry-card--note .industry-card__ic { margin: 0; font-size: 30px; }
 .industry-card--note h4 { margin-bottom: 4px; }
 .industry-card--note p { margin-bottom: 0; }
 
 /* Horizontal scroll galleries (kết quả / review) */
-.hscroll__hint { color: #d1568f; font-style: italic; font-size: 13.5px; margin-top: 6px; }
+.hscroll__hint { color: #d1568f; font-style: italic; font-size: 14.5px; margin-top: 6px; }
 .hscroll { display: flex; gap: 22px; overflow-x: auto; padding: 6px 4px 18px; scroll-snap-type: x mandatory; }
 .hscroll__item { flex: 0 0 400px; scroll-snap-align: start; margin: 0; }
 .hscroll__item img {
@@ -1108,11 +1146,11 @@ body.is-modal-open { overflow: hidden; }
   background: #fff; border: 1px solid var(--color-border);
   border-radius: var(--radius-md); box-shadow: var(--shadow-md);
 }
-.hscroll__item figcaption { margin-top: 10px; font-size: 13px; color: var(--color-text-light); text-align: center; }
+.hscroll__item figcaption { margin-top: 10px; font-size: 14px; color: var(--color-text-light); text-align: center; }
 /* Review: ảnh ngang -> khung ngang, bớt khoảng trắng trên dưới */
 .hscroll--reviews .hscroll__item { flex-basis: 620px; }
 .hscroll--reviews .hscroll__item img { height: 360px; }
-.hscroll--reviews .hscroll__item.is-empty::before { height: 360px; }
+.hscroll--reviews .hscroll__item.is-empty::before { height: 240px; }
 /* Placeholder khi chưa có ảnh */
 .hscroll__item.is-empty { position: relative; }
 .hscroll__item.is-empty img { display: none; }
@@ -1120,7 +1158,7 @@ body.is-modal-open { overflow: hidden; }
   content: "🖼️ Thêm ảnh vào\00000a assets/docs/"; white-space: pre-line;
   display: flex; align-items: center; justify-content: center; text-align: center;
   height: 520px; border: 2px dashed var(--color-border); border-radius: var(--radius-md);
-  color: var(--color-text-light); font-size: 13px; background: #fff; padding: 20px;
+  color: var(--color-text-light); font-size: 14px; background: #fff; padding: 20px;
 }
 
 @media (max-width: 860px) {
@@ -1145,3 +1183,91 @@ body.is-modal-open { overflow: hidden; }
   .hscroll--reviews .hscroll__item img { height: 240px; }
   .hscroll--reviews .hscroll__item.is-empty::before { height: 240px; }
 }
+
+/* ============ Tra cứu hồ sơ: form (trái) + quy trình xử lý (phải) ============ */
+.nk-lookup { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; align-items: start; }
+.nk-lookup__form label { display: block; font-weight: 600; color: var(--color-navy); font-size: 14.5px; }
+.nk-lookup__row { display: flex; gap: 10px; margin-top: 10px; }
+.nk-lookup__row input { flex: 1; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-size: 15px; background: #fff; color: var(--color-text); }
+.nk-lookup__row input:focus { outline: none; border-color: var(--color-primary); }
+.nk-lookup__row .btn { flex-shrink: 0; }
+.nk-lookup__guide { display: inline-block; margin-top: 14px; color: var(--color-primary); font-weight: 600; font-size: 14px; }
+.nk-lookup__guide:hover { text-decoration: underline; }
+.nk-lookup__msg { margin-top: 16px; font-size: 14.5px; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 11px 14px; }
+.nk-lookup__msg strong { color: var(--color-primary); }
+
+.nk-lookup__process { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 22px 18px; box-shadow: var(--shadow-sm); }
+.nk-process__heading { text-align: center; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; color: var(--color-primary); font-family: var(--font-display); font-size: 15px; margin-bottom: 20px; }
+.nk-process { display: flex; }
+.nk-process__step { flex: 1 1 0; min-width: 0; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2px; }
+.nk-process__step:not(:last-child)::after { content: ""; position: absolute; top: 20px; left: 50%; width: 100%; height: 2px; background: var(--color-border); z-index: 0; }
+.nk-process__step.is-done:not(:last-child)::after { background: #a9e2cc; }
+.nk-process__step.is-active:not(:last-child)::after { background: #bcd0f7; }
+.nk-process__ic {
+  position: relative; z-index: 1; width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: #eef1f6; color: #9aa3b2; margin-bottom: 10px; box-shadow: 0 0 0 4px #fff;
+}
+.nk-process__ic svg { width: 20px; height: 20px; }
+.nk-process__step.is-done .nk-process__ic { background: #e7f7ef; color: #0f9d78; }
+.nk-process__step.is-active .nk-process__ic { background: var(--color-primary); color: #fff; }
+.nk-process__label { font-size: 11.5px; color: var(--color-text); line-height: 1.3; }
+.nk-process__step.is-active .nk-process__label { color: var(--color-primary); font-weight: 700; }
+.nk-process__time { margin-top: 16px; font-size: 14px; color: var(--color-text); background: var(--color-bg-gray); border-radius: var(--radius-sm); padding: 10px 14px; text-align: center; }
+.nk-process__time strong { color: var(--color-primary); }
+
+@media (max-width: 860px) { .nk-lookup { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .nk-process { flex-direction: column; align-items: stretch; }
+  .nk-process__step { flex-direction: row; gap: 12px; text-align: left; align-items: center; padding: 6px 0; }
+  .nk-process__step:not(:last-child)::after { top: 40px; left: 20px; width: 2px; height: calc(100% - 24px); }
+  .nk-process__ic { margin-bottom: 0; flex-shrink: 0; }
+  .nk-process__label { font-size: 14px; }
+}
+
+/* ============ Section FB khách hàng: card bo góc nền cam nhạt ============ */
+.fb-card {
+  background: linear-gradient(160deg, #fff6ee 0%, #fffaf5 100%);
+  border: 1px solid rgba(239,108,47,0.20); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 28px 26px;
+}
+.fb-card .card-head { margin-bottom: 8px; }
+.fb-card .hscroll__hint { margin: 0 0 14px; }
+@media (max-width: 720px) { .fb-card { padding: 22px 16px; } }
+
+/* ============ Vì sao chọn CZT: hàng ngang icon xanh ============ */
+.why-card {
+  background: linear-gradient(160deg, #f2f6ff 0%, #fbfcff 100%);
+  border: 1px solid rgba(28,80,200,0.14); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 28px 26px;
+}
+.why-card .card-head { margin-bottom: 8px; }
+.why-row { display: grid; grid-template-columns: repeat(5, 1fr); }
+.why-item { text-align: center; padding: 28px 18px; position: relative; display: flex; flex-direction: column; align-items: center; }
+.why-item:not(:last-child)::after {
+  content: ""; position: absolute; top: 24px; bottom: 24px; right: 0; width: 1px;
+  border-right: 1px dashed var(--color-border);
+}
+.why-item__ic { display: inline-flex; color: var(--color-primary); height: 52px; align-items: center; margin-bottom: 14px; }
+.why-item__ic svg { width: 46px; height: 46px; }
+.why-item h3 { font-size: 15.5px; color: var(--color-navy); margin-bottom: 8px; min-height: 42px; display: flex; align-items: center; justify-content: center; line-height: 1.3; }
+.why-item p { font-size: 14px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .why-row { grid-template-columns: repeat(2, 1fr); }
+  .why-item:not(:last-child)::after { display: none; }
+  .why-item { border-bottom: 1px solid var(--color-border); }
+}
+@media (max-width: 520px) { .why-row { grid-template-columns: 1fr; } }
+
+/* ============ FAQ theo mục (tab) ============ */
+.faq-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+.faq-tab { padding: 10px 26px; border-radius: 999px; border: 1.5px solid var(--color-border); background: #fff; font-weight: 600; font-size: 14.5px; color: var(--color-navy); transition: all .18s ease; }
+.faq-tab:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.faq-tab.is-active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
+.faq-panel[hidden] { display: none; }
+.faq-empty { text-align: center; color: var(--color-text-light); background: #fff; border: 1px dashed var(--color-border); border-radius: var(--radius-md); padding: 32px 20px; font-size: 14.5px; }
+
+/* FAQ page: tiêu đề nhóm câu hỏi */
+.faq-cat { font-family: var(--font-display); font-size: 20px; color: var(--color-navy); margin: 34px 0 16px; }
+.faq-cat:first-of-type { margin-top: 0; }
