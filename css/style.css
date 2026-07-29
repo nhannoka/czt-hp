@@ -1064,6 +1064,41 @@ body.is-modal-open { overflow: hidden; }
   color: #d1233b; border: 3px solid #d1233b; border-radius: 8px; padding: 6px 14px;
   transform: rotate(-12deg); background: rgba(255,255,255,0.82); box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+.visa-hero {
+  padding: 40px 0 44px;
+  background: linear-gradient(120deg, #eaf1fb 0%, #f6f9fd 52%, #eef3fb 100%);
+  color: var(--color-navy);
+}
+.visa-hero .nk-hero__bg { display: none; }
+.visa-hero .nk-hero__pill {
+  background: #e2ebfa; color: var(--color-primary);
+}
+.visa-hero .nk-hero__title { color: #14357a; }
+.visa-hero .nk-hero__sub { color: var(--color-text-light); }
+.visa-hero .nk-feat__ic {
+  background: #fff; color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(28,80,200,0.12);
+}
+.visa-hero .nk-feat span:last-child { color: #46506a; }
+.visa-hero .nk-feat strong { color: var(--color-navy); }
+.visa-hero .visa-hero__trust { color: var(--color-text-light); }
+.visa-hero .visa-hero__trust strong { color: var(--color-primary); }
+.visa-hero .btn--white {
+  background: #fff; color: var(--color-navy);
+  border: 1px solid rgba(28,80,200,0.25);
+}
+.visa-hero .nk-hero__inner { position: static; min-height: 340px; }
+.visa-hero .nk-hero__content { position: relative; z-index: 2; max-width: 540px; }
+.visa-hero__media {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 55%; z-index: 1; display: block;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+.visa-hero__cover {
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: center;
+  margin: 0; border-radius: 0; box-shadow: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 12%);
+}
 
 /* Pain points: Đây có phải là bạn? */
 .pain { max-width: 900px; margin: 0 auto; }
@@ -1096,13 +1131,22 @@ body.is-modal-open { overflow: hidden; }
 /* CZT hỗ trợ Gino2 – support cards (ảnh người + nội dung) */
 .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .support-card {
-  display: flex; gap: 18px; align-items: center;
-  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md);
-  padding: 18px; box-shadow: var(--shadow-sm);
+  position: relative; display: flex; gap: 0; align-items: stretch;
+  background: #fff; border: 1px solid rgba(28,80,200,0.12); border-radius: var(--radius-md);
+  overflow: hidden; min-height: 210px;
+  box-shadow: 0 16px 18px -12px rgba(28,80,200,0.45), 0 26px 26px -16px rgba(58,123,247,0.40);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
+.support-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 22px -12px rgba(28,80,200,0.55), 0 32px 32px -16px rgba(58,123,247,0.48);
+}
+.support-card__bar { display: none; }
 .support-card__photo {
-  flex-shrink: 0; width: 140px; height: 168px; border-radius: var(--radius-md); overflow: hidden;
+  flex-shrink: 0; width: 210px; align-self: stretch; overflow: hidden;
   background: linear-gradient(160deg, #dbe6ff, #b9ccf7);
+  -webkit-mask-image: linear-gradient(to right, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 72%, transparent 100%);
 }
 .support-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .support-card__photo.is-empty { position: relative; }
@@ -1111,10 +1155,20 @@ body.is-modal-open { overflow: hidden; }
   content: "👤"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   font-size: 58px; opacity: 0.55;
 }
-.support-card__body { flex: 1; }
+.support-card__body { flex: 1; text-align: center; padding: 24px; display: flex; flex-direction: column; justify-content: center; }
 .support-card__ic { display: inline-block; margin-right: 8px; font-size: 18px; vertical-align: -2px; }
-.support-card h4 { font-size: 16px; color: var(--color-navy); margin-bottom: 6px; line-height: 1.35; }
-.support-card p { font-size: 14.5px; line-height: 1.5; }
+.support-card h4 {
+  display: inline-block; margin: 0 auto 12px; padding: 9px 18px;
+  background: #e11d48; color: #fff; border-radius: 14px;
+  font-size: 15px; font-weight: 700; line-height: 1.3; text-align: center;
+  box-shadow: 0 6px 14px rgba(225,29,72,0.28);
+}
+.support-card p { font-size: 14.5px; line-height: 1.5; color: var(--color-text-light); text-align: left; }
+.support-card__bar {
+  position: absolute; left: 10px; right: 10px; bottom: 9px;
+  height: 24px; border-radius: 12px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
 
 /* Đừng lo banner (green) */
 .dont-worry { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary-dark) 100%); color: #fff; padding: 30px 0; }
@@ -1163,20 +1217,29 @@ body.is-modal-open { overflow: hidden; }
 }
 
 @media (max-width: 860px) {
-  .visa-hero__media { min-height: 260px; margin-top: 10px; }
+  .visa-hero { padding: 30px 0 28px; }
+  .visa-hero .nk-hero__inner { gap: 14px; align-items: start; }
+  .visa-hero__media {
+    position: relative; width: 100%; top: auto; right: auto; bottom: auto;
+    transform: none; min-height: 0; margin-top: 6px; clip-path: none; line-height: normal;
+  }
+  .visa-hero__cover {
+    height: auto; border-radius: 16px; box-shadow: 0 10px 26px rgba(28,80,200,0.16);
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .visa-hero .nk-hero__content { max-width: none; }
+  .visa-hero .nk-hero__inner { min-height: 0; }
   .support-grid { grid-template-columns: 1fr; }
+  .support-card__photo { width: 150px; }
   .industry-grid { grid-template-columns: repeat(2, 1fr); }
   .industry-card--note { grid-column: span 2; }
   .dont-worry__inner { flex-direction: column; text-align: center; align-items: stretch; }
 }
 @media (max-width: 560px) {
+  .support-card__photo { width: 120px; }
   .pain__cols { grid-template-columns: 1fr; }
   .industry-grid { grid-template-columns: 1fr; }
   .industry-card--note { grid-column: span 1; flex-direction: column; text-align: center; }
-  .visa-hero__media { min-height: 300px; }
-  .visa-hero__doc--card { width: 220px; height: 140px; transform: rotate(6deg) translate(46px, 44px); }
-  .visa-hero__doc--pass { width: 148px; height: 195px; transform: rotate(-8deg) translate(-58px, -30px); }
-  .visa-hero__stamp { right: 10%; bottom: 14%; font-size: 16px; padding: 5px 11px; }
   /* Mobile: mỗi khung = 1 ảnh full chiều ngang */
   .hscroll { gap: 14px; }
   .hscroll__item, .hscroll--reviews .hscroll__item { flex: 0 0 100%; }
