@@ -365,6 +365,7 @@ p { color: var(--color-text-light); }
 
 /* ============ Nenkin interactive tools ============ */
 .nenkin-tools { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 8px; }
+.nenkin-tools > * { min-width: 0; }
 /* Mỗi mục là 1 khung nổi, nền nhạt khác nhau theo màu 4 quick-access */
 .nenkin-tool-card {
   padding: 28px 26px; border-radius: var(--radius-lg);
@@ -1139,7 +1140,7 @@ body.is-modal-open { overflow: hidden; }
 
 /* Horizontal scroll galleries (kết quả / review) */
 .hscroll__hint { color: #d1568f; font-style: italic; font-size: 14.5px; margin-top: 6px; }
-.hscroll { display: flex; gap: 22px; overflow-x: auto; padding: 6px 4px 18px; scroll-snap-type: x mandatory; }
+.hscroll { display: flex; gap: 22px; overflow-x: auto; padding: 6px 4px 18px; scroll-snap-type: x proximity; }
 .hscroll__item { flex: 0 0 400px; scroll-snap-align: start; margin: 0; }
 .hscroll__item img {
   width: 100%; height: 520px; object-fit: contain; display: block;
