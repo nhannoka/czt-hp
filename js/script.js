@@ -331,4 +331,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Lightbox: phóng to ảnh hồ sơ ---------- */
+  const docImgs = document.querySelectorAll('.doc-grid--photos .doc-card__img img');
+  if (docImgs.length) {
+    const box = document.createElement('div');
+    box.className = 'img-lightbox';
+    box.innerHTML =
+      '<button class="img-lightbox__close" aria-label="Đóng">✕</button>' +
+      '<div class="img-lightbox__inner"><img alt=""><p class="img-lightbox__cap"></p></div>';
+    document.body.appendChild(box);
+    const boxImg = box.querySelector('img');
+    const boxCap = box.querySelector('.img-lightbox__cap');
+
+    const closeBox = () => {
+      box.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+
+    docImgs.forEach((img) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        const card = img.closest('.doc-card');
+        const label = card && card.querySelector('.doc-card__label')
+          ? card.querySelector('.doc-card__label').textContent.trim()
+          : '';
+        boxImg.src = img.currentSrc || img.src;
+        boxCap.textContent = label;
+        box.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    box.addEventListener('click', (e) => {
+      if (e.target === box || e.target.closest('.img-lightbox__close')) closeBox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && box.classList.contains('is-open')) closeBox();
+    });
+  }
+
 });
