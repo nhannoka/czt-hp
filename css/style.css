@@ -596,6 +596,7 @@ body.is-modal-open { overflow: hidden; }
 }
 @media (max-width: 560px) {
   .doc-grid { grid-template-columns: 1fr; }
+  .doc-grid--photos { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 760px) {
