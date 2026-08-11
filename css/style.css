@@ -898,7 +898,6 @@ body.is-modal-open { overflow: hidden; }
 .nk-quick__card--purple .nk-quick__ic { background: #7c3aed; }
 .nk-quick__card--purple strong { color: #7c3aed; }
 .nk-quick__card--orange .nk-quick__ic { background: #ef6c2f; }
-.nk-quick__card--orange strong { color: #ef6c2f; }
 
 .nk-stars { display: block; color: var(--color-gold); font-size: 14px; letter-spacing: 1px; margin-top: 2px; }
 .nk-testimonials__more { text-align: center; margin-top: 22px; }
@@ -1357,3 +1356,114 @@ body.is-modal-open { overflow: hidden; }
 /* FAQ page: tiêu đề nhóm câu hỏi */
 .faq-cat { font-family: var(--font-display); font-size: 20px; color: var(--color-navy); margin: 34px 0 16px; }
 .faq-cat:first-of-type { margin-top: 0; }
+
+/* ============================================================
+   THUE PAGE (Giảm / Hoàn thuế) — reuses nk-hero / nk-quick / fb-card /
+   why-card shell, but the 3 section cards below use their OWN
+   thue-tool-card class (not nenkin-tool-card) so styling here never
+   leaks into nenkin.html
+   ============================================================ */
+
+/* Hero: giữ 3 nút trên cùng một hàng */
+.thue-hero .nk-hero__actions { flex-wrap: nowrap; gap: 12px; }
+
+/* Thẻ 3 section chính (Giấy tờ / Chi phí / Hồ sơ đã xử lý) — riêng cho trang Thuế */
+.thue-tools { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 8px; }
+.thue-tools > * { min-width: 0; }
+.thue-tool-card {
+  padding: 28px 26px; border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-md);
+}
+.thue-tool-card--green  { background: linear-gradient(160deg, #f2fbf7 0%, #fbfefd 100%); border-color: rgba(15,157,120,0.14); }
+.thue-tool-card--blue   { background: linear-gradient(160deg, #eef4ff 0%, #fbfdff 100%); border-color: rgba(28,80,200,0.14); }
+.thue-tool-card--orange { background: linear-gradient(160deg, #fff6ef 0%, #fffcfa 100%); border-color: rgba(239,108,47,0.14); }
+.thue-tool-card--purple { background: linear-gradient(160deg, #f8f4fe 0%, #fdfbff 100%); border-color: rgba(124,58,237,0.14); }
+.thue-tool-card__title {
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+.thue-tool-card__title--green { color: #0f9d78; }
+.thue-tool-card__title--blue { color: var(--color-primary); }
+.thue-tool-card__title--orange { color: #ef6c2f; }
+.thue-tool-card__title--purple { color: #7c3aed; }
+@media (max-width: 560px) {
+  .thue-tool-card { padding: 20px 16px; }
+}
+.thue-hero .nk-hero__actions .btn { padding: 15px 22px; white-space: nowrap; }
+
+/* Giấy tờ cần chuẩn bị */
+.thue-docs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.thue-doc {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--color-bg-gray); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: 16px 18px; font-weight: 600; color: var(--color-navy); font-size: 15px;
+}
+.thue-doc__ic {
+  flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; background: #fff;
+  border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.thue-note { margin-top: 14px; font-size: 13px; font-style: italic; color: var(--color-text-light); text-align: center; }
+
+/* 02. Chi phí dịch vụ */
+.thue-price { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.thue-price__card {
+  text-align: center; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: 28px 22px; box-shadow: var(--shadow-sm);
+}
+.thue-price__ic { font-size: 34px; display: block; margin-bottom: 8px; }
+.thue-price__label { font-weight: 700; color: var(--color-navy); font-size: 16px; margin-bottom: 10px; }
+.thue-price__value { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 5vw, 38px); color: #e0912e; line-height: 1.1; }
+.thue-price__value span { display: block; font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-text-light); margin-top: 2px; }
+.thue-price__hint { font-size: 12.5px; color: var(--color-text-light); margin-top: 8px; }
+.thue-fee { margin-top: 22px; background: var(--color-bg-gray); border-radius: var(--radius-md); padding: 22px; }
+.thue-fee__title { text-align: center; font-weight: 600; color: var(--color-navy); margin-bottom: 16px; font-size: 15px; }
+.thue-fee__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.thue-fee__item {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px 10px;
+}
+.thue-fee__ic { font-size: 22px; }
+.thue-fee__name { font-size: 12.5px; color: var(--color-text); line-height: 1.3; min-height: 32px; display: flex; align-items: center; }
+.thue-fee__cost { font-weight: 800; color: var(--color-primary); font-size: 15px; }
+
+/* 03. Hồ sơ đã xử lý — stat cards */
+.thue-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.thue-stat {
+  text-align: center; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: 26px 18px; box-shadow: var(--shadow-sm);
+}
+.thue-stat__ic { font-size: 30px; display: block; margin-bottom: 10px; }
+.thue-stat strong { display: block; font-family: var(--font-display); font-size: 26px; color: var(--color-primary); line-height: 1.15; }
+.thue-stat__label { display: block; font-size: 13.5px; color: var(--color-text-light); margin-top: 6px; }
+.thue-thanks { text-align: center; font-weight: 700; color: var(--color-navy); margin-top: 22px; font-size: 15px; }
+
+/* 04. Feedback */
+.thue-fb { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.thue-fb__card {
+  display: flex; flex-direction: column; margin: 0;
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: 20px; box-shadow: var(--shadow-sm);
+}
+.thue-fb__card blockquote { margin: 0 0 16px; font-size: 14px; color: var(--color-text); line-height: 1.55; }
+.thue-fb__amount {
+  margin-top: auto; align-self: flex-start; font-weight: 800; font-size: 18px; color: #16a34a;
+  background: rgba(22,163,74,0.1); padding: 6px 14px; border-radius: 999px;
+}
+.thue-fb__card figcaption { margin-top: 12px; font-size: 12.5px; color: var(--color-text-light); }
+
+@media (max-width: 860px) {
+  .thue-fee__grid { grid-template-columns: repeat(3, 1fr); }
+  .thue-stats, .thue-fb { grid-template-columns: repeat(2, 1fr); }
+  .thue-hero .nk-hero__actions { flex-wrap: wrap; }
+}
+@media (max-width: 560px) {
+  .thue-docs { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .thue-doc { flex-direction: column; text-align: center; gap: 8px; padding: 14px 10px; font-size: 13px; }
+  .thue-price { grid-template-columns: 1fr; }
+  .thue-fee__grid { grid-template-columns: repeat(2, 1fr); }
+}

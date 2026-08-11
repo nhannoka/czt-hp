@@ -60,47 +60,217 @@
   <button class="fab fab--top" id="backToTop" title="Lên đầu trang"><i data-icon="up"></i></button>
 </div>
 
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
-  <div class="container page-hero__inner">
-    <div class="breadcrumb"><a href="index.html">Trang chủ</a><span>›</span>Thuế</div>
-    <span class="tag">Hoàn / Giảm thuế</span>
-    <h1>Hỗ trợ thủ tục hoàn &amp; giảm thuế tại Nhật Bản</h1>
-    <p>CZT giúp bạn ước tính số tiền thuế có thể được hoàn hoặc giảm, chuẩn bị hồ sơ và theo sát tiến độ đến khi có kết quả.</p>
+<!-- ============ THUE HERO ============ -->
+<section class="nk-hero thue-hero">
+  <div class="nk-hero__bg" style="background-image:url('assets/docs/hero-tax.svg')"></div>
+  <div class="container nk-hero__inner">
+    <div class="nk-hero__content">
+      <span class="nk-hero__pill">Dịch vụ hoàn / giảm thuế chuyên nghiệp</span>
+      <h1 class="nk-hero__title"><span class="nk-hero__hl">GIẢM · HOÀN</span> THUẾ<br>NHẬT BẢN 🇯🇵</h1>
+      <p class="nk-hero__sub">Hoàn thuế thu nhập &middot; Giảm thuế thị dân</p>
+
+      <div class="nk-hero__features">
+        <div class="nk-feat"><span class="nk-feat__ic">✨</span><span>Kiểm tra hồ sơ<br>miễn phí</span></div>
+        <div class="nk-feat"><span class="nk-feat__ic">💴</span><span>Chi phí<br>minh bạch</span></div>
+        <div class="nk-feat"><span class="nk-feat__ic">📄</span><span>Hỗ trợ dịch thuật<br>giấy tờ</span></div>
+        <div class="nk-feat"><span class="nk-feat__ic">🤝</span><span>Đồng hành đến khi<br>hoàn thành</span></div>
+      </div>
+
+      <div class="nk-hero__actions">
+        <a href="#chi-phi" class="btn btn--accent btn--lg">💴 Xem chi phí</a>
+        <a href="#giay-to" class="btn btn--purple btn--lg">📋 Hồ sơ cần có</a>
+        <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--white btn--lg">💬 Chat Messenger</a>
+      </div>
+    </div>
+
+    <aside class="nk-trust">
+      <p class="nk-trust__label">Đã hỗ trợ hơn</p>
+      <p class="nk-trust__count">500+</p>
+      <p class="nk-trust__label">hồ sơ hoàn thuế</p>
+      <div class="nk-trust__avatars">
+        <span>🧑</span><span>👨</span><span>🧑‍💼</span><span>👩‍💼</span><span>🧔</span>
+      </div>
+      <blockquote class="nk-trust__quote">"Nhờ CZT mình được hoàn thuế nhanh và rõ ràng, chi phí minh bạch từ đầu!"</blockquote>
+      <p class="nk-trust__author">— Huyền T. (Tokyo)</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ QUICK ACCESS CARDS ============ -->
+<section class="nk-quick">
+  <div class="container">
+    <div class="nk-quick__list">
+      <a href="#giay-to" class="nk-quick__card nk-quick__card--green">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5a1.5 1.5 0 0 0-1.5 1.5v16a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7"/><path d="M8.5 16h7"/><path d="M8.5 19.5h4"/></svg>
+        </span>
+        <span class="nk-quick__body">
+          <strong>Giấy tờ cần chuẩn bị</strong>
+          <span class="nk-quick__desc">Xem danh sách giấy tờ hoàn/giảm thuế</span>
+          <span class="nk-quick__link">Xem ngay →</span>
+        </span>
+      </a>
+      <a href="#chi-phi" class="nk-quick__card nk-quick__card--blue">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2a2.5 2 0 0 1 5 0c0 2.8-5 1.4-5 4.2a2.5 2 0 0 0 5 0"/></svg>
+        </span>
+        <span class="nk-quick__body">
+          <strong>Chi phí dịch vụ</strong>
+          <span class="nk-quick__desc">Bảng giá minh bạch theo từng đối tượng</span>
+          <span class="nk-quick__link">Xem giá →</span>
+        </span>
+      </a>
+      <a href="#ho-so-da-xu-ly" class="nk-quick__card nk-quick__card--purple">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        </span>
+        <span class="nk-quick__body">
+          <strong>Hồ sơ đã xử lý</strong>
+          <span class="nk-quick__desc">Con số thực tế CZT đã thực hiện</span>
+          <span class="nk-quick__link">Xem ngay →</span>
+        </span>
+      </a>
+      <a href="#feedback" class="nk-quick__card nk-quick__card--orange">
+        <span class="nk-quick__ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <span class="nk-quick__body">
+          <strong>Feedback khách hàng</strong>
+          <span class="nk-quick__desc">Cảm nhận của khách đã nhận tiền hoàn</span>
+          <span class="nk-quick__link">Xem ngay →</span>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ============ NỘI DUNG ============ -->
-<section class="section">
+<section class="section nk-sec">
   <div class="container">
-    <div class="service-detail__grid">
-      <div>
-        <h4>Dịch vụ hỗ trợ</h4>
-        <ul class="check-list">
-          <li>Ước tính số tiền thuế dự kiến được hoàn hoặc giảm</li>
-          <li>Kiểm tra điều kiện áp dụng theo từng trường hợp</li>
-          <li>Hỗ trợ chuẩn bị và dịch thuật giấy tờ liên quan</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Theo dõi hồ sơ</h4>
-        <ul class="check-list">
-          <li>Theo dõi tiến độ xử lý hồ sơ thuế</li>
-          <li>Hỗ trợ liên hệ cơ quan thuế khi hồ sơ xử lý chậm</li>
-          <li>Cập nhật kết quả thường xuyên cho khách hàng</li>
-        </ul>
-        <h4>Chi phí</h4>
-        <p>Liên hệ CZT để được báo giá chính xác theo từng hồ sơ.</p>
-      </div>
-    </div>
+    <div class="thue-tools">
 
-    <h4 class="service-detail__sub-heading">Quy trình thực hiện tại CZT</h4>
-    <div class="process-steps">
-      <div class="process-step"><span>1</span><strong>Tiếp nhận & tư vấn</strong><p>Kiểm tra điều kiện và ước tính số tiền được hoàn/giảm.</p></div>
-      <div class="process-step"><span>2</span><strong>Chuẩn bị hồ sơ</strong><p>Hướng dẫn giấy tờ, hỗ trợ dịch thuật.</p></div>
-      <div class="process-step"><span>3</span><strong>Nộp hồ sơ</strong><p>Nộp lên cơ quan thuế, theo dõi tiến độ.</p></div>
-      <div class="process-step"><span>4</span><strong>Cập nhật kết quả</strong><p>Thông báo tiến độ thường xuyên cho khách hàng.</p></div>
-      <div class="process-step"><span>5</span><strong>Nhận tiền hoàn</strong><p>Bàn giao kết quả cho khách hàng.</p></div>
+      <!-- 1. Giấy tờ cần chuẩn bị -->
+      <div class="thue-tool-card thue-tool-card--green" id="giay-to">
+        <h4 class="thue-tool-card__title thue-tool-card__title--green"><svg class="nk-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5a1.5 1.5 0 0 0-1.5 1.5v16a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7"/><path d="M8.5 16h7"/><path d="M8.5 19.5h4"/></svg>Giấy tờ cần chuẩn bị</h4>
+        <div class="thue-docs">
+          <div class="thue-doc"><span class="thue-doc__ic">🪪</span><span>Thẻ cư trú (2 mặt)</span></div>
+          <div class="thue-doc"><span class="thue-doc__ic">🧾</span><span>Giấy xác nhận nhân thân</span></div>
+          <div class="thue-doc"><span class="thue-doc__ic">📄</span><span>Giấy Gensen (源泉徴収票)</span></div>
+          <div class="thue-doc"><span class="thue-doc__ic">🏦</span><span>Thẻ hoặc số ngân hàng</span></div>
+          <div class="thue-doc"><span class="thue-doc__ic">💸</span><span>Giấy chứng nhận chuyển tiền</span></div>
+          <div class="thue-doc"><span class="thue-doc__ic">🏠</span><span>Địa chỉ + Số bưu điện khách hàng</span></div>
+        </div>
+        <p class="thue-note">* Tùy trường hợp có thể cần thêm một số giấy tờ khác.</p>
+      </div>
+
+      <!-- 2. Chi phí dịch vụ -->
+      <div class="thue-tool-card thue-tool-card--blue" id="chi-phi">
+        <h4 class="thue-tool-card__title thue-tool-card__title--blue"><svg class="nk-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2a2.5 2 0 0 1 5 0c0 2.8-5 1.4-5 4.2a2.5 2 0 0 0 5 0"/></svg>Chi phí dịch vụ</h4>
+        <div class="thue-price">
+          <div class="thue-price__card">
+            <span class="thue-price__ic">🏯</span>
+            <p class="thue-price__label">Khách đang sinh sống tại Nhật</p>
+            <p class="thue-price__value">650.000<span>VNĐ / 1 bộ</span></p>
+            <p class="thue-price__hint">(chưa bao gồm thuế GTGT)</p>
+          </div>
+          <div class="thue-price__card">
+            <span class="thue-price__ic">✈️</span>
+            <p class="thue-price__label">Khách đã về Việt Nam</p>
+            <p class="thue-price__value">750.000<span>VNĐ / 1 bộ</span></p>
+            <p class="thue-price__hint">(chưa bao gồm thuế GTGT)</p>
+          </div>
+        </div>
+        <div class="thue-fee">
+          <p class="thue-fee__title">Chi phí dịch các loại giấy tờ làm giảm/hoàn thuế như sau:</p>
+          <div class="thue-fee__grid">
+            <div class="thue-fee__item"><span class="thue-fee__ic">📃</span><span class="thue-fee__name">Giấy khai sinh</span><span class="thue-fee__cost">110k</span></div>
+            <div class="thue-fee__item"><span class="thue-fee__ic">📑</span><span class="thue-fee__name">Giấy xác nhận cư trú, Giấy phụng dưỡng</span><span class="thue-fee__cost">160k</span></div>
+            <div class="thue-fee__item"><span class="thue-fee__ic">👪</span><span class="thue-fee__name">Hộ khẩu</span><span class="thue-fee__cost">50k / người</span></div>
+            <div class="thue-fee__item"><span class="thue-fee__ic">💍</span><span class="thue-fee__name">Giấy ĐKKH</span><span class="thue-fee__cost">110k</span></div>
+            <div class="thue-fee__item"><span class="thue-fee__ic">➕</span><span class="thue-fee__name">Và một số giấy tờ khác</span><span class="thue-fee__cost">Liên hệ</span></div>
+          </div>
+        </div>
+        <p class="thue-note">* Mức phí trên có thể thay đổi tùy từng thời điểm.</p>
+      </div>
+
+      <!-- 3. Các hồ sơ đã xử lý -->
+      <div class="thue-tool-card thue-tool-card--purple" id="ho-so-da-xu-ly">
+        <h4 class="thue-tool-card__title thue-tool-card__title--purple"><svg class="nk-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Các hồ sơ CZT đã xử lý</h4>
+        <div class="thue-stats">
+          <div class="thue-stat"><span class="thue-stat__ic">📁</span><strong>500+</strong><span class="thue-stat__label">Hồ sơ đã xử lý thành công</span></div>
+          <div class="thue-stat"><span class="thue-stat__ic">📋</span><strong>98%+</strong><span class="thue-stat__label">Tỷ lệ hoàn thành hồ sơ</span></div>
+          <div class="thue-stat"><span class="thue-stat__ic">💴</span><strong>10 tỷ+</strong><span class="thue-stat__label">Tổng số tiền hoàn thuế khách hàng đã nhận</span></div>
+          <div class="thue-stat"><span class="thue-stat__ic">🏅</span><strong>Kinh nghiệm</strong><span class="thue-stat__label">Xử lý nhiều trường hợp khó &ndash; đặc biệt</span></div>
+        </div>
+        <p class="thue-thanks">❤️ Cảm ơn sự tin tưởng của hàng trăm khách hàng!</p>
+      </div>
+
+      <!-- 4. Feedback khách hàng -->
+      <div class="fb-card" id="feedback">
+        <div class="card-head card-head--orange">
+          <span class="card-head__ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+          <h2>Feedback khách hàng</h2>
+        </div>
+        <div class="thue-fb">
+          <figure class="thue-fb__card">
+            <blockquote>Em nhận được tiền rồi ạ. Cảm ơn cô nhiều nhé ❤️</blockquote>
+            <div class="thue-fb__amount">+¥147,893</div>
+            <figcaption>Khách hàng CZT</figcaption>
+          </figure>
+          <figure class="thue-fb__card">
+            <blockquote>Nhờ có cô mà em được hoàn khoản thuế rất nhanh, cảm ơn cô nhiều 🙏</blockquote>
+            <div class="thue-fb__amount">+¥126,500</div>
+            <figcaption>Khách hàng CZT</figcaption>
+          </figure>
+          <figure class="thue-fb__card">
+            <blockquote>Đã nhận được tiền rồi ạ 😊. Dịch vụ bên mình rất uy tín, nhiệt tình 🥰</blockquote>
+            <div class="thue-fb__amount">+¥98,650</div>
+            <figcaption>Khách hàng CZT</figcaption>
+          </figure>
+          <figure class="thue-fb__card">
+            <blockquote>Lần đầu làm mà được hoàn nhiều quá trời luôn ạ. Cảm ơn CZT nha ❤️</blockquote>
+            <div class="thue-fb__amount">+¥153,200</div>
+            <figcaption>Khách hàng CZT</figcaption>
+          </figure>
+        </div>
+        <p class="thue-thanks">💗 Hàng trăm khách hàng đã tin tưởng và nhận tiền hoàn thuế cùng CZT!</p>
+      </div>
+
+      <!-- 5. Vì sao chọn CZT -->
+      <div class="why-card">
+        <div class="card-head card-head--blue">
+          <span class="card-head__ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+          <h2>Vì sao chọn CZT?</h2>
+        </div>
+        <div class="why-row">
+          <div class="why-item">
+            <span class="why-item__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3>Chi phí minh bạch</h3>
+            <p>Báo giá rõ ràng từ đầu, không phát sinh phí ẩn.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-item__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>
+            <h3>Ước tính miễn phí</h3>
+            <p>Kiểm tra điều kiện và ước tính số tiền hoàn/giảm miễn phí.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-item__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+            <h3>Hỗ trợ dịch thuật</h3>
+            <p>Dịch và hoàn thiện toàn bộ giấy tờ liên quan đến thuế.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-item__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span>
+            <h3>Theo dõi sát sao</h3>
+            <p>Cập nhật tiến độ hồ sơ thuế liên tục cho khách hàng.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-item__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-9.2-8.5C1.3 8.6 3 5 6.2 5c2 0 3.2 1.2 3.8 2.2C10.6 6.2 11.8 5 13.8 5 17 5 18.7 8.6 21.2 11.5 19 15.7 12 20 12 20z"/></svg></span>
+            <h3>Đồng hành đến cùng</h3>
+            <p>Hỗ trợ đến khi khách hàng nhận được tiền hoàn thuế.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -113,8 +283,7 @@
       <p>Nhắn tin cho CZT để được kiểm tra điều kiện và ước tính số tiền hoàn thuế hoàn toàn miễn phí.</p>
     </div>
     <div class="cta-band__actions">
-      <a href="index.html#booking" class="btn btn--accent btn--lg">Đăng ký tư vấn</a>
-      <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--messenger btn--lg">💬 Messenger</a>
+      <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--accent btn--lg">LIÊN HỆ TƯ VẤN MIỄN PHÍ →</a>
     </div>
   </div>
 </section>

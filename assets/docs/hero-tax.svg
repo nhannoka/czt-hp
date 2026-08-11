@@ -1,0 +1,78 @@
+<svg width="1440" height="620" viewBox="0 0 1440 620" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waveFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd76a" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#ffd76a" stop-opacity="0.75"/>
+    </linearGradient>
+    <!-- refined yen coin -->
+    <g id="yen">
+      <circle r="30" fill="#ffffff" fill-opacity="0.10" stroke="#ffd76a" stroke-opacity="0.45" stroke-width="1.6"/>
+      <circle r="22" fill="none" stroke="#ffd76a" stroke-opacity="0.22" stroke-width="1"/>
+      <g stroke="#ffd76a" stroke-opacity="0.6" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <path d="M-8 -11 L0 -1 L8 -11"/>
+        <path d="M0 -1 L0 12"/>
+        <path d="M-7 3 H7"/>
+        <path d="M-7 8 H7"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- ambient glows -->
+  <ellipse cx="1180" cy="120" rx="380" ry="300" fill="url(#glow)"/>
+  <ellipse cx="180" cy="520" rx="420" ry="300" fill="url(#glow)"/>
+
+  <!-- seigaiha-inspired arcs, bottom right -->
+  <g stroke="#ffffff" stroke-opacity="0.09" fill="none" stroke-width="1.6">
+    <path d="M1180 620 a120 120 0 0 1 240 0"/>
+    <path d="M1180 620 a160 160 0 0 1 320 0"/>
+    <path d="M1180 620 a200 200 0 0 1 400 0"/>
+    <path d="M980 620 a120 120 0 0 1 240 0"/>
+    <path d="M980 620 a160 160 0 0 1 320 0"/>
+    <path d="M780 620 a120 120 0 0 1 240 0"/>
+  </g>
+
+  <!-- soft layered waves along the bottom -->
+  <path d="M0 470 C 240 424, 420 512, 700 470 C 940 434, 1140 504, 1440 452 L1440 620 L0 620 Z" fill="url(#waveFade)"/>
+  <path d="M0 540 C 260 500, 470 570, 740 532 C 1000 496, 1200 560, 1440 522 L1440 620 L0 620 Z" fill="#ffffff" fill-opacity="0.05"/>
+
+  <!-- minimal torii gate silhouette -->
+  <g opacity="0.13" fill="#ffffff" transform="translate(725,300)">
+    <path d="M-130 -70 h260 l-14 18 h-232 Z"/>
+    <rect x="-112" y="-40" width="224" height="12" rx="3"/>
+    <rect x="-84" y="-52" width="20" height="164" rx="4"/>
+    <rect x="64" y="-52" width="20" height="164" rx="4"/>
+    <rect x="-8" y="-40" width="16" height="26" rx="3"/>
+  </g>
+
+  <!-- upward growth line with nodes -->
+  <path d="M150 540 C 360 520, 430 470, 620 452 C 830 432, 900 372, 1120 350 C 1230 340, 1300 320, 1370 296"
+        stroke="url(#goldLine)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g fill="#ffd76a">
+    <circle cx="620" cy="452" r="4" fill-opacity="0.5"/>
+    <circle cx="1120" cy="350" r="4.5" fill-opacity="0.65"/>
+    <circle cx="1370" cy="296" r="5.5" fill-opacity="0.8"/>
+  </g>
+
+  <!-- floating yen coins -->
+  <use href="#yen" transform="translate(232,196) scale(0.95)"/>
+  <use href="#yen" transform="translate(1215,182) scale(1.1)"/>
+  <use href="#yen" transform="translate(1060,378) scale(0.68)"/>
+  <use href="#yen" transform="translate(392,392) scale(0.6)"/>
+
+  <!-- tiny sparkles -->
+  <g fill="#ffffff" fill-opacity="0.4">
+    <circle cx="540" cy="180" r="2.4"/>
+    <circle cx="960" cy="238" r="2"/>
+    <circle cx="330" cy="316" r="1.8"/>
+    <circle cx="1330" cy="430" r="2.2"/>
+    <circle cx="700" cy="132" r="1.8"/>
+  </g>
+</svg>
