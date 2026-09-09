@@ -805,14 +805,14 @@ body.is-modal-open { overflow: hidden; }
 .contact__map iframe { width: 100%; height: 100%; min-height: 340px; border: 0; }
 
 /* ============ Footer ============ */
-.footer { background: var(--color-navy); color: rgba(255,255,255,0.65); padding-top: 70px; }
+.footer { background: var(--color-navy); color: rgba(255,255,255,0.85); padding-top: 70px; }
 .footer__inner { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1.1fr; gap: 34px; padding-bottom: 50px; }
 .footer__logo { background: #fff; border-radius: var(--radius-md); padding: 14px 16px; display: inline-block; margin-bottom: 6px; }
 .footer__logo img { max-width: 240px; width: 100%; height: auto; }
-.footer__brand p { font-size: 14.5px; margin: 6px 0; color: rgba(255,255,255,0.6); }
+.footer__brand p { font-size: 14.5px; margin: 6px 0; color: rgba(255,255,255,0.8); }
 .footer__socials { display: flex; gap: 10px; margin-top: 16px; }
 .footer__col h4 { color: #fff; font-size: 15px; margin-bottom: 18px; }
-.footer__col a { display: block; font-size: 14px; margin-bottom: 10px; color: rgba(255,255,255,0.65); }
+.footer__col a { display: block; font-size: 14px; margin-bottom: 10px; color: rgba(255,255,255,0.82); }
 .footer__col a:hover { color: var(--color-gold); }
 /* đặt sau .footer__col a để display:block của nó không đè lên flex-center của icon */
 .footer__socials a {
@@ -825,6 +825,8 @@ body.is-modal-open { overflow: hidden; }
 .footer__map { border-radius: var(--radius-sm); overflow: hidden; height: 120px; }
 .footer__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 14px; }
+/* p toàn cục có màu xám đặt trực tiếp -> đè lên màu trắng kế thừa của footer */
+.footer__bottom p { color: inherit; }
 
 /* ============ Nenkin page: banner ảnh + nền sakura riêng ============ */
 .sr-only {
@@ -861,16 +863,16 @@ body.is-modal-open { overflow: hidden; }
   pointer-events: none;
 }
 .nk-page .footer > * { position: relative; z-index: 1; }
-.nk-page .footer__brand p { color: rgba(255, 255, 255, 0.62); }
+.nk-page .footer__brand p { color: rgba(255, 255, 255, 0.82); }
 .nk-page .footer__logo { background: #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); }
 .nk-page .footer__col h4 { color: #fff; }
-.nk-page .footer__col a { color: rgba(255, 255, 255, 0.68); }
+.nk-page .footer__col a { color: rgba(255, 255, 255, 0.85); }
 .nk-page .footer__col a:hover { color: #7fd3e8; }
 .nk-page .footer__socials a { background: rgba(255, 255, 255, 0.10); color: #fff; }
 .nk-page .footer__socials a:hover { background: #2e8bb5; color: #fff; }
 .nk-page .footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-  color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .nk-banner { padding: 26px 0 6px; }
