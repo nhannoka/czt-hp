@@ -889,14 +889,35 @@ body.is-modal-open { overflow: hidden; }
    cân giữa khoảng trống dù cỡ nút có thay đổi. */
 .nk-banner__actions {
   position: absolute; left: 5.2%; top: 59.4%; bottom: 23.6%;
-  display: flex; flex-wrap: nowrap; align-items: center; gap: 0.65cqw;
+  display: flex; flex-wrap: nowrap; align-items: center; gap: 0.5cqw;
 }
-.nk-banner__actions .btn {
-  padding: 0.6cqw 0.95cqw;
-  font-size: clamp(10px, 0.92cqw, 13px);
-  border-radius: 0.5cqw;
-  white-space: nowrap; gap: 0.4cqw;
+/* Nút CTA dạng pill: badge icon tròn bên trái - chữ in hoa - mũi tên phải */
+.nk-cta {
+  display: flex; align-items: center; gap: 0.42em;
+  padding: 0.85em 0.58em;
+  border-radius: 999px; white-space: nowrap;
+  font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em;
+  font-size: clamp(9px, 0.86cqw, 13px);
+  box-shadow: 0 0.3em 0.8em rgba(16, 25, 43, 0.22);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
+.nk-cta:hover { transform: translateY(-2px); box-shadow: 0 0.5em 1.1em rgba(16, 25, 43, 0.3); }
+.nk-cta__ic {
+  flex-shrink: 0; width: 2em; height: 2em; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.nk-cta__ic svg { width: 1.1em; height: 1.1em; display: block; }
+.nk-cta__label { flex: 1; text-align: center; }
+.nk-cta__arrow { flex-shrink: 0; display: inline-flex; opacity: 0.9; }
+.nk-cta__arrow svg { width: 0.8em; height: 0.8em; display: block; }
+
+.nk-cta--blue { background: linear-gradient(135deg, #2f63e0, #1a3fa8); color: #fff; }
+.nk-cta--blue .nk-cta__ic { background: #dbe7ff; color: #1a3fa8; }
+.nk-cta--pink { background: linear-gradient(135deg, #f4568f, #e02a6b); color: #fff; }
+.nk-cta--pink .nk-cta__ic { background: #fff; color: #e02a6b; }
+.nk-cta--white { background: #fff; color: #1a3fa8; box-shadow: 0 0.3em 0.8em rgba(16, 25, 43, 0.16); }
+.nk-cta--white .nk-cta__ic { background: linear-gradient(135deg, #00b2ff, #006aff); color: #fff; }
+.nk-cta--white .nk-cta__ic svg { width: 1.35em; height: 1.35em; }
 
 @media (max-width: 860px) {
   .nk-page::before {
@@ -911,9 +932,9 @@ body.is-modal-open { overflow: hidden; }
     left: 9%; right: 9%; top: 36.6%; bottom: 38.8%;
     flex-direction: column; align-items: stretch; justify-content: center; gap: 1.9cqw;
   }
-  .nk-banner__actions .btn {
-    width: 100%; padding: 2.2cqw 2.5cqw;
-    font-size: clamp(12px, 2.7cqw, 17px); border-radius: 1.6cqw;
+  .nk-cta {
+    width: 100%; font-size: clamp(13px, 3cqw, 17px);
+    padding: 0.95em 0.72em;
   }
 }
 
