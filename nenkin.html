@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Comfortaa:wght@500;600;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="nk-page">
 
 <!-- ============ HEADER / NAV ============ -->
 <header class="header" id="header">
@@ -51,48 +51,33 @@
 
 <!-- Floating action buttons -->
 <div class="floating-actions">
-  <a href="https://zalo.me/" target="_blank" rel="noopener" class="fab fab--zalo" title="Chat Zalo"><i data-icon="zalo"></i></a>
+  <a href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener" class="fab fab--zalo" title="Chat Zalo"><i data-icon="zalo"></i></a>
   <a href="https://m.me/" target="_blank" rel="noopener" class="fab fab--mess" title="Messenger"><i data-icon="messenger"></i></a>
-  <a href="https://www.tiktok.com/@czt" target="_blank" rel="noopener" class="fab fab--tiktok" title="TikTok" aria-label="TikTok">
+  <a href="https://www.tiktok.com/@tokuteicozaotrang?_r=1&amp;_t=ZS-99YONA8zto4" target="_blank" rel="noopener" class="fab fab--tiktok" title="TikTok" aria-label="TikTok">
     <svg viewBox="0 0 448 512" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
   </a>
-  <a href="tel:0900000000" class="fab fab--phone" title="Gọi điện"><i data-icon="phone"></i></a>
+  <a href="tel:+818050508378" class="fab fab--phone" title="Gọi điện"><i data-icon="phone"></i></a>
   <button class="fab fab--top" id="backToTop" title="Lên đầu trang"><i data-icon="up"></i></button>
 </div>
 
-<!-- ============ NENKIN HERO ============ -->
-<section class="nk-hero">
-  <div class="nk-hero__bg" style="background-image:url('assets/docs/hero-japan.svg')"></div>
-  <div class="container nk-hero__inner">
-    <div class="nk-hero__content">
-      <span class="nk-hero__pill">Dịch vụ Nenkin chuyên nghiệp</span>
-      <h1 class="nk-hero__title"><span class="nk-hero__hl">HOÀN</span> NENKIN<br>NHẬT BẢN 🇯🇵</h1>
-      <p class="nk-hero__sub">Lấy lại tiền bảo hiểm hưu trí khi về Việt Nam</p>
-
-      <div class="nk-hero__features">
-        <div class="nk-feat"><span class="nk-feat__ic">📄</span><span>Hợp đồng<br>pháp lý rõ ràng</span></div>
-        <div class="nk-feat"><span class="nk-feat__ic">💴</span><span>Báo số tiền<br>dự kiến miễn phí</span></div>
-        <div class="nk-feat"><span class="nk-feat__ic">📞</span><span>Gọi điện cục Nenkin<br>nếu xử lý chậm</span></div>
-        <div class="nk-feat"><span class="nk-feat__ic">🔍</span><span>Theo dõi hồ sơ<br>đến khi nhận tiền</span></div>
-      </div>
-
-      <div class="nk-hero__actions">
-        <a href="#tra-cuu-ho-so" class="btn btn--purple btn--lg">🔍 Tra cứu hồ sơ</a>
-        <a href="#tinh-tien-nenkin" class="btn btn--accent btn--lg">💰 Tính tiền Nenkin ngay</a>
-        <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--white btn--lg">💬 Chat Messenger</a>
+<!-- ============ NENKIN BANNER ============ -->
+<section class="nk-banner">
+  <div class="container">
+    <h1 class="sr-only">Hoàn Nenkin Nhật Bản &ndash; Lấy lại tiền bảo hiểm hưu trí khi về Việt Nam</h1>
+    <div class="nk-banner__wrap">
+      <picture>
+        <source media="(max-width: 860px)" srcset="assets/docs/nenkin/banner-mobile.png">
+        <img class="nk-banner__img"
+             src="assets/docs/nenkin/banner-desktop.png"
+             alt="Hoàn Nenkin Nhật Bản - Lấy lại tiền bảo hiểm hưu trí khi về Việt Nam. CZT đã hỗ trợ hơn 2000+ khách hàng nhận tiền."
+             width="1772" height="724">
+      </picture>
+      <div class="nk-banner__actions">
+        <a href="#tra-cuu-ho-so" class="btn btn--purple">🔍 Tra cứu hồ sơ</a>
+        <a href="#tinh-tien-nenkin" class="btn btn--accent">💰 Tính tiền Nenkin</a>
+        <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--white">💬 Chat Messenger</a>
       </div>
     </div>
-
-    <aside class="nk-trust">
-      <p class="nk-trust__label">Đã hỗ trợ hơn</p>
-      <p class="nk-trust__count">1000+</p>
-      <p class="nk-trust__label">khách hàng nhận tiền</p>
-      <div class="nk-trust__avatars">
-        <span>🧑</span><span>👨</span><span>🧑‍💼</span><span>👨‍💼</span><span>🧔</span>
-      </div>
-      <blockquote class="nk-trust__quote">"Cảm ơn CZT đã hỗ trợ mình nhận được Nenkin nhanh chóng và tận tâm!"</blockquote>
-      <p class="nk-trust__author">— Tuan A. (Osaka)</p>
-    </aside>
   </div>
 </section>
 
@@ -244,6 +229,7 @@
               </div>
             </label>
             <a href="https://m.me/" target="_blank" rel="noopener" class="nk-lookup__guide">🔖 Hướng dẫn tìm mã hồ sơ</a>
+            <p class="nk-lookup__note">Anh chị vui lòng điền mã Hồ sơ theo đúng tên nhóm anh chị đang được hỗ trợ, hoặc theo mã khách hàng mà CZT cung cấp cho anh chị sau khi nhận hồ sơ.</p>
             <p id="nkLookupMsg" class="nk-lookup__msg" hidden></p>
           </div>
 
@@ -256,7 +242,7 @@
               <li class="nk-process__step"><span class="nk-process__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></span><span class="nk-process__label">Có kết quả lần 1</span></li>
               <li class="nk-process__step"><span class="nk-process__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg></span><span class="nk-process__label">Đang xử lý lần 2</span></li>
               <li class="nk-process__step"><span class="nk-process__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 3.5L2.5 10.5l7 2.7 2.7 7 9.3-16.7z"/><path d="M9.5 13.2L21.5 3.5"/></svg></span><span class="nk-process__label">Đã nộp lần 2</span></li>
-              <li class="nk-process__step"><span class="nk-process__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/><path d="M8.5 9h4M8.5 13h3"/><path d="M17 4h5M19.5 1.5v5"/></svg></span><span class="nk-process__label">Đang bổ sung giấy tờ</span></li>
+              <li class="nk-process__step"><span class="nk-process__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/><path d="M8.5 9h4M8.5 13h3"/><path d="M17 4h5M19.5 1.5v5"/></svg></span><span class="nk-process__label">Đang xét duyệt</span></li>
               <li class="nk-process__step"><span class="nk-process__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v3a5 5 0 0 1-10 0z"/><path d="M17 5h3v1a3 3 0 0 1-3 3M7 5H4v1a3 3 0 0 0 3 3M9 21h6M12 12v4"/></svg></span><span class="nk-process__label">Hoàn thành 2 lần</span></li>
             </ol>
             <p class="nk-process__time">⏱ Thời gian xử lý: <strong>Lần 1 (3–6 tháng)</strong> &middot; <strong>Lần 2 (1–3 tháng)</strong></p>
@@ -272,6 +258,11 @@
         </div>
         <p class="hscroll__hint">(Kéo sang để xem thêm →)</p>
         <div class="hscroll hscroll--reviews" data-gallery data-prefix="assets/docs/nenkin-fb/fb-" data-alt="Feedback khách hàng CZT trên Facebook"></div>
+        <a class="fb-reviews-link" href="https://www.facebook.com/tokuteicozaotrang/reviews/?id=100063543378380&amp;sk=reviews" target="_blank" rel="noopener">
+          <span class="fb-reviews-link__ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8V5.5A1.5 1.5 0 0 1 15.5 4H18V1h-2.5A4.5 4.5 0 0 0 11 5.5V8H8v3h3v10h3V11h2.6l.4-3z"/></svg></span>
+          <span class="fb-reviews-link__text">Bấm vào đây để xem đánh giá thật của khách hàng đã trải nghiệm dịch vụ của CZT</span>
+          <span class="fb-reviews-link__arrow" aria-hidden="true">→</span>
+        </a>
       </div>
 
       <!-- Vì sao chọn CZT -->
@@ -322,14 +313,13 @@
         <img src="assets/logos/czt-logo-full.jpg" alt="CZT International Service Co., Ltd">
       </div>
       <p>MST: 2803234866</p>
-      <p>Địa chỉ: Số 00, đường ABC, Việt Nam</p>
-      <p>Hotline: 090 000 0000</p>
-      <p>Email: info@czt.com.vn</p>
+      <p>Địa chỉ: Thôn Hùng Tiến, Xã Xuân Bình, Tỉnh Thanh Hóa</p>
+      <p>Hotline: +81 080-5050-8378</p>
+      <p>Email: dichvuquocteczt@gmail.com</p>
       <div class="footer__socials">
-        <a href="https://facebook.com/" target="_blank" rel="noopener" title="Facebook">FB</a>
-        <a href="https://www.tiktok.com/@czt" target="_blank" rel="noopener" title="TikTok">TT</a>
-        <a href="https://youtube.com/" target="_blank" rel="noopener" title="YouTube">YT</a>
-        <a href="https://zalo.me/" target="_blank" rel="noopener" title="Zalo">Zalo</a>
+        <a href="https://www.facebook.com/tokuteicozaotrang" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></a>
+        <a href="https://www.tiktok.com/@tokuteicozaotrang?_r=1&amp;_t=ZS-99YONA8zto4" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.84 5.72a4.55 4.55 0 0 1-1.09-2.97h-2.99v11.99a2.53 2.53 0 1 1-1.8-2.42V9.28a5.55 5.55 0 1 0 4.72 5.48V9.11a7.47 7.47 0 0 0 4.35 1.39V7.53a4.53 4.53 0 0 1-3.19-1.81z"/></svg></a>
+        <a href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener" title="Zalo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.9c-5.16 0-9.35 3.53-9.35 7.89 0 2.48 1.36 4.69 3.48 6.13-.13 1.03-.6 2.2-1.35 3.05-.27.3-.3.79.37.72 2.02-.36 3.63-1.2 4.7-1.9.68.12 1.39.19 2.15.19 5.16 0 9.35-3.53 9.35-7.89S17.16 2.9 12 2.9zM8.75 7.35h6.5v1.75l-4.05 4.8h4.05v1.75h-6.7v-1.75l4.05-4.8h-3.85z"/></svg></a>
       </div>
     </div>
     <div class="footer__col">
@@ -361,7 +351,7 @@
   </div>
   <div class="footer__bottom">
     <div class="container">
-      <p>&copy; <span id="year"></span> CZT. Bản quyền thuộc về Công ty TNHH CZT.</p>
+      <p>&copy; <span id="year"></span> CZT. Bản quyền thuộc về Công ty TNHH Dịch Vụ Quốc Tế CZT.</p>
     </div>
   </div>
 </footer>

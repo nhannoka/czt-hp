@@ -811,17 +811,109 @@ body.is-modal-open { overflow: hidden; }
 .footer__logo img { max-width: 240px; width: 100%; height: auto; }
 .footer__brand p { font-size: 14.5px; margin: 6px 0; color: rgba(255,255,255,0.6); }
 .footer__socials { display: flex; gap: 10px; margin-top: 16px; }
-.footer__socials a {
-  width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08);
-  display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff;
-}
-.footer__socials a:hover { background: var(--color-primary); }
 .footer__col h4 { color: #fff; font-size: 15px; margin-bottom: 18px; }
 .footer__col a { display: block; font-size: 14px; margin-bottom: 10px; color: rgba(255,255,255,0.65); }
 .footer__col a:hover { color: var(--color-gold); }
+/* đặt sau .footer__col a để display:block của nó không đè lên flex-center của icon */
+.footer__socials a {
+  width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08);
+  display: inline-flex; align-items: center; justify-content: center;
+  line-height: 0; margin-bottom: 0; color: #fff; flex-shrink: 0;
+}
+.footer__socials a:hover { background: var(--color-primary); }
+.footer__socials a svg { width: 18px; height: 18px; display: block; flex-shrink: 0; }
 .footer__map { border-radius: var(--radius-sm); overflow: hidden; height: 120px; }
 .footer__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.3); }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 14px; }
+
+/* ============ Nenkin page: banner ảnh + nền sakura riêng ============ */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Nền sakura chỉ áp cho trang Nenkin (body.nk-page), phủ lớp trắng mờ cho dễ đọc.
+   Dùng pseudo-element position:fixed thay cho background-attachment:fixed
+   để tránh lỗi nền bị phóng to/giật trên iOS Safari. */
+.nk-page::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.42), rgba(255,255,255,0.66)),
+    url('../assets/docs/nenkin/bg-desktop.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.nk-page .nk-quick { background: transparent; }
+
+/* Footer trang Nenkin: xanh navy -> xanh teal chuyển sắc, nhẹ hơn navy đặc mặc định */
+.nk-page .footer {
+  position: relative; overflow: hidden;
+  background: linear-gradient(115deg, #1b3752 0%, #22496a 48%, #2b6485 100%);
+  color: rgba(255, 255, 255, 0.72);
+}
+/* vòng cung mờ trang trí góc dưới trái */
+.nk-page .footer::before {
+  content: ""; position: absolute; left: -90px; bottom: -150px;
+  width: 430px; height: 430px; border-radius: 50%;
+  background: repeating-radial-gradient(circle, rgba(255,255,255,0.06) 0 1px, transparent 1px 28px);
+  pointer-events: none;
+}
+.nk-page .footer > * { position: relative; z-index: 1; }
+.nk-page .footer__brand p { color: rgba(255, 255, 255, 0.62); }
+.nk-page .footer__logo { background: #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); }
+.nk-page .footer__col h4 { color: #fff; }
+.nk-page .footer__col a { color: rgba(255, 255, 255, 0.68); }
+.nk-page .footer__col a:hover { color: #7fd3e8; }
+.nk-page .footer__socials a { background: rgba(255, 255, 255, 0.10); color: #fff; }
+.nk-page .footer__socials a:hover { background: #2e8bb5; color: #fff; }
+.nk-page .footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.nk-banner { padding: 26px 0 6px; }
+/* container-type để nút CTA scale theo bề ngang banner (đơn vị cqw), luôn nằm
+   đúng tỉ lệ trong khoảng trống của ảnh ở mọi kích thước màn hình */
+.nk-banner__wrap { position: relative; container-type: inline-size; }
+.nk-banner__img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+}
+/* Desktop: 3 nút đè lên khoảng trống cột trái của banner.
+   Khoảng trống đo được từ ảnh: 59.4% -> 76.4% chiều cao (giữa dòng subtitle
+   và hàng 4 icon). Neo cả top/bottom + justify-content:center để nút luôn
+   cân giữa khoảng trống dù cỡ nút có thay đổi. */
+.nk-banner__actions {
+  position: absolute; left: 5.2%; top: 59.4%; bottom: 23.6%;
+  display: flex; flex-wrap: nowrap; align-items: center; gap: 0.65cqw;
+}
+.nk-banner__actions .btn {
+  padding: 0.6cqw 0.95cqw;
+  font-size: clamp(10px, 0.92cqw, 13px);
+  border-radius: 0.5cqw;
+  white-space: nowrap; gap: 0.4cqw;
+}
+
+@media (max-width: 860px) {
+  .nk-page::before {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.42), rgba(255,255,255,0.66)),
+      url('../assets/docs/nenkin/bg-mobile.png');
+  }
+  .nk-banner { padding: 16px 0 4px; }
+  /* Mobile: xếp dọc vào vùng trời trống giữa banner (dưới laptop, trên card 2000+).
+     Khoảng trống đo được từ ảnh: 36.6% -> 61.2% chiều cao. */
+  .nk-banner__actions {
+    left: 9%; right: 9%; top: 36.6%; bottom: 38.8%;
+    flex-direction: column; align-items: stretch; justify-content: center; gap: 1.9cqw;
+  }
+  .nk-banner__actions .btn {
+    width: 100%; padding: 2.2cqw 2.5cqw;
+    font-size: clamp(12px, 2.7cqw, 17px); border-radius: 1.6cqw;
+  }
+}
 
 /* ============ Nenkin rich hero ============ */
 .nk-hero {
@@ -1283,6 +1375,7 @@ body.is-modal-open { overflow: hidden; }
 .nk-lookup__row .btn { flex-shrink: 0; }
 .nk-lookup__guide { display: inline-block; margin-top: 14px; color: var(--color-primary); font-weight: 600; font-size: 14px; }
 .nk-lookup__guide:hover { text-decoration: underline; }
+.nk-lookup__note { margin-top: 10px; font-size: 13.5px; line-height: 1.55; color: var(--color-text-light); }
 .nk-lookup__msg { margin-top: 16px; font-size: 14.5px; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 11px 14px; }
 .nk-lookup__msg strong { color: var(--color-primary); }
 
@@ -1323,6 +1416,24 @@ body.is-modal-open { overflow: hidden; }
 }
 .fb-card .card-head { margin-bottom: 8px; }
 .fb-card .hscroll__hint { margin: 0 0 14px; }
+.fb-reviews-link {
+  display: flex; align-items: center; gap: 12px; margin-top: 16px;
+  background: #fff; border: 1px solid rgba(24, 119, 242, 0.28); border-radius: var(--radius-md);
+  padding: 14px 18px; box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.fb-reviews-link:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: #1877f2; }
+.fb-reviews-link__ic {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+  background: #1877f2; color: #fff; display: flex; align-items: center; justify-content: center;
+}
+.fb-reviews-link__ic svg { width: 18px; height: 18px; }
+.fb-reviews-link__text { flex: 1; font-size: 14.5px; font-weight: 600; color: var(--color-navy); line-height: 1.45; }
+.fb-reviews-link__arrow { flex-shrink: 0; color: #1877f2; font-weight: 700; font-size: 18px; }
+@media (max-width: 560px) {
+  .fb-reviews-link { padding: 12px 14px; gap: 10px; }
+  .fb-reviews-link__text { font-size: 13.5px; }
+}
 @media (max-width: 720px) { .fb-card { padding: 22px 16px; } }
 
 /* ============ Vì sao chọn CZT: hàng ngang icon xanh ============ */

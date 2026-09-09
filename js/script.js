@@ -280,6 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'Có kết quả lần 1',
     'Đang xử lý lần 2',
     'Đã nộp lần 2',
+    // Giá trị trong Google Sheet, khác nhãn hiển thị ("Đang xét duyệt") vì nhãn đó
+    // đã trùng với bước 3 — đổi ở đây sẽ khiến indexOf khớp nhầm về bước 3.
     'Đang bổ sung giấy tờ',
     'Hoàn thành 2 lần',
   ];
