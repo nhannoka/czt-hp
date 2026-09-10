@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Comfortaa:wght@500;600;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
 
 <!-- ============ HEADER / NAV ============ -->
 <header class="header" id="header">
@@ -49,70 +49,34 @@
   </div>
 </header>
 
-<!-- ============ 1. HERO / BANNER ============ -->
-<section class="hero" id="home">
-  <div class="hero__bg"></div>
-  <div class="container hero__inner">
-    <div class="hero__content" data-aos>
-      <span class="tag tag--accent">Uy tín - Tận tâm - Đúng hẹn</span>
-      <h1>Hỗ trợ thủ tục Nhật Bản chuyên nghiệp</h1>
-      <div class="hero__pitch">
-        <p class="hero__pitch-services">NENKIN &middot; VISA &middot; HOÀN THUẾ &middot; DỊCH VỤ KHÁC</p>
-        <ul class="hero__pitch-values">
-          <li>Minh bạch trong quy trình</li>
-          <li>Rõ ràng về chi phí</li>
-          <li>Tận tâm trong từng bước</li>
-          <li>Tin cậy trong từng dịch vụ</li>
-        </ul>
+<!-- ============ 1. BANNER ============ -->
+<section class="hm-banner" id="home">
+  <div class="container">
+    <h1 class="sr-only">Hỗ trợ thủ tục Nhật Bản &ndash; Nenkin, Visa, Hoàn thuế, Dịch vụ khác | CZT</h1>
+    <div class="hm-banner__wrap">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/docs/home/banner-mobile.png">
+        <img class="hm-banner__img" src="assets/docs/home/banner-desktop.png"
+             alt="Hỗ trợ thủ tục Nhật Bản: Nenkin, Visa, Hoàn thuế, Dịch vụ khác. 3,000+ hồ sơ đã xử lý, 98% khách hàng hài lòng, 5+ năm kinh nghiệm."
+             width="2926" height="1246">
+      </picture>
+      <div class="hm-banner__actions">
+        <a href="#contact" class="nk-cta nk-cta--blue">
+          <span class="nk-cta__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+          <span class="nk-cta__label">Liên hệ CZT</span>
+          <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="nenkin.html#tra-cuu-ho-so" class="nk-cta nk-cta--pink">
+          <span class="nk-cta__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h6"/><path d="M14 2.5V8.5h5V10"/><path d="M8.5 12h4"/><path d="M8.5 8.5h2"/><circle cx="16" cy="16" r="3.2"/><path d="M18.4 18.4 21 21"/></svg></span>
+          <span class="nk-cta__label">Tra cứu hồ sơ</span>
+          <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="https://m.me/" target="_blank" rel="noopener" class="nk-cta nk-cta--white">
+          <span class="nk-cta__ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.2 2 2 6.3 2 11.8c0 3.1 1.4 5.9 3.7 7.7V23l3.4-1.9c.9.3 1.9.4 2.9.4 5.8 0 10-4.3 10-9.8S17.8 2 12 2zm1 12.2l-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg></span>
+          <span class="nk-cta__label">Chat Messenger</span>
+          <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span>
+        </a>
       </div>
-      <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary btn--lg">Liên hệ CZT</a>
-        <a href="nenkin.html#tra-cuu-ho-so" class="btn btn--accent btn--lg">🔍 Tra cứu hồ sơ</a>
-        <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--messenger btn--lg">💬 Messenger</a>
-      </div>
-      <div class="hero__stats">
-        <div><strong>2,000+</strong><span>Hồ sơ đã xử lý</span></div>
-        <div><strong>98%</strong><span>Khách hàng hài lòng</span></div>
-        <div><strong>5+</strong><span>Năm kinh nghiệm</span></div>
-      </div>
-    </div>
-    <div class="hero__media">
-      <a href="nenkin.html" class="hero-card hero-card--nenkin">
-        <span class="hero-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/><path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/></svg>
-        </span>
-        <strong>NENKIN</strong>
-        <span class="hero-card__sub">Lương hưu Nhật Bản</span>
-        <span class="hero-card__link">Xem chi tiết →</span>
-        <svg class="hero-card__wave" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C40 12 80 48 120 30 S200 12 240 30 V60 H0 Z" fill="rgba(255,255,255,0.12)"/><path d="M0 42 C40 24 80 60 120 42 S200 24 240 42 V60 H0 Z" fill="rgba(255,255,255,0.08)"/></svg>
-      </a>
-      <a href="visa.html" class="hero-card hero-card--visa">
-        <span class="hero-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3z"/></svg>
-        </span>
-        <strong>VISA</strong>
-        <span class="hero-card__sub">Tokutei Gino2<br>Gia đình · Thăm thân</span>
-        <span class="hero-card__link">Xem chi tiết →</span>
-        <svg class="hero-card__wave" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C40 12 80 48 120 30 S200 12 240 30 V60 H0 Z" fill="rgba(255,255,255,0.12)"/><path d="M0 42 C40 24 80 60 120 42 S200 24 240 42 V60 H0 Z" fill="rgba(255,255,255,0.08)"/></svg>
-      </a>
-      <a href="thue.html" class="hero-card hero-card--thue">
-        <span class="hero-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M14 12l-4 5"/><circle cx="10.2" cy="12.2" r="0.6"/><circle cx="13.8" cy="16.2" r="0.6"/></svg>
-        </span>
-        <strong>THUẾ</strong>
-        <span class="hero-card__sub">Hoàn thuế<br>Giảm thuế</span>
-        <span class="hero-card__link">Xem chi tiết →</span>
-        <svg class="hero-card__wave" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C40 12 80 48 120 30 S200 12 240 30 V60 H0 Z" fill="rgba(255,255,255,0.12)"/><path d="M0 42 C40 24 80 60 120 42 S200 24 240 42 V60 H0 Z" fill="rgba(255,255,255,0.08)"/></svg>
-      </a>
-      <a href="dich-vu-khac.html" class="hero-card hero-card--other">
-        <span class="hero-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-        </span>
-        <strong>DỊCH VỤ KHÁC</strong>
-        <span class="hero-card__sub">Dịch thuật · Hành chính</span>
-        <span class="hero-card__link">Xem chi tiết →</span>
-        <svg class="hero-card__wave" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C40 12 80 48 120 30 S200 12 240 30 V60 H0 Z" fill="rgba(255,255,255,0.12)"/><path d="M0 42 C40 24 80 60 120 42 S200 24 240 42 V60 H0 Z" fill="rgba(255,255,255,0.08)"/></svg>
-      </a>
     </div>
   </div>
 </section>
@@ -128,254 +92,238 @@
   <button class="fab fab--top" id="backToTop" title="Lên đầu trang"><i data-icon="up"></i></button>
 </div>
 
-<!-- ============ 3. DỊCH VỤ ============ -->
-<section class="section section--gray" id="services">
+<!-- ============ 2. DỊCH VỤ NỔI BẬT ============ -->
+<section class="hm-sec" id="services">
   <div class="container">
-    <div class="section__head">
-      <span class="tag">Dịch vụ</span>
-      <h2>Dịch vụ nổi bật của CZT</h2>
-      <p>Giải pháp trọn gói cho hành trình sống và làm việc tại Nhật Bản.</p>
+    <div class="hm-head">
+      <span class="hm-head__tag">Dịch vụ</span>
+      <h2 class="hm-head__title">Dịch vụ <span>nổi bật</span></h2>
+      <span class="hm-head__swoosh" aria-hidden="true"></span>
+      <p class="hm-head__sub">Giải pháp thiết thực cho hành trình sống và làm việc tại Nhật Bản.</p>
     </div>
-
-    <div class="service-cards">
-      <div class="service-card">
-        <div class="service-card__icon">💰</div>
-        <h3>Nenkin</h3>
-        <p class="service-card__sub">Hoàn lương hưu Nhật Bản</p>
-        <ul class="check-list check-list--sm">
-          <li>Kiểm tra điều kiện hưởng Nenkin.</li>
-          <li>Hợp đồng dịch vụ rõ ràng, minh bạch.</li>
-          <li>Theo dõi hồ sơ suốt quá trình xử lý.</li>
-          <li>Hỗ trợ liên hệ cơ quan liên quan khi tiền hoàn về chậm.</li>
-        </ul>
-        <a href="nenkin.html">Xem chi tiết →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-card__icon">🛂</div>
-        <h3>Visa Nhật Bản</h3>
-        <p class="service-card__sub">Visa Gino2 &middot; Gia đình &middot; Thăm thân</p>
-        <ul class="check-list check-list--sm">
-          <li>Tư vấn điều kiện và quy trình.</li>
-          <li>Kiểm tra hồ sơ trước khi nộp.</li>
-          <li>Hỗ trợ chuẩn bị giấy tờ.</li>
-          <li>Đồng hành đến khi hoàn tất thủ tục.</li>
-        </ul>
-        <a href="visa.html">Xem chi tiết →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-card__icon">💴</div>
-        <h3>Hoàn / Giảm thuế</h3>
-        <p class="service-card__sub">Hỗ trợ thủ tục thuế tại Nhật Bản</p>
-        <ul class="check-list check-list--sm">
-          <li>Ước tính số tiền thuế dự kiến được hoàn.</li>
-          <li>Hỗ trợ chuẩn bị và dịch thuật giấy tờ.</li>
-          <li>Theo dõi tiến độ hồ sơ.</li>
-          <li>Hỗ trợ liên hệ cơ quan thuế khi hồ sơ xử lý chậm.</li>
-        </ul>
-        <a href="thue.html">Xem chi tiết →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-card__icon">📄</div>
-        <h3>Dịch vụ khác</h3>
-        <p class="service-card__sub">Dịch thuật &amp; hỗ trợ thủ tục hành chính</p>
-        <ul class="check-list check-list--sm">
-          <li>Tư vấn các thủ tục liên quan đến Nhật Bản.</li>
-          <li>Hỗ trợ giấy tờ theo từng trường hợp.</li>
-          <li>Giải đáp các vấn đề phát sinh trong quá trình thực hiện hồ sơ.</li>
-        </ul>
-        <a href="dich-vu-khac.html">Xem chi tiết →</a>
-      </div>
-      <div class="service-card service-card--cta">
-        <h3>Chưa biết bắt đầu từ đâu?</h3>
-        <p>Để lại thông tin, CZT sẽ liên hệ tư vấn miễn phí trong 24h.</p>
-        <a href="#booking" class="btn btn--primary">Đặt lịch tư vấn</a>
-      </div>
+    <div class="hm-svc-grid">
+      <article class="hm-svc">
+        <span class="hm-svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9" cy="6" rx="6" ry="2.5"/><path d="M3 6v4c0 1.4 2.7 2.5 6 2.5"/><path d="M3 10v4c0 1.4 2.7 2.5 6 2.5"/><path d="M3 14v4c0 1.4 2.7 2.5 6 2.5"/><circle cx="16.5" cy="15.5" r="5"/><path d="M14.8 13l1.7 2.2 1.7-2.2M16.5 15.2V18.5M15 16.4h3M15 17.6h3"/></svg></span>
+        <div class="hm-svc__body">
+          <h3>Nenkin</h3>
+          <p class="hm-svc__sub">Hoàn lương hưu Nhật Bản</p>
+          <ul class="hm-checks"><li>Kiểm tra điều kiện hưởng Nenkin.</li><li>Hợp đồng dịch vụ rõ ràng, minh bạch.</li><li>Theo dõi hồ sơ suốt quá trình xử lý.</li><li>Hỗ trợ liên hệ cơ quan liên quan khi tiền hoàn về chậm.</li></ul>
+          <a class="hm-svc__link" href="nenkin.html">Xem chi tiết <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="hm-svc">
+        <span class="hm-svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="10" r="2"/><path d="M5.5 16c.5-1.8 1.7-2.7 3-2.7s2.5.9 3 2.7"/><path d="M14 9h4.5M14 12.5h4.5M14 16h3"/></svg></span>
+        <div class="hm-svc__body">
+          <h3>Visa Nhật Bản</h3>
+          <p class="hm-svc__sub">Visa Gino2 &middot; Gia đình &middot; Thăm thân</p>
+          <ul class="hm-checks"><li>Tư vấn điều kiện và quy trình.</li><li>Kiểm tra hồ sơ trước khi nộp.</li><li>Hỗ trợ chuẩn bị giấy tờ.</li><li>Đồng hành đến khi hoàn tất thủ tục.</li></ul>
+          <a class="hm-svc__link" href="visa.html">Xem chi tiết <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="hm-svc">
+        <span class="hm-svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5H11"/><path d="M13.5 2.5V8H19v3"/><path d="M8 11.5h5M8 15h2.5"/><circle cx="17" cy="17" r="4.3"/><path d="M15.3 18.7l3.4-3.4"/><circle cx="15.5" cy="15.5" r=".5"/><circle cx="18.5" cy="18.5" r=".5"/></svg></span>
+        <div class="hm-svc__body">
+          <h3>Hoàn / Giảm thuế</h3>
+          <p class="hm-svc__sub">Hỗ trợ thủ tục thuế tại Nhật Bản</p>
+          <ul class="hm-checks"><li>Ước tính số tiền thuế dự kiến được hoàn.</li><li>Hỗ trợ chuẩn bị và dịch thuật giấy tờ.</li><li>Theo dõi tiến độ hồ sơ.</li><li>Hỗ trợ liên hệ cơ quan thuế khi hồ sơ xử lý chậm.</li></ul>
+          <a class="hm-svc__link" href="thue.html">Xem chi tiết <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="hm-svc">
+        <span class="hm-svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="3" width="11" height="10" rx="2"/><path d="M5.5 10.5 8 5.5l2.5 5M6.4 8.8h3.2"/><path d="M10.5 13v3.5L13 14h6.5a2 2 0 0 0 2-2V9.5a2 2 0 0 0-2-2H16"/><path d="M15.5 16.5h5a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-.5v1.5L18.5 20.5h-3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg></span>
+        <div class="hm-svc__body">
+          <h3>Dịch thuật &amp; Phiên dịch</h3>
+          <p class="hm-svc__sub">Hỗ trợ ngôn ngữ và hồ sơ Nhật &ndash; Việt</p>
+          <ul class="hm-checks"><li>Dịch giấy khai sinh, cư trú, phụng dưỡng.</li><li>Dịch thuật hồ sơ hành chính và visa.</li><li>Phiên dịch, hỗ trợ trao đổi khi cần.</li><li>Hỗ trợ lấy giấy thuế shi cũ.</li></ul>
+          <a class="hm-svc__link" href="dich-vu-khac.html">Xem chi tiết <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
     </div>
-
-  </div>
-</section>
-
-<!-- ============ QUY TRÌNH LÀM VIỆC ============ -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="section__head">
-      <span class="tag">Quy trình</span>
-      <h2>Quy trình làm việc tại CZT</h2>
-      <p>Đơn giản - Rõ ràng - Theo sát từng bước.</p>
-    </div>
-    <div class="process-steps">
-      <div class="process-step"><div class="process-step__head"><span>1</span><strong>Tiếp nhận & tư vấn</strong></div><p>Lắng nghe nhu cầu, tư vấn giải pháp phù hợp miễn phí.</p></div>
-      <div class="process-step"><div class="process-step__head"><span>2</span><strong>Chuẩn bị hồ sơ</strong></div><p>Hướng dẫn chi tiết giấy tờ cần thiết, hỗ trợ dịch thuật.</p></div>
-      <div class="process-step"><div class="process-step__head"><span>3</span><strong>Nộp hồ sơ</strong></div><p>Nộp hồ sơ tới cơ quan chức năng, theo dõi tiến độ.</p></div>
-      <div class="process-step"><div class="process-step__head"><span>4</span><strong>Cập nhật kết quả</strong></div><p>Thông báo tiến độ xử lý thường xuyên cho khách hàng.</p></div>
-      <div class="process-step"><div class="process-step__head"><span>5</span><strong>Bàn giao & hỗ trợ</strong></div><p>Bàn giao kết quả và hỗ trợ các vấn đề phát sinh.</p></div>
+    <div class="hm-ctabar">
+      <span class="hm-ctabar__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.3 7.6L3 21l1.4-5.3A8.5 8.5 0 1 1 21 12z"/><circle cx="8.5" cy="12" r=".6" fill="currentColor"/><circle cx="12" cy="12" r=".6" fill="currentColor"/><circle cx="15.5" cy="12" r=".6" fill="currentColor"/></svg></span>
+      <div class="hm-ctabar__text">
+        <strong>Chưa biết hồ sơ của mình phù hợp với dịch vụ nào?</strong>
+        <span>Để lại thông tin, CZT sẽ kiểm tra và tư vấn miễn phí.</span>
+      </div>
+      <a class="hm-ctabar__btn" href="#booking">Tư vấn miễn phí <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ VÌ SAO CHỌN CZT ============ -->
-<section class="section section--dark" id="why">
+<!-- ============ 3. QUY TRÌNH LÀM VIỆC ============ -->
+<section class="hm-sec" id="process">
   <div class="container">
-    <div class="section__head section__head--light">
-      <span class="tag tag--accent">Vì sao chọn CZT</span>
-      <h2>Sự khác biệt của CZT</h2>
+    <div class="hm-head">
+      <span class="hm-head__tag">Quy trình</span>
+      <h2 class="hm-head__title">Quy trình làm việc tại <span>CZT</span></h2>
+      <span class="hm-head__swoosh" aria-hidden="true"></span>
+      <p class="hm-head__sub">Đơn giản &ndash; Rõ ràng &ndash; Theo sát từng bước.</p>
     </div>
-    <div class="diff-grid">
-      <div class="diff-card"><div class="diff-card__icon">⚡</div><h3>Xử lý nhanh chóng</h3><p>Quy trình tối ưu, cập nhật tiến độ liên tục cho khách hàng.</p></div>
-      <div class="diff-card"><div class="diff-card__icon">🔒</div><h3>Bảo mật thông tin</h3><p>Cam kết bảo mật tuyệt đối hồ sơ, thông tin cá nhân khách hàng.</p></div>
-      <div class="diff-card"><div class="diff-card__icon">💰</div><h3>Chi phí minh bạch</h3><p>Báo giá rõ ràng ngay từ đầu, không phát sinh chi phí ẩn.</p></div>
-      <div class="diff-card"><div class="diff-card__icon">🧑‍💼</div><h3>Đội ngũ chuyên môn</h3><p>Am hiểu pháp luật Nhật Bản, giàu kinh nghiệm thực tế.</p></div>
-      <div class="diff-card"><div class="diff-card__icon">📞</div><h3>Hỗ trợ 24/7</h3><p>Luôn sẵn sàng giải đáp thắc mắc qua Zalo, Messenger, hotline.</p></div>
-      <div class="diff-card"><div class="diff-card__icon">🤝</div><h3>Đồng hành lâu dài</h3><p>Hỗ trợ khách hàng xuyên suốt quá trình sinh sống tại Nhật.</p></div>
+    <div class="hm-steps">
+      <div class="hm-step">
+        <span class="hm-step__num">1</span>
+        <span class="hm-step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10a5 5 0 0 1-7.3 4.4L4 15.5l1-3.3A5 5 0 1 1 15 10z"/><path d="M17.5 8.6A5 5 0 0 1 19.3 17l.9 3-3.4-1.1A5 5 0 0 1 10.4 17"/><circle cx="7.8" cy="10" r=".5" fill="currentColor"/><circle cx="10" cy="10" r=".5" fill="currentColor"/><circle cx="12.2" cy="10" r=".5" fill="currentColor"/></svg></span>
+        <h3>Tiếp nhận &amp; tư vấn</h3>
+        <p>Lắng nghe nhu cầu, tư vấn giải pháp phù hợp miễn phí.</p>
+      </div>
+      <div class="hm-step">
+        <span class="hm-step__num">2</span>
+        <span class="hm-step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5v5h5"/><path d="M8.5 12h7M8.5 15.5h7M8.5 8.5h3"/></svg></span>
+        <h3>Chuẩn bị hồ sơ</h3>
+        <p>Hướng dẫn chi tiết giấy tờ cần thiết, hỗ trợ dịch thuật.</p>
+      </div>
+      <div class="hm-step">
+        <span class="hm-step__num">3</span>
+        <span class="hm-step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3H5.5A1.5 1.5 0 0 0 4 4.5v15A1.5 1.5 0 0 0 5.5 21h10A1.5 1.5 0 0 0 17 19.5V14"/><path d="M7.5 7.5h6M7.5 11h4"/><path d="M7 17c1-1.4 1.8-1.4 2.3 0s1.3 1.4 2.2 0"/><path d="M19.8 4.2a1.6 1.6 0 0 1 0 2.3l-6 6-2.9.6.6-2.9 6-6a1.6 1.6 0 0 1 2.3 0z"/></svg></span>
+        <h3>Ký hợp đồng / Thỏa thuận</h3>
+        <p>Xác nhận nội dung; hỗ trợ ký trực tuyến hoặc gửi hợp đồng bản gốc về tận nhà.</p>
+      </div>
+      <div class="hm-steps__turn" aria-hidden="true"></div>
+      <div class="hm-step">
+        <span class="hm-step__num">4</span>
+        <span class="hm-step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5H15"/><path d="M13 2.5V7.5h5V11"/><path d="M8.5 11h4M8.5 14.5h3"/><path d="M14 17.5h7M18.5 15l2.5 2.5-2.5 2.5"/></svg></span>
+        <h3>Nộp hồ sơ</h3>
+        <p>Nộp hồ sơ tới cơ quan chức năng, theo dõi tiến độ.</p>
+      </div>
+      <div class="hm-step">
+        <span class="hm-step__num">5</span>
+        <span class="hm-step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12.5" rx="1.8"/><path d="M1.5 19.5h21"/><circle cx="12" cy="10.2" r="4"/><path d="M12 8.3v2l1.4 1"/></svg></span>
+        <h3>Cập nhật kết quả</h3>
+        <p>Thông báo tiến độ xử lý thường xuyên cho khách hàng.</p>
+      </div>
+      <div class="hm-step">
+        <span class="hm-step__num">6</span>
+        <span class="hm-step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6.5" r="3.5"/><path d="M9.5 9.5c-1.5.6-2.5 1.7-2.5 3h10c0-1.3-1-2.4-2.5-3"/><path d="M3 12.5l1.8 5.2c.3.9 1.2 1.6 2.2 1.8l3.5.7M21 12.5l-1.8 5.2c-.3.9-1.2 1.6-2.2 1.8l-3.5.7"/><path d="M5 11.8 6.8 15M19 11.8 17.2 15"/></svg></span>
+        <h3>Bàn giao &amp; hỗ trợ</h3>
+        <p>Bàn giao kết quả và hỗ trợ các vấn đề phát sinh.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 4. BẢNG GIÁ ============ -->
-<section class="section section--gray" id="pricing">
+<!-- ============ 4. VÌ SAO CHỌN CZT ============ -->
+<section class="hm-sec hm-sec--dark" id="why">
   <div class="container">
-    <div class="section__head">
-      <span class="tag">Bảng giá</span>
-      <h2>Bảng giá dịch vụ</h2>
-      <p>Chi phí tham khảo, liên hệ CZT để được báo giá chính xác theo hồ sơ thực tế.</p>
+    <div class="hm-head hm-head--light">
+      <span class="hm-head__tag">Vì sao chọn CZT</span>
+      <h2 class="hm-head__title">Vì sao khách hàng lựa chọn <span>CZT?</span></h2>
+      <span class="hm-head__swoosh" aria-hidden="true"></span>
     </div>
-    <div class="table-wrap">
-      <table class="pricing-table">
-        <thead>
-          <tr><th>Dịch vụ</th><th>Chi phí tham khảo</th><th>Thời gian xử lý</th><th></th></tr>
-        </thead>
+    <div class="hm-why-grid">
+      <div class="hm-why">
+        <div class="hm-why__top"><span class="hm-why__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5v5h5"/><path d="M8.5 11h7M8.5 14.5h4"/><path d="M13.5 18l1.5 1.5 3-3"/></svg></span><h3>Quy trình rõ ràng</h3></div>
+        <p>Hướng dẫn từng bước, cập nhật tiến độ hồ sơ thường xuyên.</p>
+      </div>
+      <div class="hm-why">
+        <div class="hm-why__top"><span class="hm-why__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.2" r="1.3"/><path d="M12 16.5v1.8"/></svg></span><h3>Bảo mật thông tin</h3></div>
+        <p>Hồ sơ và thông tin cá nhân của khách hàng được bảo mật trong suốt quá trình xử lý.</p>
+      </div>
+      <div class="hm-why">
+        <div class="hm-why__top"><span class="hm-why__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9" cy="6" rx="5.5" ry="2.2"/><path d="M3.5 6v3.5c0 1.2 2.5 2.2 5.5 2.2s5.5-1 5.5-2.2V6"/><path d="M3.5 9.5V13c0 1.2 2.5 2.2 5.5 2.2"/><ellipse cx="15" cy="15" rx="5.5" ry="2.2"/><path d="M9.5 15v3.5c0 1.2 2.5 2.2 5.5 2.2s5.5-1 5.5-2.2V15"/></svg></span><h3>Chi phí minh bạch</h3></div>
+        <p>Báo phí rõ ràng ngay từ đầu, hạn chế tối đa các khoản phát sinh.</p>
+      </div>
+      <div class="hm-why">
+        <div class="hm-why__top"><span class="hm-why__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 21V8.5l6-3v15.5"/><path d="M9.5 21V3h7.5v18"/><path d="M17 10h3.5v11"/><path d="M2 21h20"/><path d="M12 7h2.5M12 10.5h2.5M12 14h2.5M5.8 11h1.5M5.8 14.5h1.5"/></svg></span><h3>Liên kết văn phòng chuyên môn tại Nhật</h3></div>
+        <p>Phối hợp trực tiếp với văn phòng chuyên môn tại Nhật, hỗ trợ chuẩn bị và xử lý hồ sơ đúng quy trình.</p>
+      </div>
+      <div class="hm-why">
+        <div class="hm-why__top"><span class="hm-why__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13.5V12a8 8 0 0 1 16 0v1.5"/><rect x="2.8" y="13" width="4" height="6" rx="1.6"/><rect x="17.2" y="13" width="4" height="6" rx="1.6"/><path d="M19.2 19v.5a2.5 2.5 0 0 1-2.5 2.5H13"/></svg></span><h3>Hỗ trợ tận tâm</h3></div>
+        <p>Tiếp nhận và giải đáp thắc mắc hằng ngày trong khung giờ 9:00&ndash;22:00.</p>
+      </div>
+      <div class="hm-why">
+        <div class="hm-why__top"><span class="hm-why__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V3.5"/><path d="M5 4h13l-2.2 4.2L18 12.5H5"/><path d="M8.5 4v8.5M12 4v8.5M15 4v8.5M5 8.2h12"/></svg></span><h3>Theo sát đến khi hoàn thành</h3></div>
+        <p>Chủ động theo dõi tiến độ và hỗ trợ xử lý các vấn đề phát sinh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. BẢNG GIÁ ============ -->
+<section class="hm-sec" id="pricing">
+  <div class="container">
+    <div class="hm-head">
+      <span class="hm-head__tag">Bảng giá</span>
+      <h2 class="hm-head__title">Bảng giá dịch vụ</h2>
+      <span class="hm-head__swoosh" aria-hidden="true"></span>
+      <p class="hm-head__sub">Chi phí tham khảo &mdash; CZT sẽ xác nhận mức phí sau khi kiểm tra hồ sơ.</p>
+    </div>
+    <div class="hm-price">
+      <table class="hm-price__table">
+        <thead><tr><th>Dịch vụ</th><th>Chi phí tham khảo</th><th>Thời gian dự kiến</th><th><span class="sr-only">Tư vấn</span></th></tr></thead>
         <tbody>
-          <tr><td>Hoàn thuế Nenkin</td><td>Liên hệ báo giá</td><td>3 - 6 tháng</td><td><a href="#booking" class="btn btn--sm btn--outline">Tư vấn</a></td></tr>
-          <tr><td>Visa Nhật Bản (Tokutei / Gino2)</td><td>Liên hệ báo giá</td><td>1 - 4 tháng</td><td><a href="#booking" class="btn btn--sm btn--outline">Tư vấn</a></td></tr>
-          <tr><td>Hoàn / Giảm thuế</td><td>Liên hệ báo giá</td><td>Tùy trường hợp</td><td><a href="#booking" class="btn btn--sm btn--outline">Tư vấn</a></td></tr>
-          <tr><td>Phiên dịch & Dịch thuật (theo trang)</td><td>Liên hệ báo giá</td><td>1 - 3 ngày</td><td><a href="#booking" class="btn btn--sm btn--outline">Tư vấn</a></td></tr>
-          <tr><td>Dịch vụ khác (hành chính)</td><td>Liên hệ báo giá</td><td>Tùy trường hợp</td><td><a href="#booking" class="btn btn--sm btn--outline">Tư vấn</a></td></tr>
+          <tr><td data-label="Dịch vụ">Hoàn Nenkin &mdash; Dưới 5 năm</td><td data-label="Chi phí tham khảo">1.300.000đ</td><td data-label="Thời gian dự kiến">Lần 1: 3&ndash;6 tháng<br>Lần 2: 1&ndash;3 tháng</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
+          <tr><td data-label="Dịch vụ">Hoàn Nenkin &mdash; Từ 5 năm trở lên</td><td data-label="Chi phí tham khảo">1.500.000đ</td><td data-label="Thời gian dự kiến">Lần 1: 3&ndash;6 tháng<br>Lần 2: 1&ndash;3 tháng</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
+          <tr><td data-label="Dịch vụ">Hoàn / Giảm thuế &mdash; Đang ở Nhật</td><td data-label="Chi phí tham khảo">650.000đ</td><td data-label="Thời gian dự kiến">1&ndash;3 tháng</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
+          <tr><td data-label="Dịch vụ">Hoàn / Giảm thuế &mdash; Đã về Việt Nam</td><td data-label="Chi phí tham khảo">750.000đ</td><td data-label="Thời gian dự kiến">1&ndash;3 tháng</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
+          <tr><td data-label="Dịch vụ">Visa Tokutei Gino 2 &mdash; CZT nộp hồ sơ <span class="hm-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8.5l4.5 3.5L12 5l4.5 7L21 8.5l-2 10H5z"/></svg>Nổi bật</span></td><td data-label="Chi phí tham khảo">66.000 yên</td><td data-label="Thời gian dự kiến">2 tuần &ndash; 2 tháng</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
+          <tr><td data-label="Dịch vụ">Dịch thuật &amp; Phiên dịch</td><td data-label="Chi phí tham khảo">Liên hệ báo giá</td><td data-label="Thời gian dự kiến">Tùy nội dung</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
+          <tr><td data-label="Dịch vụ">Dịch vụ hành chính khác</td><td data-label="Chi phí tham khảo">Liên hệ báo giá</td><td data-label="Thời gian dự kiến">Tùy trường hợp</td><td><a class="hm-price__btn" href="#booking">Tư vấn <span class="nk-cta__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="pricing-note">* Liên hệ để được báo giá chính xác theo từng hồ sơ cụ thể.</p>
-  </div>
-</section>
-
-<!-- ============ 5. TIN TỨC ============ -->
-<section class="section" id="news">
-  <div class="container">
-    <div class="section__head">
-      <span class="tag">Tin tức</span>
-      <h2>Tin tức & Kiến thức</h2>
-      <p>Cập nhật thông tin mới nhất về Nenkin, Tokutei và pháp luật xuất nhập cảnh Nhật Bản.</p>
-    </div>
-    <div class="news-grid">
-      <article class="news-card">
-        <div class="news-card__thumb">Nenkin 2026</div>
-        <div class="news-card__body">
-          <span class="news-card__cat">Nenkin</span>
-          <h3>Hướng dẫn thủ tục hoàn thuế Nenkin mới nhất 2026</h3>
-          <p>Những thay đổi quan trọng về thủ tục và mức hoàn thuế Nenkin mà người lao động cần biết.</p>
-          <a href="#">Đọc thêm →</a>
-        </div>
-      </article>
-      <article class="news-card">
-        <div class="news-card__thumb">Tokutei</div>
-        <div class="news-card__body">
-          <span class="news-card__cat">Tokutei</span>
-          <h3>Tokutei mới nhất: Thêm ngành nghề được chấp thuận</h3>
-          <p>Danh sách ngành nghề mở rộng cho visa kỹ năng đặc định trong năm nay.</p>
-          <a href="#">Đọc thêm →</a>
-        </div>
-      </article>
-      <article class="news-card">
-        <div class="news-card__thumb">Luật nhập cảnh</div>
-        <div class="news-card__body">
-          <span class="news-card__cat">Luật nhập cảnh</span>
-          <h3>Những thay đổi trong luật nhập cảnh Nhật Bản cần lưu ý</h3>
-          <p>Tổng hợp các quy định mới ảnh hưởng đến người lao động và du học sinh.</p>
-          <a href="#">Đọc thêm →</a>
-        </div>
-      </article>
-      <article class="news-card">
-        <div class="news-card__thumb">Kinh nghiệm</div>
-        <div class="news-card__body">
-          <span class="news-card__cat">Kinh nghiệm</span>
-          <h3>Kinh nghiệm xin visa thành công từ A đến Z</h3>
-          <p>Chia sẻ thực tế từ những hồ sơ CZT đã hỗ trợ thành công.</p>
-          <a href="#">Đọc thêm →</a>
-        </div>
-      </article>
-      <article class="news-card">
-        <div class="news-card__thumb">Cảnh báo</div>
-        <div class="news-card__body">
-          <span class="news-card__cat">Cảnh báo lừa đảo</span>
-          <h3>Cảnh giác với các chiêu trò lừa đảo "hoàn thuế Nenkin"</h3>
-          <p>Dấu hiệu nhận biết và cách phòng tránh các hình thức lừa đảo phổ biến.</p>
-          <a href="#">Đọc thêm →</a>
-        </div>
-      </article>
-      <article class="news-card news-card--cta">
-        <h3>Xem thêm tin tức</h3>
-        <p>CZT cập nhật 4-8 bài viết mỗi tháng để bạn không bỏ lỡ thông tin quan trọng.</p>
-        <a href="#" class="btn btn--primary">Tất cả tin tức</a>
-      </article>
+    <div class="hm-price__notes">
+      <p>* Tất cả mức phí trên chưa bao gồm thuế giá trị gia tăng (VAT) 10%.</p>
+      <p>* Chi phí có thể thay đổi tùy tình trạng hồ sơ. CZT sẽ kiểm tra và xác nhận trước khi thực hiện.</p>
+      <p>* Phí Visa Tokutei Gino 2 chưa bao gồm lệ phí tem và các chi phí phát sinh theo từng hồ sơ.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 6. FAQ ============ -->
-<section class="section section--gray" id="faq">
+<!-- ============ 6. KHÁCH HÀNG ============ -->
+<section class="hm-sec hm-sec--dark" id="testimonials">
   <div class="container">
-    <div class="section__head">
-      <span class="tag">FAQ</span>
-      <h2>Câu hỏi thường gặp</h2>
+    <div class="hm-head hm-head--light">
+      <span class="hm-head__tag">Khách hàng</span>
+      <h2 class="hm-head__title">Khách hàng nói gì về <span>CZT?</span></h2>
+      <span class="hm-head__swoosh" aria-hidden="true"></span>
+      <p class="hm-head__sub">Những chia sẻ thực tế từ khách hàng đã sử dụng dịch vụ tại CZT.</p>
     </div>
-    <div class="accordion" id="accordion">
-      <div class="accordion__item is-open">
-        <button class="accordion__head">Bao lâu thì nhận được tiền hoàn Nenkin? <span>+</span></button>
-        <div class="accordion__body"><p>Thông thường từ 3-6 tháng kể từ khi nộp hồ sơ đầy đủ, tùy vào thời điểm nộp và cơ quan xử lý.</p></div>
-      </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Có cần về Việt Nam mới làm được thủ tục không? <span>+</span></button>
-        <div class="accordion__body"><p>Thủ tục Nenkin yêu cầu bạn đã xuất cảnh khỏi Nhật và không còn địa chỉ cư trú tại đó. Một số dịch vụ khác có thể thực hiện khi bạn vẫn đang ở Nhật.</p></div>
-      </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Visa Tokutei 2 có khó xin không? <span>+</span></button>
-        <div class="accordion__body"><p>Tokutei số 2 yêu cầu tay nghề cao hơn và kỳ thi riêng, nhưng cho phép làm việc dài hạn và bảo lãnh gia đình. CZT sẽ tư vấn lộ trình phù hợp với từng ngành nghề.</p></div>
-      </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Tôi có thể đổi công ty trong thời gian làm Tokutei/Gino2 không? <span>+</span></button>
-        <div class="accordion__body"><p>Có thể, nhưng cần làm thủ tục thông báo và đáp ứng điều kiện chuyển đổi phù hợp với loại visa hiện tại. Liên hệ CZT để được hướng dẫn cụ thể.</p></div>
-      </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Visa sắp hết hạn thì phải làm sao? <span>+</span></button>
-        <div class="accordion__body"><p>Bạn nên liên hệ CZT trước ít nhất 2-3 tháng trước khi visa hết hạn để được hỗ trợ chuẩn bị hồ sơ gia hạn kịp thời, tránh gián đoạn tư cách lưu trú.</p></div>
-      </div>
+    <div class="hm-reviews" id="hmReviews">
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Nơi đáng tin cậy để lấy nenkin, hỗ trợ nhiệt tình, chu đáo, 5 ⭐ cho cô giáo ạ, uy tín nha mn 👍&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">P</span><span><strong>Phan Chuẩn</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Hỗ trợ nhiệt tình, thanh toán sau quá uy tín nha mn&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">Đ</span><span><strong>Đạt Nguyễn</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Nhiệt tình chu đáo, nhận tiền xong mới thanh toán. Ok nha mn&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">N</span><span><strong>Nga Nguyễn</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Đỉnh của chóp luôn mn ơi, bạn nào muốn lấy nenkin, làm thuế hoặc xin visa thì nhắn liền cho cô giáo Trang nha! Cô rất nhiệt tình và rất công khai minh bạch mọi thủ tục khi làm bên cô giáo nên mn cứ việc ib cho cô giáo Trang nhé. Đặc biệt là cô giáo siêu siêu dễ thương nhaaa. HÃY ĐẾN HÃY ĐẾN với CÔ GIÁO TRANG&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">L</span><span><strong>Lê Quốc Anh</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Mình đã nhờ bên chị làm hồ sơ và được hướng dẫn tận tình! Bao uy tín nhé!&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">V</span><span><strong>Văn Huy</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Thân thiện hoà nhã, làm việc nhanh gọn, nhiệt tình, uy tín, nhận tiền lần 2 mới thanh toán, rất hài lòng&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">H</span><span><strong>Hồ Văn Linh</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Hỗ trợ xin visa ginou2 chi tiết, nhanh gọn. 10đ&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">Ý</span><span><strong>Ý</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
+        <figure class="hm-review">
+          <div class="hm-review__top"><span class="hm-review__fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.24h-3.22V7.49c0-.94.26-1.58 1.6-1.58h1.72V3.01c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.24v3.24h2.8V21h3.36z"/></svg></span><span class="hm-review__stars" aria-label="5 sao">★★★★★</span></div>
+          <blockquote>&ldquo;Uy tín, nhanh gọn. Nhân viên vui tính, nhiệt tình. Phải nói là uy tín số 1 Japan nhé mọi người&rdquo;</blockquote>
+          <figcaption><span class="hm-review__avatar">Q</span><span><strong>Quyền</strong><small>Đánh giá thực tế trên Facebook</small></span></figcaption>
+        </figure>
     </div>
-  </div>
-</section>
-
-<!-- ============ 7. KHÁCH HÀNG ============ -->
-<section class="section" id="testimonials">
-  <div class="container">
-    <div class="section__head">
-      <span class="tag">Khách hàng</span>
-      <h2>Khách hàng nói gì về CZT</h2>
-    </div>
-    <div class="testimonials" id="testimonials-track">
-      <div class="testimonial">
-        <p>"CZT hỗ trợ mình hoàn thuế Nenkin rất nhanh, tư vấn nhiệt tình và luôn cập nhật tiến độ đầy đủ."</p>
-        <div class="testimonial__author"><div class="avatar">N</div><div><strong>Chị Ngọc</strong><span>Osaka, Nhật Bản</span></div></div>
-      </div>
-      <div class="testimonial">
-        <p>"Nhờ CZT tư vấn hồ sơ Tokutei kỹ càng nên mình đậu ngay lần đầu. Rất cảm ơn đội ngũ hỗ trợ."</p>
-        <div class="testimonial__author"><div class="avatar">H</div><div><strong>Anh Hùng</strong><span>Tokyo, Nhật Bản</span></div></div>
-      </div>
-      <div class="testimonial">
-        <p>"Dịch vụ dịch thuật hồ sơ nhanh, chính xác, giá hợp lý. Sẽ tiếp tục ủng hộ CZT."</p>
-        <div class="testimonial__author"><div class="avatar">T</div><div><strong>Chị Thảo</strong><span>Hà Nội, Việt Nam</span></div></div>
-      </div>
-    </div>
-    <div class="testimonials__nav">
-      <button id="testiPrev">‹</button>
-      <button id="testiNext">›</button>
+    <div class="hm-reviews__nav">
+      <button type="button" class="hm-reviews__arrow" data-dir="-1" aria-label="Đánh giá trước">‹</button>
+      <a class="hm-reviews__more" href="https://www.facebook.com/tokuteicozaotrang/reviews/?id=100063543378380&amp;sk=reviews" target="_blank" rel="noopener">Xem thêm đánh giá trên Facebook <span aria-hidden="true">→</span></a>
+      <button type="button" class="hm-reviews__arrow" data-dir="1" aria-label="Đánh giá tiếp theo">›</button>
     </div>
   </div>
 </section>
@@ -455,10 +403,10 @@
         <div class="contact__item"><strong>Địa chỉ</strong><span>Thôn Hùng Tiến, Xã Xuân Bình, Tỉnh Thanh Hóa</span></div>
         <div class="contact__item"><strong>Hotline</strong><span><a href="tel:+818050508378">+81 080-5050-8378</a></span></div>
         <div class="contact__item"><strong>Email</strong><span><a href="mailto:dichvuquocteczt@gmail.com">dichvuquocteczt@gmail.com</a></span></div>
-        <div class="contact__item"><strong>Zalo</strong><span><a href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener">zalo.me/czt</a></span></div>
-        <div class="contact__item"><strong>Messenger</strong><span><a href="https://m.me/" target="_blank" rel="noopener">m.me/czt</a></span></div>
-        <div class="contact__item"><strong>TikTok</strong><span><a href="https://www.tiktok.com/@tokuteicozaotrang?_r=1&amp;_t=ZS-99YONA8zto4" target="_blank" rel="noopener">@czt</a></span></div>
-        <div class="contact__item"><strong>Giờ làm việc</strong><span>Thứ 2 - Thứ 7: 8:30 - 18:00</span></div>
+        <div class="contact__item"><strong>Zalo</strong><span><a href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener">zalo.me/g/d9w8djm0zfuvlax0gopg</a></span></div>
+        <div class="contact__item"><strong>Facebook</strong><span><a href="https://www.facebook.com/tokuteicozaotrang" target="_blank" rel="noopener">facebook.com/tokuteicozaotrang</a></span></div>
+        <div class="contact__item"><strong>TikTok</strong><span><a href="https://www.tiktok.com/@tokuteicozaotrang?_r=1&amp;_t=ZS-99YONA8zto4" target="_blank" rel="noopener">@tokuteicozaotrang</a></span></div>
+        <div class="contact__item"><strong>Giờ làm việc</strong><span>Thứ 2 &ndash; Chủ nhật: 9:00 &ndash; 22:00 (giờ Nhật)</span></div>
       </div>
       <div class="contact__map">
         <iframe title="CZT trên bản đồ" src="https://www.google.com/maps?q=Th%C3%B4n%20H%C3%B9ng%20Ti%E1%BA%BFn%2C%20X%C3%A3%20Xu%C3%A2n%20B%C3%ACnh%2C%20T%E1%BB%89nh%20Thanh%20H%C3%B3a%2C%20Vi%E1%BB%87t%20Nam&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -494,7 +442,6 @@
     <div class="footer__col">
       <h4>Về CZT</h4>
       <a href="ve-czt.html">Giới thiệu</a>
-      <a href="#news">Tin tức</a>
       <a href="#recruit">Tuyển dụng</a>
       <a href="#contact">Liên hệ</a>
     </div>
@@ -519,5 +466,15 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script>
+/* Nút ‹ › cuộn dải đánh giá khách hàng đúng 1 thẻ */
+document.querySelectorAll('.hm-reviews__arrow').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var track = document.getElementById('hmReviews');
+    var card = track.querySelector('.hm-review');
+    track.scrollBy({ left: +btn.dataset.dir * (card.offsetWidth + 20), behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
