@@ -899,11 +899,11 @@ body.is-modal-open { overflow: hidden; }
   border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
 }
 /* Desktop: 3 nút đè lên khoảng trống cột trái của banner.
-   Khoảng trống đo được từ ảnh: 59.4% -> 76.4% chiều cao (giữa dòng subtitle
+   Khoảng trống đo được từ ảnh: 57.5% -> 70% chiều cao, ngang tới 44.7% (giữa dòng subtitle
    và hàng 4 icon). Neo cả top/bottom + justify-content:center để nút luôn
    cân giữa khoảng trống dù cỡ nút có thay đổi. */
 .nk-banner__actions {
-  position: absolute; left: 5.2%; top: 59.4%; bottom: 23.6%;
+  position: absolute; left: 5.2%; top: 57.5%; bottom: 30%;
   display: flex; flex-wrap: nowrap; align-items: center; gap: 0.5cqw;
 }
 /* Nút CTA dạng pill: badge icon tròn bên trái - chữ in hoa - mũi tên phải */
@@ -912,7 +912,7 @@ body.is-modal-open { overflow: hidden; }
   padding: 0.85em 0.58em;
   border-radius: 999px; white-space: nowrap;
   font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em;
-  font-size: clamp(9px, 0.86cqw, 13px);
+  font-size: clamp(9px, 0.82cqw, 13px);
   box-shadow: 0 0.3em 0.8em rgba(16, 25, 43, 0.22);
   transition: transform .18s ease, box-shadow .18s ease;
 }
@@ -925,6 +925,12 @@ body.is-modal-open { overflow: hidden; }
 .nk-cta__label { flex: 1; text-align: center; }
 .nk-cta__arrow { flex-shrink: 0; display: inline-flex; opacity: 0.9; }
 .nk-cta__arrow svg { width: 0.8em; height: 0.8em; display: block; }
+/* 861-1150px: khoảng trống trên ảnh không đủ chỗ cho 3 nút (cỡ chữ đã chạm mức tối thiểu)
+   -> đưa hàng nút xuống ngay dưới banner, cỡ chữ đọc được */
+@media (min-width: 861px) and (max-width: 1150px) {
+  .nk-banner__actions { position: static; justify-content: center; gap: 12px; margin-top: 14px; }
+  .nk-banner .nk-cta { font-size: 13px; }
+}
 
 .nk-cta--blue { background: linear-gradient(135deg, #2f63e0, #1a3fa8); color: #fff; }
 .nk-cta--blue .nk-cta__ic { background: #dbe7ff; color: #1a3fa8; }
@@ -942,9 +948,9 @@ body.is-modal-open { overflow: hidden; }
   }
   .nk-banner { padding: 16px 0 4px; }
   /* Mobile: xếp dọc vào vùng trời trống giữa banner (dưới laptop, trên card 2000+).
-     Khoảng trống đo được từ ảnh: 36.6% -> 61.2% chiều cao. */
+     Khoảng trống đo được từ ảnh: 36.6% -> 59.5% chiều cao. */
   .nk-banner__actions {
-    left: 9%; right: 9%; top: 36.6%; bottom: 38.8%;
+    left: 9%; right: 9%; top: 36.6%; bottom: 40.5%;
     flex-direction: column; align-items: stretch; justify-content: center; gap: 1.9cqw;
   }
   .nk-cta {
@@ -1636,14 +1642,29 @@ body.is-modal-open { overflow: hidden; }
 
 /* ---- Banner ---- */
 .hm-banner { padding: 24px 0 8px; }
+.hm-banner__stage { position: relative; container-type: inline-size; }
 .hm-banner__wrap { position: relative; container-type: inline-size; }
-.hm-banner__img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
-/* khoảng trống đo từ ảnh: dọc 58.4% -> 79.4%, ngang từ 15% tới viền vàng ~69.8% */
+.hm-banner__img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+/* ảnh PC 1916x821 — khoảng trống đo từ ảnh: dọc 60% -> 78.6% (giữa checklist và dải số liệu),
+   ngang từ 11.6% (thẳng mép checklist) tới mép vùng xanh ~57% */
 .hm-banner__actions {
-  position: absolute; left: 15%; top: 58.4%; bottom: 20.6%;
+  position: absolute; left: 11.6%; top: 60.5%; bottom: 22%;
   display: flex; align-items: center; gap: 0.8cqw;
 }
-.hm-banner .nk-cta { font-size: clamp(10px, 1.02cqw, 15px); padding: 0.85em 0.7em; }
+.hm-banner .nk-cta { font-size: clamp(8px, 0.98cqw, 15px); padding: 0.85em 0.7em; }
+/* 4 ô dịch vụ: vùng kem bên phải banner (vùng xanh + viền vàng chỉ lấn tới ~60.8%) */
+.hm-banner__cards {
+  position: absolute; left: 63%; right: 3%; top: 8%; bottom: 8%;
+  display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 1.1cqw;
+}
+.hm-banner__cards .hero-card { padding: 1.3cqw 0.9cqw 1cqw; border-radius: 1.3cqw; }
+.hm-banner__cards .hero-card__icon { width: 3.8cqw; height: 3.8cqw; margin-bottom: 0.7cqw; }
+.hm-banner__cards .hero-card__icon svg { width: 2cqw; height: 2cqw; }
+.hm-banner__cards .hero-card strong { font-size: clamp(10px, 1.55cqw, 22px); }
+/* sub giãn ra để icon luôn ở đỉnh, nút 'Xem chi tiết' luôn ở đáy -> 4 ô thẳng hàng */
+.hm-banner__cards .hero-card__sub { font-size: clamp(8px, 0.95cqw, 14px); margin-top: 0.35cqw; flex: 1 0 auto; }
+.hm-banner__cards .hero-card__link { font-size: clamp(8px, 0.9cqw, 13px); margin-top: 0.8cqw; padding: 0.5cqw 1.2cqw; }
+.hm-banner__cards .hero-card__wave { height: 4cqw; }
 
 /* ---- Heading chung ---- */
 .hm-sec { padding: 80px 0; }
@@ -1801,7 +1822,7 @@ body.is-modal-open { overflow: hidden; }
 
 /* ---- 6. Khách hàng ---- */
 .hm-reviews {
-  display: flex; align-items: flex-start; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 12px;
+  display: flex; align-items: stretch; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 12px;
   scrollbar-width: none;
 }
 .hm-reviews::-webkit-scrollbar { display: none; }
@@ -1815,6 +1836,13 @@ body.is-modal-open { overflow: hidden; }
 .hm-review__fb svg { width: 19px; height: 19px; }
 .hm-review__stars { color: #f4b400; font-size: 20px; letter-spacing: 3px; }
 .hm-review blockquote { flex: 1; margin: 0 0 16px; font-style: italic; color: #13295b; font-size: 16px; line-height: 1.6; }
+/* mọi thẻ cao bằng nhau (stretch); trích dẫn dài hơn 5 dòng thì cuộn bên trong thẻ */
+.hm-review blockquote {
+  max-height: calc(1.6em * 5); overflow-y: auto; padding-right: 6px;
+  scrollbar-width: thin; scrollbar-color: #d9a43c transparent;
+}
+.hm-review blockquote::-webkit-scrollbar { width: 4px; }
+.hm-review blockquote::-webkit-scrollbar-thumb { background: #d9a43c; border-radius: 4px; }
 .hm-review figcaption { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid #eef1f7; }
 .hm-review__avatar {
   flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: #1c50c8; color: #fff;
@@ -1841,13 +1869,23 @@ body.is-modal-open { overflow: hidden; }
 }
 @media (max-width: 860px) {
   /* Mobile banner: 3 nút đặt trong vùng trống của ảnh, tương tự page Nenkin */
+  /* ảnh mobile 853x1844 — 3 nút vào khoảng trống phía trên: 33.6% -> 51.4% (giữa checklist và dải số liệu) */
   .hm-banner__actions {
-    left: 9%; right: 9%; top: 67.6%; bottom: 38.8%;
-    flex-direction: column; align-items: stretch; justify-content: center; gap: 1.9cqw;
+    left: 9%; right: 9%; top: 34.5%; bottom: 49.5%;
+    flex-direction: column; align-items: stretch; justify-content: center; gap: 1.6cqw;
   }
   .hm-banner .nk-cta {
     width: 100%; font-size: clamp(11px, 3cqw, 17px); padding: 0.5em 0.5em;
   }
+  /* 4 ô vào vùng kem trống phía dưới ảnh mobile: 59% -> 98% (dưới dải số liệu) */
+  .hm-banner__cards { left: 8.5%; right: 8.5%; top: 60%; bottom: 2%; gap: 3cqw; }
+  .hm-banner__cards .hero-card { padding: 2.6cqw 2cqw 2.6cqw; border-radius: 4cqw; }
+  .hm-banner__cards .hero-card__icon { width: 9cqw; height: 9cqw; margin-bottom: 2cqw; }
+  .hm-banner__cards .hero-card__icon svg { width: 5cqw; height: 5cqw; }
+  .hm-banner__cards .hero-card strong { font-size: clamp(12px, 4.4cqw, 20px); }
+  .hm-banner__cards .hero-card__sub { font-size: clamp(10px, 3.1cqw, 14px); margin-top: 0.8cqw; }
+  .hm-banner__cards .hero-card__link { font-size: clamp(9.5px, 2.9cqw, 13px); margin-top: 2cqw; padding: 1.4cqw 3.2cqw; }
+  .hm-banner__cards .hero-card__wave { height: 9cqw; }
   .hm-sec { padding: 56px 0; }
   .hm-svc-grid { grid-template-columns: 1fr; }
   .hm-ctabar { flex-wrap: wrap; }
@@ -1871,4 +1909,94 @@ body.is-modal-open { overflow: hidden; }
   .hm-why-grid { grid-template-columns: 1fr; }
   .hm-review { flex-basis: 86%; }
   .hm-reviews__more { padding: 12px 18px; font-size: 13px; text-align: center; }
+}
+
+/* ---- 7. Cơ hội cộng tác ---- */
+.hm-collab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hm-collab {
+  display: flex; gap: 22px; padding: 28px 28px 26px; background: #fff; border-radius: var(--radius-md);
+  border: 1px solid #efe6d2; box-shadow: 0 10px 28px rgba(19, 41, 91, 0.07);
+}
+.hm-collab__ic { flex-shrink: 0; width: 84px; }
+.hm-collab__ic svg { width: 84px; height: 84px; display: block; }
+.hm-collab__body { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.hm-collab h3 { font-size: 23px; color: #13295b; line-height: 1.3; }
+.hm-collab__tag {
+  margin: 8px 0 10px; padding: 4px 14px; border-radius: 999px; background: #fdecc8; color: #b86e00;
+  font-size: 12.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.hm-collab p { color: #4b587a; font-size: 15px; line-height: 1.55; margin-bottom: 12px; }
+.hm-collab__list li { position: relative; padding-left: 30px; margin-bottom: 8px; color: #2b3552; font-size: 15px; line-height: 1.5; }
+.hm-collab__list li::before {
+  content: ""; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%;
+  background: #f0a02a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+.hm-collab__btn {
+  margin-top: auto; align-self: stretch; text-align: center; padding: 13px 20px; border-radius: 8px;
+  background: #1c50c8; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
+  box-shadow: 0 6px 16px rgba(28, 80, 200, 0.28); transition: background .18s ease;
+}
+.hm-collab__list { margin-bottom: 16px; }
+.hm-collab__btn:hover { background: #143a97; }
+@media (max-width: 860px) { .hm-collab-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .hm-collab { flex-direction: column; gap: 12px; padding: 22px 18px; }
+  .hm-collab__ic, .hm-collab__ic svg { width: 64px; height: 64px; }
+}
+
+/* ---- 8. Liên hệ tư vấn (gộp Đặt lịch + Liên hệ) ---- */
+.hm-contact {
+  position: relative; overflow: hidden; padding: 80px 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(80, 140, 255, 0.35), transparent 50%),
+    linear-gradient(160deg, #0c2a78 0%, #0a2266 55%, #081a52 100%);
+}
+.hm-contact::before {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 140px; pointer-events: none; opacity: .15;
+  background: repeating-radial-gradient(circle at 50% 130%, transparent 0 14px, rgba(255,255,255,0.5) 14px 15px);
+}
+.hm-contact__grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hm-contact__title { font-size: clamp(34px, 5vw, 58px); color: #fff; line-height: 1.1; margin: 18px 0 16px; }
+.hm-contact__title span { color: #f2c865; }
+.hm-contact__desc { color: rgba(255, 255, 255, 0.88); font-size: 18px; line-height: 1.55; margin-bottom: 20px; }
+.hm-contact__checks li { position: relative; padding-left: 44px; margin-bottom: 14px; color: #fff; font-size: 17px; line-height: 30px; }
+.hm-contact__checks li::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2313295b' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 16px no-repeat,
+    linear-gradient(135deg, #f6d98a, #e0b04a);
+}
+.hm-contact__channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 26px 0 22px; }
+.hm-contact__channels a {
+  display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 12px;
+  background: #fff; border-radius: 12px; color: #13295b; font-weight: 800; font-size: 17px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); transition: transform .18s ease;
+}
+.hm-contact__channels a:hover { transform: translateY(-3px); }
+.hm-contact__channels svg { width: 36px; height: 36px; flex-shrink: 0; }
+.hm-contact__hours {
+  display: flex; align-items: center; gap: 12px; padding-top: 18px;
+  border-top: 1px solid rgba(232, 194, 106, 0.45); color: rgba(255, 255, 255, 0.9); font-size: 16px;
+}
+.hm-contact__hours svg { width: 28px; height: 28px; color: #f2c865; flex-shrink: 0; }
+.hm-contact__map {
+  background: #fff; border: 3px solid #e8c26a; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column;
+}
+.hm-contact__map iframe { width: 100%; height: 420px; border: 0; display: block; }
+.hm-contact__addr {
+  display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 18px;
+  color: #13295b; font-weight: 600; font-size: 16px; text-align: center;
+}
+.hm-contact__addr svg { width: 26px; height: 26px; flex-shrink: 0; }
+.hm-contact__addr:hover span { text-decoration: underline; }
+@media (max-width: 860px) {
+  .hm-contact { padding: 56px 0; }
+  .hm-contact__grid { grid-template-columns: 1fr; gap: 32px; }
+  .hm-contact__map iframe { height: 300px; }
+}
+@media (max-width: 560px) {
+  .hm-contact__channels { grid-template-columns: 1fr; }
+  .hm-contact__desc { font-size: 16px; }
+  .hm-contact__checks li { font-size: 15.5px; }
 }
