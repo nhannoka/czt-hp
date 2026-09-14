@@ -454,13 +454,13 @@ p { color: var(--color-text-light); }
 .nk-calc__placeholder strong { color: var(--color-navy); }
 .nk-calc__result-label { font-size: 14.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
 .nk-calc__row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 15.5px; color: var(--color-text); }
-.nk-calc__row strong { font-family: var(--font-display); color: var(--color-navy); }
+.nk-calc__row strong { font-family: var(--font-display); color: var(--color-navy); white-space: nowrap; flex-shrink: 0; margin-left: 12px; }
 .nk-calc__total {
   border-top: 1px dashed rgba(120,80,220,0.3); margin-top: 12px; padding-top: 16px;
 }
 .nk-calc__total-label { display: block; font-weight: 700; color: var(--color-navy); font-size: 15px; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 6px; }
 .nk-calc__total-value { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.nk-calc__total strong { font-family: var(--font-display); color: var(--color-primary); font-size: 42px; line-height: 1.1; }
+.nk-calc__total strong { font-family: var(--font-display); color: var(--color-primary); font-size: clamp(24px, 6vw, 34px); line-height: 1.1; white-space: nowrap; }
 .nk-calc__bag { font-size: 48px; flex-shrink: 0; filter: drop-shadow(0 6px 12px rgba(120,80,220,0.22)); }
 .nk-calc__cta {
   margin-top: 20px; display: flex; align-items: center; gap: 20px;

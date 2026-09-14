@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nenkin1 = Math.round(total * 0.7958);
       const nenkin2 = total - nenkin1;
 
-      const fmt = (n) => n.toLocaleString('ja-JP') + ' 円';
+      const fmt = (n) => n.toLocaleString('ja-JP') + '\u00A0円';
       document.getElementById('nkOut1').textContent = fmt(nenkin1);
       document.getElementById('nkOut2').textContent = fmt(nenkin2);
       document.getElementById('nkOut3').textContent = fmt(total);
