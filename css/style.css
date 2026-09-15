@@ -2123,8 +2123,10 @@ body.is-modal-open { overflow: hidden; }
 .vs-slide.is-empty { min-height: 200px; }
 .vs-carousel__arrow {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 48px; height: 48px; border-radius: 50%;
-  background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; font-size: 30px; line-height: 1; box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  display: flex; align-items: center; justify-content: center; padding: 0;
 }
+.vs-carousel__arrow svg { width: 46%; height: 46%; display: block; }
 .vs-carousel--reviews .vs-carousel__arrow { background: #fff; border: 2px solid #13295b; }
 .vs-carousel__arrow--prev { left: -22px; }
 .vs-carousel__arrow--next { right: -22px; }
