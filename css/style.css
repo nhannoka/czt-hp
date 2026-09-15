@@ -2000,3 +2000,191 @@ body.is-modal-open { overflow: hidden; }
   .hm-contact__desc { font-size: 16px; }
   .hm-contact__checks li { font-size: 15.5px; }
 }
+
+/* ============================================================
+   TRANG VISA (body.visa-page) — tiền tố vs-, dùng lại heading hm- của trang chủ
+   ============================================================ */
+.visa-page::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: url('../assets/docs/home/bg-desktop.png') center top / cover no-repeat;
+}
+@media (max-width: 860px) { .visa-page::before { background-image: url('../assets/docs/home/bg-mobile.png'); } }
+.visa-page .hm-head__sub em { color: #b8862a; font-size: 15px; }
+
+/* ---- Banner: ảnh không có chữ, chữ dựng bằng HTML trên vùng xanh (PC: 0–51% ngang) ---- */
+.vs-banner { padding: 24px 0 8px; }
+.vs-banner__wrap { position: relative; container-type: inline-size; }
+.vs-banner__img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.vs-banner__content {
+  position: absolute; left: 6%; top: 50%; transform: translateY(-50%); width: 44%;
+  color: #fff; font-size: 1cqw;
+}
+.vs-banner__pill {
+  display: inline-block; padding: 0.55em 1.6em; border: 1.5px solid #e0b04a; border-radius: 999px;
+  color: #f2c865; font-size: 1.15em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.vs-banner__title {
+  font-family: var(--font-body); font-weight: 800; color: #fff; text-transform: uppercase;
+  font-size: 4.6em; line-height: 1.12; letter-spacing: -0.01em; margin: 0.35em 0 0.1em;
+}
+.vs-banner__two {
+  /* line-height >= 1 + padding: background-clip:text chỉ tô trong khung, khung thấp hơn chữ sẽ cắt mất nét */
+  display: inline-block; font-size: 1.9em; line-height: 1.15; padding: 0.05em 0.08em; margin: -0.35em 0 -0.3em 0.02em; vertical-align: -0.1em;
+  background: linear-gradient(180deg, #ffe39a 0%, #e0a82e 55%, #b8791c 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0.08em 0.12em rgba(0,0,0,0.35));
+}
+.vs-banner__jp { color: #f2c865; font-size: 2.2em; letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.6em; margin: 0 0 0.6em; }
+.vs-banner__jp span { display: inline-block; width: 3em; height: 1.5px; background: #e0b04a; }
+.vs-banner__points { color: rgba(255,255,255,0.95); font-size: 1.55em; line-height: 1.45; margin: 0 0 1em; }
+.vs-dot { color: #e0b04a; margin: 0 0.5em; }
+.vs-banner__cta {
+  display: inline-flex; align-items: center; gap: 0.7em; padding: 0.55em 1.8em 0.55em 0.6em; border-radius: 999px;
+  background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; font-weight: 800; text-transform: uppercase;
+  font-size: 1.45em; box-shadow: 0 0.5em 1.2em rgba(227,169,58,0.35); transition: transform .18s ease;
+}
+.vs-banner__cta:hover { transform: translateY(-2px); }
+.vs-banner__cta-ic { width: 2.2em; height: 2.2em; border-radius: 50%; background: #fff; color: #d19a2c; display: flex; align-items: center; justify-content: center; }
+.vs-banner__cta-ic svg { width: 1.3em; height: 1.3em; }
+.vs-banner__trust { display: flex; align-items: center; gap: 0.6em; margin-top: 1.1em; font-size: 1.2em; color: rgba(255,255,255,0.9); }
+.vs-banner__trust svg { width: 1.6em; height: 1.6em; flex-shrink: 0; }
+.vs-banner__trust strong { color: #f2c865; font-size: 1.35em; }
+
+/* ---- Đây có phải là bạn ---- */
+.vs-pain { max-width: 1080px; margin: 0 auto; }
+.vs-pain__quote {
+  position: relative; display: flex; align-items: center; gap: 30px; padding: 22px 36px; margin-bottom: 20px;
+  border-radius: var(--radius-md); border: 1.5px solid #e0b04a;
+  background: linear-gradient(120deg, #0f2a6b, #1c3f9e); box-shadow: 0 12px 30px rgba(15,42,107,0.22);
+}
+.vs-pain__avatar { flex-shrink: 0; width: 130px; height: 130px; border-radius: 50%; border: 4px solid #fff; overflow: hidden; background: #dbe7ff; }
+.vs-pain__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.vs-pain__quote p { color: #fff; font-family: var(--font-display); font-style: italic; font-size: clamp(20px, 2.6vw, 32px); line-height: 1.35; }
+.vs-pain__mark { color: #e0b04a; font-size: 1.8em; line-height: 0; vertical-align: -0.35em; margin-right: 10px; font-style: normal; }
+.vs-pain__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.vs-pain__col { background: #fff; border-radius: var(--radius-md); border: 1.5px solid #e8c26a; overflow: hidden; box-shadow: 0 10px 26px rgba(19,41,91,0.07); }
+.vs-pain__col h3 { display: flex; align-items: center; gap: 14px; padding: 14px 24px; font-size: 26px; }
+.vs-pain__col--yes h3 { background: #13295b; color: #fff; }
+.vs-pain__col--no h3 { background: #fdecec; color: #13295b; }
+.vs-pain__badge { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+.vs-pain__badge svg { width: 18px; height: 18px; }
+.vs-pain__col--yes .vs-pain__badge { background: #e0b04a; }
+.vs-pain__col--no .vs-pain__badge { background: #e5484d; }
+.vs-pain__col ul { padding: 8px 24px 14px; }
+.vs-pain__col li { display: flex; align-items: center; gap: 16px; padding: 12px 0; font-size: 18px; font-weight: 600; color: #13295b; }
+.vs-pain__col li + li { border-top: 1px solid #eef1f7; }
+.vs-pain__i { flex-shrink: 0; width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+.vs-pain__i svg { width: 17px; height: 17px; }
+.vs-pain__col--yes .vs-pain__i { background: #34c77b; color: #fff; }
+.vs-pain__col--no .vs-pain__i { background: #fde2e2; color: #e5484d; }
+
+/* ---- CZT hỗ trợ Gino2 ---- */
+.vs-support { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.vs-support__card { padding: 24px 26px; border-radius: var(--radius-md); border: 1.5px solid #e0b04a; background: rgba(20, 50, 130, 0.45); }
+.vs-support__top { display: flex; align-items: center; gap: 18px; margin-bottom: 14px; }
+.vs-support__ic { flex-shrink: 0; width: 60px; height: 60px; border-radius: 12px; background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; display: flex; align-items: center; justify-content: center; }
+.vs-support__ic svg { width: 32px; height: 32px; }
+.vs-support__card h3 { color: #f2c865; font-size: 24px; line-height: 1.3; }
+.vs-support__card p { color: rgba(255,255,255,0.9); font-size: 17px; line-height: 1.55; }
+.vs-worry {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(224,176,74,0.5);
+}
+.vs-worry__text strong { display: flex; align-items: center; gap: 10px; color: #fff; font-family: var(--font-display); font-size: 24px; }
+.vs-worry__text strong svg { width: 26px; height: 26px; color: #f2c865; }
+.vs-worry__text span { color: rgba(255,255,255,0.85); font-size: 15px; }
+.vs-worry__btn { padding: 14px 30px; border-radius: 10px; background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; font-weight: 800; font-size: 16px; }
+
+/* ---- Ngành nghề ---- */
+.vs-ind { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.vs-ind__card { background: #fff; border: 1.5px solid #e8c26a; border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 26px rgba(19,41,91,0.07); }
+.vs-ind__top { background: #13295b; padding: 26px 0; display: flex; justify-content: center; }
+.vs-ind__ic { width: 96px; height: 96px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #f2c865; display: flex; align-items: center; justify-content: center; }
+.vs-ind__ic svg { width: 62px; height: 62px; }
+.vs-ind__body { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 18px 16px 18px; }
+.vs-ind__body h3 { font-size: 28px; color: #13295b; line-height: 1.15; min-height: 2.3em; display: flex; align-items: center; }
+.vs-ind__body p { color: #4b587a; font-size: 15px; margin: 6px 0 16px; flex: 1; }
+.vs-ind__btn { align-self: stretch; padding: 11px 0; border-radius: 8px; background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; font-weight: 800; }
+.vs-ind__other { display: flex; align-items: center; gap: 22px; margin-top: 20px; padding: 18px 28px; border-radius: var(--radius-md); background: #13295b; border: 1.5px solid #e0b04a; }
+.vs-ind__other-ic { flex-shrink: 0; width: 52px; height: 52px; color: #f2c865; padding-right: 22px; border-right: 1px solid rgba(224,176,74,0.6); box-sizing: content-box; }
+.vs-ind__other-ic svg { width: 52px; height: 52px; }
+.vs-ind__other strong { flex-shrink: 0; color: #f2c865; font-family: var(--font-display); font-size: 30px; }
+.vs-ind__other p { color: rgba(255,255,255,0.9); font-size: 16px; }
+
+/* ---- Carousel ảnh (kết quả / đánh giá) ---- */
+.vs-panel { background: rgba(255, 249, 235, 0.85); border: 1.5px solid #e8c26a; border-radius: var(--radius-lg); padding: 36px 30px 26px; }
+.vs-carousel { position: relative; }
+.vs-carousel__track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px; }
+.vs-carousel__track::-webkit-scrollbar { display: none; }
+.vs-slide { flex: 0 0 calc((100% - 40px) / 3); scroll-snap-align: start; margin: 0; background: #fff; border: 1.5px solid #e8c26a; border-radius: var(--radius-md); padding: 12px; }
+.vs-slide img { width: 100%; height: 420px; object-fit: contain; border-radius: 10px; display: block; cursor: zoom-in; }
+.vs-carousel--reviews .vs-slide { flex-basis: calc((100% - 20px) / 2); border: 2px solid #13295b; }
+.vs-carousel--reviews .vs-slide img { height: 340px; }
+.vs-slide.is-empty { min-height: 200px; }
+.vs-carousel__arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, #f8dc8c, #e3a93a); color: #13295b; font-size: 30px; line-height: 1; box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+.vs-carousel--reviews .vs-carousel__arrow { background: #fff; border: 2px solid #13295b; }
+.vs-carousel__arrow--prev { left: -22px; }
+.vs-carousel__arrow--next { right: -22px; }
+.vs-carousel__dots { display: flex; justify-content: center; gap: 12px; margin-top: 18px; }
+.vs-carousel__dots span { width: 14px; height: 14px; border-radius: 50%; background: #c9ceda; }
+.vs-carousel__dots span.is-active { background: #e0b04a; }
+.vs-carousel--reviews + .vs-carousel__dots span.is-active { background: #13295b; }
+.vs-carousel__note { text-align: center; color: #4b587a; margin-top: 12px; font-size: 15px; }
+
+/* ---- CTA cuối ---- */
+.vs-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 40px; padding: 30px 40px;
+  border-radius: var(--radius-md); background: linear-gradient(120deg, #0f2a6b, #1c3f9e);
+}
+.vs-cta h2 { color: #fff; font-size: clamp(24px, 3vw, 36px); margin-bottom: 8px; }
+.vs-cta p { color: rgba(255,255,255,0.85); font-size: 16px; max-width: 560px; }
+.vs-cta__actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; min-width: 290px; }
+.vs-cta__btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 20px; border-radius: 10px; background: #fff; color: #13295b; font-weight: 800; font-size: 17px; }
+.vs-cta__btn svg { width: 24px; height: 24px; }
+.vs-cta__btn--gold { background: linear-gradient(135deg, #f8dc8c, #e3a93a); }
+
+@media (max-width: 1024px) {
+  .vs-ind { grid-template-columns: 1fr 1fr; }
+  .vs-slide { flex-basis: calc((100% - 20px) / 2); }
+}
+@media (max-width: 860px) {
+  /* ảnh mobile: vùng xanh trống 0–42% chiều cao -> chữ căn giữa ở phía trên */
+  /* chữ phải dừng trước ~42% chiều cao ảnh (nơi mây/thẻ cư trú bắt đầu) */
+  .vs-banner__content { left: 5%; right: 5%; width: auto; top: 8%; transform: none; text-align: center; font-size: 1.62cqw; }
+  .vs-banner__pill { font-size: 1.75em; padding: 0.45em 1.4em; }
+  .vs-banner__title { font-size: 5.6em; margin: 0.3em 0 0.05em; }
+  .vs-banner__two { font-size: 1.45em; }
+  .vs-banner__jp { justify-content: center; font-size: 2.5em; margin-bottom: 0.45em; }
+  .vs-banner__jp span { display: none; }
+  .vs-banner__points { font-size: 2.2em; margin-bottom: 0.8em; }
+  .vs-banner__cta { font-size: 2.2em; white-space: nowrap; padding: 0.45em 1.4em 0.45em 0.5em; }
+  .vs-banner__trust { display: block; font-size: 2.15em; margin: 0.9em auto 0; max-width: 72%; }
+  .vs-banner__trust svg { display: none; }
+  .vs-pain__quote { flex-direction: column; text-align: center; padding: 22px; gap: 14px; }
+  .vs-pain__avatar { width: 96px; height: 96px; }
+  .vs-pain__cols, .vs-support { grid-template-columns: 1fr; }
+  .vs-worry { flex-direction: column; text-align: center; }
+  .vs-worry__text strong { justify-content: center; }
+  .vs-ind__other { flex-wrap: wrap; }
+  .vs-ind__other-ic { border-right: 0; padding-right: 0; }
+  .vs-slide, .vs-carousel--reviews .vs-slide { flex-basis: 100%; }
+  .vs-carousel__arrow { width: 38px; height: 38px; font-size: 24px; }
+  .vs-carousel__arrow--prev { left: -8px; }
+  .vs-carousel__arrow--next { right: -8px; }
+  .vs-panel { padding: 26px 16px 20px; }
+  .vs-cta { flex-direction: column; text-align: center; padding: 26px 20px; }
+  .vs-cta__actions { min-width: 0; width: 100%; }
+}
+@media (max-width: 560px) {
+  .vs-ind { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .vs-ind__ic { width: 70px; height: 70px; }
+  .vs-ind__ic svg { width: 44px; height: 44px; }
+  .vs-ind__body h3 { font-size: 20px; }
+  .vs-ind__body p { font-size: 13px; }
+  .vs-ind__btn { font-size: 13px; padding: 9px 0; }
+  .vs-pain__col li { font-size: 16px; }
+  .vs-slide img { height: 380px; }
+}
