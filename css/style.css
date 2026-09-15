@@ -2030,9 +2030,12 @@ body.is-modal-open { overflow: hidden; }
 .vs-banner__two {
   /* line-height >= 1 + padding: background-clip:text chỉ tô trong khung, khung thấp hơn chữ sẽ cắt mất nét */
   display: inline-block; font-size: 1.9em; line-height: 1.15; padding: 0.05em 0.08em; margin: -0.35em 0 -0.3em 0.02em; vertical-align: -0.1em;
-  background: linear-gradient(180deg, #ffe39a 0%, #e0a82e 55%, #b8791c 100%);
+  position: relative;
+  /* vàng cam trơn: sáng dịu ở trên, đậm dần xuống dưới, không sọc; viền mảnh + quầng sáng mềm */
+  background: linear-gradient(180deg, #ffd68c 0%, #f7b650 38%, #efa33c 70%, #e3922e 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 0.08em 0.12em rgba(0,0,0,0.35));
+  -webkit-text-stroke: 0.01em rgba(255, 226, 160, 0.7);
+  filter: drop-shadow(0 0 0.14em rgba(255, 176, 70, 0.55)) drop-shadow(0 0 0.04em rgba(255, 210, 130, 0.6));
 }
 .vs-banner__jp { color: #f2c865; font-size: 2.2em; letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.6em; margin: 0 0 0.6em; }
 .vs-banner__jp span { display: inline-block; width: 3em; height: 1.5px; background: #e0b04a; }
