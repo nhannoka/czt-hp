@@ -5,172 +5,278 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>[Nội bộ] Tạo hồ sơ Nenkin - CZT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-  body { background: var(--color-bg-gray); }
-  .tool-wrap { max-width: 880px; margin: 0 auto; padding: 40px 24px 90px; }
-  .tool-header { text-align: center; margin-bottom: 32px; }
-  .tool-header .tag { background: rgba(200,16,46,0.1); color: #c8102e; }
-  .tool-card { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 32px; margin-bottom: 24px; }
-  .tool-card h3 { margin-bottom: 4px; }
-  .tool-card > p.hint { margin-bottom: 20px; font-size: 13.5px; }
-  .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
-  .f-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
-  .f-full { grid-column: 1 / -1; }
-  label { display: block; font-size: 13.5px; font-weight: 600; color: var(--color-navy); margin-bottom: 6px; }
-  label.opt::after { content: " (tuỳ chọn)"; font-weight: 400; color: var(--color-text-light); }
-  input, select { width: 100%; padding: 10px 12px; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-size: 14px; font-family: inherit; margin-bottom: 14px; }
-  input:focus, select:focus { outline: none; border-color: var(--color-primary); }
-  .history-row { display: grid; grid-template-columns: 1.4fr 1.6fr 1fr 1fr; gap: 12px; align-items: end; margin-bottom: 6px; }
-  .history-row label { font-size: 12px; }
-  #submitBtn { width: 100%; padding: 16px; font-size: 16px; }
-  #resultNote { margin-top: 18px; padding: 14px 16px; border-radius: var(--radius-sm); font-size: 14px; display: none; }
-  #resultNote.success { display: block; background: #e9f8ee; color: #1b7a3d; border: 1px solid #b9e8c6; }
-  #resultNote.error { display: block; background: #fdeceb; color: #b3271f; border: 1px solid #f7c7c3; }
-  .disclaimer { font-size: 13px; color: var(--color-text-light); background: #fff8e6; border: 1px solid #f0dca0; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 24px; }
-  .back-link { display: inline-block; margin-bottom: 20px; font-size: 14px; color: var(--color-primary); font-weight: 600; }
+  body { background: linear-gradient(180deg, #eef3fc 0%, #f6f8fc 320px); }
+  .tool { max-width: 1180px; margin: 0 auto; padding: 28px 28px 120px; }
+  .tool__back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-primary); margin-bottom: 18px; }
+  .tool__back:hover { text-decoration: underline; }
+
+  .tool__hero {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    background: linear-gradient(120deg, #0f2a6b, #1c50c8); color: #fff;
+    border-radius: var(--radius-lg); padding: 28px 32px; margin-bottom: 20px; box-shadow: var(--shadow-md);
+  }
+  .tool__badge { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 999px; margin-bottom: 10px; }
+  .tool__hero h1 { color: #fff; font-size: clamp(22px, 3vw, 30px); margin-bottom: 6px; }
+  .tool__hero p { color: rgba(255,255,255,0.85); font-size: 14.5px; max-width: 640px; }
+  .tool__files { display: flex; gap: 10px; flex-wrap: wrap; }
+  .tool__file { background: #fff; color: var(--color-navy); border-radius: 12px; padding: 10px 14px; font-size: 13px; line-height: 1.35; min-width: 160px; }
+  .tool__file strong { display: block; font-size: 15px; color: var(--color-primary); }
+
+  .notice { display: flex; gap: 12px; font-size: 13.5px; line-height: 1.6; color: #6b4e00; background: #fff8e1;
+    border: 1px solid #f0d58c; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 20px; }
+  .notice strong { color: #4a3500; }
+
+  .card { background: #fff; border: 1px solid #e3e8f2; border-radius: var(--radius-md); box-shadow: 0 6px 20px rgba(19,41,91,0.05); padding: 26px 28px 12px; margin-bottom: 18px; }
+  .card__head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .card__num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 10px; background: #e8efff; color: var(--color-primary);
+    font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .card__head h2 { font-family: var(--font-body); font-size: 18px; font-weight: 800; color: var(--color-navy); }
+  .card__hint { font-size: 13.5px; color: var(--color-text-light); margin: 0 0 16px 44px; }
+
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 20px; }
+  .span-2 { grid-column: span 2; } .span-3 { grid-column: span 3; } .span-4 { grid-column: 1 / -1; }
+
+  .field { margin-bottom: 14px; min-width: 0; }
+  .field label { display: block; font-size: 13px; font-weight: 700; color: var(--color-navy); margin-bottom: 6px; }
+  .field label .req { color: #d92d20; margin-left: 2px; }
+  .field label .opt { font-weight: 500; color: var(--color-text-light); }
+  .field input, .field select {
+    width: 100%; height: 44px; padding: 0 13px; border: 1.5px solid #d5dce8; border-radius: 10px; background: #fbfcfe;
+    font-size: 14.5px; font-family: inherit; color: var(--color-text); transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .field input:focus { outline: none; border-color: var(--color-primary); background: #fff; box-shadow: 0 0 0 4px rgba(28,80,200,0.12); }
+  .field input::placeholder { color: #a6afc0; }
+  .field__help { display: block; font-size: 12px; color: var(--color-text-light); margin-top: 5px; }
+  .field__err { display: block; font-size: 12.5px; color: #d92d20; margin-top: 5px; font-weight: 600; min-height: 0; }
+  .field__err:empty { display: none; }
+  .field.is-invalid input { border-color: #d92d20; background: #fff6f5; }
+  .field.is-invalid input:focus { box-shadow: 0 0 0 4px rgba(217,45,32,0.12); }
+  .field.is-invalid .field__help { display: none; }
+
+  .actionbar {
+    position: sticky; bottom: 0; z-index: 5; margin: 24px -28px 0; padding: 14px 28px;
+    background: rgba(246,248,252,0.92); backdrop-filter: blur(8px); border-top: 1px solid #e3e8f2;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  #submitBtn { flex: 0 0 auto; padding: 14px 28px; font-size: 15.5px; font-weight: 700; border-radius: 12px; }
+  #submitBtn:disabled { opacity: 0.7; cursor: wait; }
+  .actionbar__note { flex: 1 1 320px; font-size: 13px; color: var(--color-text-light); }
+  .result { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 12px; font-size: 14px; line-height: 1.55; }
+  .result--success { display: block; background: #e9f8ee; color: #1b7a3d; border: 1px solid #b9e8c6; }
+  .result--error { display: block; background: #fdeceb; color: #b3271f; border: 1px solid #f7c7c3; }
+
+  @media (max-width: 1024px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .span-3, .span-4 { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    .tool { padding: 18px 14px 110px; }
+    .tool__hero { padding: 22px 20px; }
+    .tool__files { width: 100%; }
+    .tool__file { flex: 1 1 0; min-width: 0; }
+    .card { padding: 20px 16px 6px; }
+    .card__hint { margin-left: 0; }
+    .grid { grid-template-columns: 1fr; }
+    .span-2 { grid-column: 1 / -1; }
+    .actionbar { margin: 20px -14px 0; padding: 12px 14px; }
+    #submitBtn { width: 100%; }
+  }
 </style>
 </head>
 <body>
-<div class="tool-wrap">
-  <a href="../index.html" class="back-link">&larr; Về trang chủ</a>
+<div class="tool">
+  <a href="../index.html" class="tool__back">&larr; Về trang chủ</a>
 
-  <div class="tool-header">
-    <span class="tag">Nội bộ CZT</span>
-    <h2>Tạo hồ sơ hoàn thuế Nenkin</h2>
-    <p>Nhập thông tin khách hàng, hệ thống tự điền vào 2 mẫu đơn (L1 - Đơn xin hoàn Nenkin, L2 - Đơn khai thuế) và xuất file để tải về.</p>
+  <header class="tool__hero">
+    <div>
+      <span class="tool__badge">Nội bộ CZT</span>
+      <h1>Tạo hồ sơ hoàn thuế Nenkin</h1>
+      <p>Nhập thông tin khách hàng, hệ thống tự điền vào đúng vị trí trên 2 mẫu đơn và xuất file để tải về.</p>
+    </div>
+    <div class="tool__files">
+      <div class="tool__file"><strong>L1 · .xlsx</strong>Đơn xin hoàn Nenkin</div>
+      <div class="tool__file"><strong>L2 · .pdf</strong>Tờ khai thuế (3 trang)</div>
+    </div>
+  </header>
+
+  <div class="notice">
+    <span aria-hidden="true">⚠️</span>
+    <div><strong>Bắt buộc kiểm tra lại file sau khi xuất</strong> trước khi nộp cho cơ quan Nhật Bản, đặc biệt: SWIFT/BIC, Số lương hưu cơ bản, Phiên âm Katakana và các ô số tiền. Toàn bộ xử lý chạy ngay trên trình duyệt, không gửi dữ liệu khách hàng lên máy chủ nào.</div>
   </div>
 
-  <div class="disclaimer">
-    ⚠️ <strong>Lưu ý bắt buộc trước khi nộp:</strong> Công cụ này tự động điền vào đúng vị trí đã đo trên 2 mẫu gốc, nhưng <strong>vẫn phải mở lại file sau khi xuất để kiểm tra kỹ</strong> trước khi nộp cho cơ quan Nhật Bản — đặc biệt các trường: SWIFT/BIC, Số lương hưu cơ bản, và Lịch sử tham gia bảo hiểm. Toàn bộ xử lý chạy ngay trên trình duyệt của bạn, không gửi dữ liệu khách hàng lên bất kỳ máy chủ nào.
-  </div>
+  <form id="nenkinForm" novalidate>
 
-  <form id="nenkinForm">
-
-    <div class="tool-card">
-      <h3>1. Thông tin cá nhân</h3>
-      <p class="hint">Điền theo đúng hộ chiếu, viết hoa không dấu.</p>
-      <div class="f-grid">
-        <div>
-          <label>Họ và tên (chữ La-tinh, như hộ chiếu) *</label>
-          <input type="text" id="fullName" placeholder="NGUYEN VAN A" required>
+    <section class="card">
+      <div class="card__head"><span class="card__num">1</span><h2>Thông tin cá nhân</h2></div>
+      <p class="card__hint">Điền đúng theo hộ chiếu, tiếng Việt <strong>không dấu</strong> (hệ thống tự viết hoa).</p>
+      <div class="grid">
+        <div class="field span-2">
+          <label for="fullName">Họ và tên (như hộ chiếu)<span class="req">*</span></label>
+          <input type="text" id="fullName" placeholder="NGUYEN VAN A" autocomplete="off">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Phiên âm Katakana *</label>
-          <input type="text" id="furigana" placeholder="グエン　バン　アー" required>
+        <div class="field span-2">
+          <label for="furigana">Phiên âm Katakana<span class="req">*</span></label>
+          <input type="text" id="furigana" placeholder="グエン　バン　アー" autocomplete="off" lang="ja">
+          <span class="field__help">Mỗi từ cách nhau một dấu cách, đúng thứ tự họ tên.</span>
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Ngày sinh *</label>
+        <div class="field">
+          <label for="dob">Ngày sinh<span class="req">*</span></label>
           <input type="date" id="dob" required>
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Quốc tịch *</label>
-          <input type="text" id="nationality" value="VIET NAM" required>
+        <div class="field">
+          <label for="nationality">Quốc tịch<span class="req">*</span></label>
+          <input type="text" id="nationality" value="VIET NAM">
+          <span class="field__err"></span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="tool-card">
-      <h3>2. Địa chỉ sau khi về nước</h3>
-      <div class="f-grid">
-        <div class="f-full">
-          <label>Số nhà, đường, thông tin khác *</label>
-          <input type="text" id="addrStreet" required>
+    <section class="card">
+      <div class="card__head"><span class="card__num">2</span><h2>Địa chỉ sau khi về nước</h2></div>
+      <p class="card__hint">Tiếng Việt không dấu.</p>
+      <div class="grid">
+        <div class="field span-4">
+          <label for="addrStreet">Số nhà, đường, thôn/xóm<span class="req">*</span></label>
+          <input type="text" id="addrStreet" placeholder="XOM 11, DIEN DOAI">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Thành phố / Huyện *</label>
-          <input type="text" id="addrCity" required>
+        <div class="field">
+          <label for="addrCity">Thành phố / Huyện<span class="req">*</span></label>
+          <input type="text" id="addrCity" placeholder="DIEN CHAU">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Tỉnh *</label>
-          <input type="text" id="addrProvince" required>
+        <div class="field">
+          <label for="addrProvince">Tỉnh<span class="req">*</span></label>
+          <input type="text" id="addrProvince" placeholder="NGHE AN">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label class="opt">Mã bưu điện</label>
+        <div class="field">
+          <label for="addrZip">Mã bưu điện <span class="opt">(tuỳ chọn)</span></label>
           <input type="text" id="addrZip">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Quốc gia *</label>
-          <input type="text" id="addrCountry" value="VIET NAM" required>
+        <div class="field">
+          <label for="addrCountry">Quốc gia<span class="req">*</span></label>
+          <input type="text" id="addrCountry" value="VIET NAM">
+          <span class="field__err"></span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="tool-card">
-      <h3>3. Thông tin lương hưu (Nenkin)</h3>
-      <div class="f-grid f-grid--3">
-        <div>
-          <label>Số lương hưu cơ bản (10 số) *</label>
-          <input type="text" id="pensionNo" maxlength="10" placeholder="1170883324" required>
+    <section class="card">
+      <div class="card__head"><span class="card__num">3</span><h2>Thông tin lương hưu (Nenkin)</h2></div>
+      <p class="card__hint">&nbsp;</p>
+      <div class="grid">
+        <div class="field span-2">
+          <label for="pensionNo">Số lương hưu cơ bản (10 số)<span class="req">*</span></label>
+          <input type="text" id="pensionNo" maxlength="12" inputmode="numeric" placeholder="1170883324">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Số năm tham gia bảo hiểm *</label>
+        <div class="field">
+          <label for="years">Số năm tham gia bảo hiểm<span class="req">*</span></label>
           <input type="number" id="years" min="1" step="1" value="5" required>
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Ngày điền đơn *</label>
+        <div class="field">
+          <label for="fileDate">Ngày điền đơn<span class="req">*</span></label>
           <input type="date" id="fileDate" required>
+          <span class="field__err"></span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="tool-card">
-      <h3>4. Tài khoản nhận tiền</h3>
-      <div class="f-grid">
-        <div>
-          <label>Tên ngân hàng *</label>
-          <input type="text" id="bankName" required>
+    <section class="card">
+      <div class="card__head"><span class="card__num">4</span><h2>Tài khoản nhận tiền</h2></div>
+      <p class="card__hint">Tiếng Việt không dấu, đúng như ngân hàng đăng ký.</p>
+      <div class="grid">
+        <div class="field span-2">
+          <label for="bankName">Tên ngân hàng<span class="req">*</span></label>
+          <input type="text" id="bankName" placeholder="VIETNAM JOINT STOCK COMMERCIAL BANK FOR INDUSTRY AND TRADE">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Tên chi nhánh *</label>
-          <input type="text" id="bankBranch" required>
+        <div class="field span-2">
+          <label for="bankBranch">Tên chi nhánh<span class="req">*</span></label>
+          <input type="text" id="bankBranch" placeholder="CHI NHANH BAC NGHE AN">
+          <span class="field__err"></span>
         </div>
-        <div class="f-full">
-          <label>Địa chỉ chi nhánh *</label>
-          <input type="text" id="bankAddress" required>
+        <div class="field span-4">
+          <label for="bankAddress">Địa chỉ chi nhánh (hoặc trụ sở)<span class="req">*</span></label>
+          <input type="text" id="bankAddress" placeholder="108 TRAN HUNG DAO STREET, CUA NAM WARD, HANOI CITY, VIETNAM">
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Mã SWIFT / BIC (8 hoặc 11 ký tự) *</label>
-          <input type="text" id="swift" maxlength="11" placeholder="ICBVVNVX" required>
+        <div class="field">
+          <label for="bankCity">Thành phố của ngân hàng<span class="req">*</span></label>
+          <input type="text" id="bankCity" placeholder="HA NOI">
+          <span class="field__help">Thành phố trong địa chỉ ở trên.</span>
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Số tài khoản *</label>
-          <input type="text" id="accountNo" required>
+        <div class="field">
+          <label for="bankCountry">Quốc gia của ngân hàng<span class="req">*</span></label>
+          <input type="text" id="bankCountry" value="VIET NAM">
+          <span class="field__err"></span>
         </div>
-        <div class="f-full">
-          <label>Tên chủ tài khoản (La-tinh, đúng tên đăng ký ngân hàng) *</label>
-          <input type="text" id="accountName" required>
+        <div class="field">
+          <label for="swift">Mã SWIFT / BIC<span class="req">*</span></label>
+          <input type="text" id="swift" maxlength="11" placeholder="ICBVVNVX444" autocomplete="off">
+          <span class="field__help">8 hoặc 11 ký tự.</span>
+          <span class="field__err"></span>
+        </div>
+        <div class="field">
+          <label for="accountNo">Số tài khoản<span class="req">*</span></label>
+          <input type="text" id="accountNo" inputmode="numeric" autocomplete="off">
+          <span class="field__err"></span>
+        </div>
+        <div class="field span-4">
+          <label for="accountName">Tên chủ tài khoản (như đăng ký ngân hàng)<span class="req">*</span></label>
+          <input type="text" id="accountName" placeholder="NGUYEN VAN A">
+          <span class="field__err"></span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="tool-card">
-      <h3>5. Số tiền hoàn thuế</h3>
-      <p class="hint">Số tiền lương hưu trọn gói (Nenkin) khách hàng nhận được từ Japan Pension Service.</p>
-      <div class="f-grid f-grid--3">
-        <div>
-          <label>Số tiền Nenkin nhận được (JPY) *</label>
+    <section class="card">
+      <div class="card__head"><span class="card__num">5</span><h2>Số tiền hoàn thuế</h2></div>
+      <p class="card__hint">Số tiền lương hưu trọn gói khách nhận từ Japan Pension Service.</p>
+      <div class="grid">
+        <div class="field">
+          <label for="incomeAmount">Số tiền Nenkin nhận được (JPY)<span class="req">*</span></label>
           <input type="number" id="incomeAmount" min="0" step="1" required>
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label>Thuế đã khấu trừ (JPY)</label>
+        <div class="field">
+          <label for="withholdingTax">Thuế đã khấu trừ (JPY) <span class="opt">(tuỳ chọn)</span></label>
           <input type="number" id="withholdingTax" min="0" step="1">
+          <span class="field__help">Để trống: tự tính 20.42%.</span>
+          <span class="field__err"></span>
         </div>
-        <div>
-          <label class="opt">Số hiệu bưu điện (nếu nhận qua 郵便局)</label>
-          <input type="text" id="postalSymbol" placeholder="17790-19038381">
+        <div class="field span-2">
+          <label for="postalSymbol">Số hiệu bưu điện <span class="opt">(nếu nhận qua 郵便局)</span></label>
+          <input type="text" id="postalSymbol" placeholder="17790-19038381" inputmode="numeric">
+          <span class="field__err"></span>
         </div>
       </div>
-      <p class="hint">Để trống ô "Thuế đã khấu trừ" nếu muốn hệ thống tự tính theo mức 20.42%.</p>
-    </div>
+    </section>
 
-    <button type="submit" id="submitBtn" class="btn btn--primary">Xuất file L1 (.xlsx) &amp; L2 (.pdf)</button>
-    <div id="resultNote"></div>
+    <div class="actionbar">
+      <button type="submit" id="submitBtn" class="btn btn--primary">Xuất file L1 (.xlsx) &amp; L2 (.pdf)</button>
+      <span class="actionbar__note">Tạo xong, 2 file sẽ tự tải về máy.</span>
+    </div>
+    <div id="resultNote" class="result" role="status"></div>
   </form>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-<script src="tao-ho-so.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script>
+<script src="tao-ho-so.js?v=20260922b"></script>
 </body>
 </html>
