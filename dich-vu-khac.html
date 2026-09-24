@@ -12,10 +12,10 @@
 <link rel="icon" type="image/png" href="assets/logos/czt-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Comfortaa:wght@500;600;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Comfortaa:wght@500;600;700&family=Noto+Serif+JP:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260924e">
 </head>
-<body>
+<body class="dk-page">
 
 <!-- ============ HEADER / NAV ============ -->
 <header class="header" id="header">
@@ -52,7 +52,7 @@
 <!-- Floating action buttons -->
 <div class="floating-actions">
   <a href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener" class="fab fab--zalo" title="Chat Zalo"><i data-icon="zalo"></i></a>
-  <a href="https://m.me/" target="_blank" rel="noopener" class="fab fab--mess" title="Messenger"><i data-icon="messenger"></i></a>
+  <a href="https://m.me/tokuteicozaotrang" target="_blank" rel="noopener" class="fab fab--mess" title="Messenger"><i data-icon="messenger"></i></a>
   <a href="https://www.tiktok.com/@tokuteicozaotrang?_r=1&amp;_t=ZS-99YONA8zto4" target="_blank" rel="noopener" class="fab fab--tiktok" title="TikTok" aria-label="TikTok">
     <svg viewBox="0 0 448 512" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
   </a>
@@ -60,40 +60,177 @@
   <button class="fab fab--top" id="backToTop" title="Lên đầu trang"><i data-icon="up"></i></button>
 </div>
 
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
-  <div class="container page-hero__inner">
-    <div class="breadcrumb"><a href="index.html">Trang chủ</a><span>›</span>Dịch vụ khác</div>
-    <span class="tag">Dịch vụ khác</span>
-    <h1>Dịch thuật &amp; hỗ trợ thủ tục hành chính</h1>
-    <p>Ngoài Nenkin, Visa và Thuế, CZT còn đồng hành cùng bạn trong dịch thuật hồ sơ và các thủ tục hành chính tại Nhật Bản.</p>
-  </div>
-</section>
-
-<!-- ============ NỘI DUNG ============ -->
-<section class="section">
+<!-- ============ BANNER DỊCH VỤ KHÁC ============ -->
+<section class="dk-banner">
   <div class="container">
-    <div class="other-services">
-      <div class="other-services__item"><h4>Phiên dịch &amp; Dịch thuật</h4><p>Dịch thuật Nhật ↔ Việt, Anh ↔ Việt, Nhật ↔ Anh: giấy khai sinh, đăng ký kết hôn, sơ yếu lý lịch, bằng cấp, bảng điểm, chứng chỉ, hợp đồng lao động, hồ sơ visa, giấy tờ thuế &amp; hành chính.</p></div>
-      <div class="other-services__item"><h4>Gia hạn visa</h4><p>Hỗ trợ chuẩn bị hồ sơ gia hạn thời gian lưu trú đúng hạn, tránh gián đoạn.</p></div>
-      <div class="other-services__item"><h4>Đổi tư cách lưu trú</h4><p>Tư vấn chuyển đổi giữa các loại tư cách lưu trú phù hợp với tình trạng công việc.</p></div>
-      <div class="other-services__item"><h4>Bảo lãnh</h4><p>Hỗ trợ thủ tục bảo lãnh người thân sang Nhật (vợ/chồng, con cái).</p></div>
-      <div class="other-services__item"><h4>Giấy tờ thuế</h4><p>Hỗ trợ kê khai, quyết toán thuế thu nhập cá nhân tại Nhật.</p></div>
-      <div class="other-services__item"><h4>Giấy tờ hành chính</h4><p>Hỗ trợ các thủ tục hành chính khác liên quan đến cư trú, đăng ký tại Nhật.</p></div>
+    <div class="dk-banner__wrap">
+      <picture>
+        <source media="(max-width: 860px)" srcset="assets/docs/dvk/banner-mobile.jpg?v=20260924b">
+        <img class="dk-banner__img" src="assets/docs/dvk/banner-desktop.jpg?v=20260924" alt="Hộ chiếu Nhật Bản, sách hồ sơ dịch thuật và visa bên cửa sổ nhìn ra núi Phú Sĩ" width="1923" height="818">
+      </picture>
+      <div class="dk-banner__content">
+        <p class="dk-banner__brand">Cô Záo Trang<small>Support in Japan</small></p>
+        <h1 class="dk-banner__title">Dịch vụ hỗ trợ<br><span>tại Nhật Bản</span></h1>
+        <p class="dk-banner__desc">Ngoài Nenkin, Visa và Thuế, CZT còn đồng hành cùng bạn trong dịch thuật hồ sơ và các thủ tục hành chính tại Nhật Bản.</p>
+        <ul class="dk-banner__feats">
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.3-9.2-8.5C1.3 8.6 3 5 6.2 5c2 0 3.2 1.2 3.8 2.2C10.6 6.2 11.8 5 13.8 5 17 5 18.7 8.6 21.2 11.5 19 15.7 12 20 12 20z"/></svg></span>Tận tâm <br>hỗ trợ</li>
+          <li><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7.5" r="3"/><circle cx="5.5" cy="9.5" r="2.3"/><circle cx="18.5" cy="9.5" r="2.3"/><path d="M6.5 19v-1.5a5.5 5.5 0 0 1 11 0V19zM1 18.5V17a4 4 0 0 1 4.5-4 7 7 0 0 0-1.5 4.5v1zM23 18.5V17a4 4 0 0 0-4.5-4 7 7 0 0 1 1.5 4.5v1z"/></svg></span>Giải pháp <br>linh hoạt</li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>Đồng hành <br>lâu dài</li>
+        </ul>
+        <a class="dk-banner__cta" href="#lien-he">Liên hệ CZT <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <p class="dk-banner__script" aria-hidden="true">Cùng bạn<br>vững bước<br>tại Nhật Bản</p>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="section section--accent">
-  <div class="container cta-band">
-    <div class="cta-band__text">
-      <h2>Bạn cần hỗ trợ dịch thuật hoặc thủ tục khác?</h2>
-      <p>Nhắn tin cho CZT để được tư vấn miễn phí và báo giá theo từng loại hồ sơ.</p>
+<!-- ============ 4 Ô TRUY CẬP NHANH ============ -->
+<section class="dk-quick">
+  <div class="container dk-quick__list">
+    <a href="#dich-thuat" class="dk-quick__card"><span class="dk-quick__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h12v9H7l-4 3z"/><circle cx="6.5" cy="8.5" r=".6" fill="currentColor"/><circle cx="9" cy="8.5" r=".6" fill="currentColor"/><circle cx="11.5" cy="8.5" r=".6" fill="currentColor"/><path d="M17 9h4v9l-3-2.4h-7V15" stroke="#e0a93a"/></svg></span><span class="dk-quick__name">Phiên dịch<br>Dịch thuật</span><em>Xem ngay →</em></a>
+    <a href="#visa-ho-chieu" class="dk-quick__card"><span class="dk-quick__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="11" r="3.5"/><path d="M8.5 11h7M12 7.5c1.3 1 1.3 6 0 7M12 7.5c-1.3 1-1.3 6 0 7M9 18h6"/></svg></span><span class="dk-quick__name">Visa<br>Hộ chiếu</span><em>Xem ngay →</em></a>
+    <a href="#thu-tuc" class="dk-quick__card"><span class="dk-quick__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5a1.5 1.5 0 0 0-1.5 1.5v16a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7M8.5 16h4" stroke="#e0a93a"/></svg></span><span class="dk-quick__name">Thủ tục<br>hành chính</span><em>Xem ngay →</em></a>
+    <a href="#gino-nha-hang" class="dk-quick__card"><span class="dk-quick__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 14.5A4 4 0 0 1 7 6.6a5 5 0 0 1 10 0 4 4 0 0 1 .5 7.9V20h-11z"/><path d="M6.5 17h11" stroke="#e0a93a"/></svg></span><span class="dk-quick__name">Gino1-2<br>Nhà hàng</span><em>Xem ngay →</em></a>
+  </div>
+</section>
+
+<!-- ============ 01 DỊCH THUẬT & PHIÊN DỊCH ============ -->
+<section class="dk-sec" id="dich-thuat">
+  <div class="container">
+    <div class="dk-panel dk-panel--gold dk-split">
+      <span class="dk-num" aria-hidden="true">01<small>Language<br>Support</small></span>
+      <span class="dk-script dk-script--tr" aria-hidden="true">Đồng hành<br>trong từng bước<br>tại Nhật Bản</span>
+      <div class="dk-intro">
+        <span class="dk-tag">Dịch vụ hỗ trợ</span>
+        <h2 class="dk-intro__title">Dịch thuật &amp;<br>Phiên dịch</h2>
+        <span class="dk-line" aria-hidden="true"></span>
+        <p class="dk-intro__desc">Hỗ trợ kết nối ngôn ngữ Việt &ndash; Nhật trong công việc và cuộc sống.</p>
+        <ul class="dk-points">
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Chính xác, rõ ràng</b><small>Đúng thuật ngữ, đúng ngữ cảnh</small></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/></svg></span><b>Hỗ trợ tận tâm</b><small>Tư vấn theo từng trường hợp</small></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3" fill="currentColor"/></svg></span><b>Bảo mật thông tin</b><small>An toàn tuyệt đối</small></li>
+        </ul>
+      </div>
+      <div class="dk-cards dk-cards--2">
+        <div class="dk-card">
+          <span class="dk-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="3" width="14" height="14" rx="2"/><path d="M6 7h7M9.5 5.5V7M11.5 7c-.5 3-2.6 5.2-5.3 6.3M8 9.5c.9 1.6 2.3 2.9 4 3.6"/><circle cx="17.5" cy="17.5" r="4.5" fill="#f6c94f" stroke="#e0a93a"/><path d="M15.8 17.2a1.8 1.8 0 0 1 3.2-.8M19.2 17.8a1.8 1.8 0 0 1-3.2.8" stroke="#fff"/></svg></span>
+          <h3>Dịch thuật giấy tờ</h3>
+          <p class="dk-card__lang">Việt ↔ Nhật, Nhật ↔ Việt</p>
+          <span class="dk-line dk-line--s" aria-hidden="true"></span>
+          <p>Dịch các loại giấy tờ, hồ sơ cá nhân, hồ sơ hành chính và tài liệu liên quan đến công việc.</p>
+          <ul class="dk-checks"><li>Giấy tờ cá nhân</li><li>Hồ sơ hành chính</li><li>Tài liệu công việc</li><li>Các loại giấy tờ khác</li></ul>
+        </div>
+        <div class="dk-card">
+          <span class="dk-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4h12v9H6.5l-4 3z"/><circle cx="6" cy="8.5" r=".7" fill="currentColor"/><circle cx="8.5" cy="8.5" r=".7" fill="currentColor"/><circle cx="11" cy="8.5" r=".7" fill="currentColor"/><path d="M16.5 9h5v8.5l-3-2.3h-7.5V13.5" fill="#f6c94f" stroke="#e0a93a"/></svg></span>
+          <h3>Phiên dịch</h3>
+          <p class="dk-card__lang">Việt ↔ Nhật, Nhật ↔ Việt</p>
+          <span class="dk-line dk-line--s" aria-hidden="true"></span>
+          <p>Hỗ trợ phiên dịch trong công việc, trao đổi và các thủ tục tại Nhật Bản.</p>
+          <ul class="dk-checks"><li>Phiên dịch tại cơ quan hành chính</li><li>Phiên dịch trong công việc</li><li>Hỗ trợ giao tiếp khác</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="cta-band__actions">
-      <a href="index.html#contact" class="btn btn--accent btn--lg">Đăng ký tư vấn</a>
-      <a href="https://m.me/" target="_blank" rel="noopener" class="btn btn--messenger btn--lg">💬 Messenger</a>
+  </div>
+</section>
+
+<!-- ============ 02 VISA & HỘ CHIẾU ============ -->
+<section class="dk-sec" id="visa-ho-chieu">
+  <div class="container">
+    <div class="dk-panel dk-panel--blue">
+      <span class="dk-script dk-script--tl" aria-hidden="true">Đồng hành<br>trong từng bước<br>tại Nhật Bản</span>
+      <div class="dk-head">
+        <span class="dk-tag">Visa &amp; hộ chiếu</span>
+        <h2 class="dk-head__title">Hỗ trợ các thủ tục liên quan đến<br>visa và hộ chiếu</h2>
+        <span class="dk-line" aria-hidden="true"></span>
+        <p class="dk-head__sub">CZT hỗ trợ chuẩn bị giấy tờ, kiểm tra hồ sơ và hướng dẫn thủ tục phù hợp với từng trường hợp.</p>
+      </div>
+      <div class="dk-cards dk-cards--3">
+        <div class="dk-card dk-card--center"><span class="dk-card__ic dk-card__ic--round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="15" height="16" rx="2"/><path d="M6 8h9" stroke="#e0a93a" stroke-width="2.2"/><path d="M6 12h6M6 15h4"/><circle cx="18" cy="15" r="2.4" fill="#f6c94f" stroke="#e0a93a"/><path d="M14.5 21a3.5 3.5 0 0 1 7 0" stroke="#e0a93a"/></svg></span><h3>Visa bảo lãnh</h3><p>Hỗ trợ chuẩn bị giấy tờ bảo lãnh người thân.</p></div>
+        <div class="dk-card dk-card--center"><span class="dk-card__ic dk-card__ic--round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3" stroke="#e0a93a"/><circle cx="5.5" cy="9.5" r="2.3"/><circle cx="18.5" cy="9.5" r="2.3"/><path d="M7 20v-2a5 5 0 0 1 10 0v2" stroke="#e0a93a"/><path d="M1.5 19v-1a4 4 0 0 1 4-4M22.5 19v-1a4 4 0 0 0-4-4"/></svg></span><h3>Visa thăm thân</h3><p>Hỗ trợ kiểm tra và chuẩn bị hồ sơ cần thiết.</p></div>
+        <div class="dk-card dk-card--center"><span class="dk-card__ic dk-card__ic--round"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="11" r="3.8" fill="#f6c94f" stroke="#e0a93a"/><path d="M8.2 11h7.6M12 7.2c1.4 1 1.4 6.6 0 7.6M12 7.2c-1.4 1-1.4 6.6 0 7.6" stroke="#13295b"/><path d="M9 18h6"/></svg></span><h3>Gia hạn hộ chiếu</h3><p>Hỗ trợ chuẩn bị giấy tờ phục vụ thủ tục gia hạn hộ chiếu.</p></div>
+      </div>
+      <p class="dk-info"><span aria-hidden="true">i</span>Nội dung hỗ trợ tùy thuộc vào từng trường hợp cụ thể.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 THỦ TỤC HÀNH CHÍNH ============ -->
+<section class="dk-sec" id="thu-tuc">
+  <div class="container">
+    <div class="dk-panel dk-panel--cream">
+      <span class="dk-num dk-num--br" aria-hidden="true"><small>Administrative<br>Support</small>03</span>
+      <div class="dk-head">
+        <span class="dk-tag">Thủ tục hành chính tại Nhật</span>
+        <h2 class="dk-head__title">Hỗ trợ giấy tờ cần thiết trong cuộc sống tại Nhật</h2>
+        <span class="dk-line" aria-hidden="true"></span>
+        <p class="dk-head__sub">CZT hỗ trợ anh/chị chuẩn bị và thực hiện các thủ tục hành chính thường gặp.</p>
+      </div>
+      <div class="dk-admin">
+        <div class="dk-admin__side">
+          <span class="dk-script" aria-hidden="true">Đồng hành<br>trong từng bước<br>tại Nhật Bản</span>
+          <ul class="dk-points">
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Đúng quy định</b><small>Hướng dẫn chi tiết, chính xác</small></li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/></svg></span><b>Hỗ trợ tận tâm</b><small>Tư vấn theo từng trường hợp</small></li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3" fill="currentColor"/></svg></span><b>Bảo mật thông tin</b><small>An toàn tuyệt đối</small></li>
+          </ul>
+        </div>
+        <ol class="dk-steps">
+          <li><b class="dk-steps__no">01</b><div><h3>Cắt địa chỉ <span lang="ja">（転出届）</span></h3><p>Hỗ trợ chuẩn bị và hướng dẫn thủ tục cắt địa chỉ.</p></div><span class="dk-steps__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11L11 4l8 7"/><path d="M5 9.5V20h8M9 20v-5h4"/><path d="M15 16h7M19 13l3 3-3 3" stroke="#e0a93a"/></svg></span></li>
+          <li><b class="dk-steps__no">02</b><div><h3>Lấy giấy thuế <span lang="ja">（課税証明書・納税証明書）</span></h3><p>Hỗ trợ lấy giấy thuế tại Shiyakusho.</p></div><span class="dk-steps__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9L11 4l8.5 5M4 9h14M5.5 9.5v7M9 9.5v7M12.5 9.5v7M3 19.5h11"/><circle cx="18" cy="17" r="4" fill="#f6c94f" stroke="#e0a93a"/><path d="M16.5 15l1.5 2 1.5-2M18 17v2.5M16.7 18h2.6" stroke="#13295b" stroke-width="1.2"/></svg></span></li>
+          <li><b class="dk-steps__no">03</b><div><h3>Lấy giấy cư trú <span lang="ja">（住民票）</span></h3><p>Hỗ trợ lấy giấy cư trú phục vụ các thủ tục cần thiết.</p></div><span class="dk-steps__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5.5 16c.5-1.6 1.6-2.4 3-2.4s2.5.8 3 2.4"/><path d="M14 10h4.5M14 13.5h4.5" stroke="#e0a93a"/></svg></span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 TOKUTEI GINO NHÀ HÀNG ============ -->
+<section class="dk-sec" id="gino-nha-hang">
+  <div class="container">
+    <div class="dk-panel dk-panel--blue dk-gino">
+      <span class="dk-num dk-num--bl" aria-hidden="true">04<small>Study<br>Support</small></span>
+      <div class="dk-gino__text">
+        <span class="dk-tag">Hỗ trợ học tập</span>
+        <h2 class="dk-intro__title">Tokutei Gino<br>Nhà hàng</h2>
+        <p class="dk-gino__desc">Tài liệu &ndash; hướng dẫn học &ndash; hỗ trợ ôn thi Kỹ năng đặc định Gino1 &amp; Gino2 ngành Nhà hàng.</p>
+        <ul class="dk-gino__feats">
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5c3-1.3 6-1.3 9.5.5v14c-3.5-1.8-6.5-1.8-9.5-.5zM21.5 5.5c-3-1.3-6-1.3-9.5.5v14c3.5-1.8 6.5-1.8 9.5-.5z"/></svg></span><b>Tài liệu học</b><small>Cung cấp tài liệu đầy đủ, cập nhật</small></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><circle cx="9" cy="9" r="2"/><path d="M5.5 14c.6-1.4 1.8-2.2 3.5-2.2M13 8h5M13 11h3M8 20h8M12 16v4"/></svg></span><b>Hướng dẫn học</b><small>Giải thích chi tiết, dễ hiểu, thực tế</small></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5a1.5 1.5 0 0 0-1.5 1.5v16a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7M8.5 16h4"/></svg></span><b>Hỗ trợ ôn thi</b><small>Đồng hành đến khi bạn sẵn sàng</small></li>
+        </ul>
+        <div class="dk-gino__actions">
+          <a class="dk-btn" href="#lien-he">Liên hệ tư vấn ngay <span aria-hidden="true">›</span></a>
+          <p class="dk-gino__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg>Cùng bạn chinh phục<br>Kỹ năng đặc định tại Nhật Bản!</p>
+        </div>
+      </div>
+      <div class="dk-gino__visual" aria-hidden="true">
+        <span class="dk-script dk-script--tr">Đồng hành<br>trong từng bước<br>tại Nhật Bản</span>
+        <div class="dk-books">
+          <div class="dk-book dk-book--cover"><b lang="ja">特定技能<br>外食業</b><small>Tokutei Gino</small><span>🍱</span></div>
+          <div class="dk-book dk-book--side"><b lang="ja">日本語<br>飲食業の会話</b><span>👨‍🍳</span></div>
+          <div class="dk-book dk-book--spine" lang="ja">特定技能1号 対策テキスト 外食業</div>
+          <div class="dk-book dk-book--spine" lang="ja">特定技能2号 対策テキスト 外食業</div>
+          <div class="dk-book dk-book--spine" lang="ja">飲食業 実技・面接対策</div>
+        </div>
+        <span class="dk-badge"><b>Gino1<br>&amp; Gino2</b><small>Nhà hàng</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIÊN HỆ ============ -->
+<section class="dk-sec dk-sec--last" id="lien-he">
+  <div class="container">
+    <div class="dk-cta">
+      <div>
+        <h2>Bạn cần hỗ trợ dịch thuật hoặc thủ tục khác?</h2>
+        <p>Nhắn tin cho CZT để được tư vấn miễn phí và báo giá theo từng loại hồ sơ.</p>
+      </div>
+      <div class="dk-cta__actions">
+        <a class="dk-cta__btn dk-cta__btn--gold" href="https://m.me/tokuteicozaotrang" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#0a7cff" aria-hidden="true"><path d="M12 2C6.2 2 2 6.3 2 11.8c0 3.1 1.4 5.9 3.7 7.7V23l3.4-1.9c.9.3 1.9.4 2.9.4 5.8 0 10-4.3 10-9.8S17.8 2 12 2zm1 12.2l-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>Nhắn tin Messenger</a>
+        <a class="dk-cta__btn" href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#0068ff" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.9c-5.16 0-9.35 3.53-9.35 7.89 0 2.48 1.36 4.69 3.48 6.13-.13 1.03-.6 2.2-1.35 3.05-.27.3-.3.79.37.72 2.02-.36 3.63-1.2 4.7-1.9.68.12 1.39.19 2.15.19 5.16 0 9.35-3.53 9.35-7.89S17.16 2.9 12 2.9zM8.75 7.35h6.5v1.75l-4.05 4.8h4.05v1.75h-6.7v-1.75l4.05-4.8h-3.85z"/></svg>Chat Zalo</a>
+        <a class="dk-cta__btn" href="tel:+818050508378"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>+81 080-5050-8378</a>
+      </div>
     </div>
   </div>
 </section>

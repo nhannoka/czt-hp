@@ -2284,3 +2284,221 @@ body.is-modal-open { overflow: hidden; }
   .tx-trust li:first-child { padding-left: 6px; }
   .tx-trust li br { display: none; }
 }
+
+/* ============================================================
+   TRANG DỊCH VỤ KHÁC (body.dk-page) — banner ảnh + 4 khối dịch vụ theo mockup.
+   Class tiền tố dk- riêng cho trang này, không dùng chung với trang khác.
+   ============================================================ */
+.dk-page::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('../assets/docs/dvk/bg-desktop.jpg?v=20260924') center bottom / 100% auto no-repeat, #fdfdfe;
+}
+@media (max-width: 860px) {
+  .dk-page::before { background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('../assets/docs/dvk/bg-mobile.jpg?v=20260924') center / 100% 100% no-repeat, #fbfcfe; }
+}
+
+/* ---- Banner ---- */
+.dk-banner { padding: 26px 0 8px; }
+.dk-banner__wrap { position: relative; container-type: inline-size; }
+.dk-banner__img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+/* PC: vùng sáng bên trái ảnh (0 -> 47% bề ngang) */
+.dk-banner__content { position: absolute; left: 4.2%; top: 50%; transform: translateY(-50%); width: 44%; font-size: 1cqw; color: #13295b; }
+.dk-banner__brand { display: inline-block; font-size: 0.78em; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6b7a9c; line-height: 1.6; }
+.dk-banner__brand small { display: block; font-size: 0.85em; letter-spacing: 0.24em; }
+.dk-banner__title { font-family: var(--font-body); font-weight: 800; font-size: 4.3em; line-height: 1.08; color: #13295b; margin: 0.3em 0 0.25em; letter-spacing: -0.01em; }
+.dk-banner__title span { color: #1a56d6; }
+.dk-banner__desc { font-size: 1.12em; line-height: 1.6; color: #2b3a5c; max-width: 36em; }
+.dk-banner__feats { display: flex; list-style: none; margin: 1.3em 0 1.5em; padding: 0; }
+.dk-banner__feats li { display: flex; align-items: center; gap: 0.7em; font-size: 0.95em; font-weight: 700; line-height: 1.3; padding: 0 1.4em; }
+.dk-banner__feats li:first-child { padding-left: 0; }
+.dk-banner__feats li + li { border-left: 1px solid #c9d3e6; }
+.dk-banner__feats span { width: 2.9em; height: 2.9em; border-radius: 50%; background: #e3ecff; color: #1a56d6; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dk-banner__feats svg { width: 1.5em; height: 1.5em; }
+.dk-banner__cta { display: inline-flex; align-items: center; gap: 0.9em; padding: 0.6em 0.7em 0.6em 1.5em; border-radius: 999px; background: linear-gradient(135deg, #fbd36b, #eeab2c); color: #13295b; font-weight: 800; font-size: 1.2em; text-transform: uppercase; box-shadow: 0 0.5em 1.2em rgba(224, 169, 58, 0.35); transition: transform .18s ease; }
+.dk-banner__cta:hover { transform: translateY(-2px); }
+.dk-banner__cta span { width: 1.9em; height: 1.9em; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; }
+.dk-banner__cta svg { width: 1em; height: 1em; }
+.dk-banner__script { position: absolute; left: 72%; top: 9%; font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.6cqw; line-height: 1.05; color: #1a3fa8; transform: rotate(-12deg); text-shadow: 0 1px 8px rgba(255, 255, 255, 0.7); pointer-events: none; }
+
+/* ---- 4 ô truy cập nhanh ---- */
+.dk-quick { padding: 18px 0 8px; }
+.dk-quick__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.dk-quick__card {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px 16px; padding: 20px 22px 16px;
+  background: rgba(255, 255, 255, 0.92); border: 1.5px solid #dbe5f8; border-radius: var(--radius-md);
+  box-shadow: 0 8px 22px rgba(19, 41, 91, 0.07); transition: transform .18s ease, box-shadow .18s ease;
+}
+.dk-quick__card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(19, 41, 91, 0.12); }
+.dk-quick__ic { width: 56px; height: 56px; border-radius: 50%; background: #e3ecff; color: #13295b; display: flex; align-items: center; justify-content: center; }
+.dk-quick__ic svg { width: 30px; height: 30px; }
+.dk-quick__name { font-weight: 700; font-size: 17px; color: #13295b; line-height: 1.3; }
+.dk-quick__card em { grid-column: 1 / -1; font-style: normal; font-weight: 700; color: #1a56d6; font-size: 14.5px; text-align: center; }
+
+/* ---- Khung chung ---- */
+.dk-sec { padding: 22px 0; scroll-margin-top: 70px; }
+.dk-sec--last { padding-bottom: 60px; }
+.dk-panel { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: 38px 38px 30px; box-shadow: 0 10px 30px rgba(19, 41, 91, 0.06); }
+.dk-panel > * { position: relative; }
+.dk-panel--gold { background: linear-gradient(135deg, #fff6dc, #fffaec 60%, #fff3d2); border: 1.5px solid #f3dd9f; }
+.dk-panel--blue { background: linear-gradient(160deg, rgba(234, 242, 255, 0.95), rgba(246, 250, 255, 0.95)); border: 1.5px solid #d6e2fb; }
+.dk-panel--cream { background: linear-gradient(160deg, rgba(255, 252, 244, 0.96), rgba(250, 246, 236, 0.96)); border: 1.5px solid #efe3c4; }
+.dk-tag { display: inline-block; padding: 6px 18px; border-radius: 999px; background: linear-gradient(135deg, #fbd36b, #eeab2c); color: #13295b; font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.dk-line { display: block; width: 84px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #f3c65a, #e0a93a); margin: 10px 0 12px; }
+.dk-line--s { width: 40px; height: 3px; margin: 8px 0 10px; }
+.dk-script { position: absolute; font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 22px; line-height: 1.1; color: #1a3fa8; text-align: center; transform: rotate(-10deg); pointer-events: none; }
+.dk-script--tr { top: 22px; right: 34px; }
+.dk-script--tl { top: 34px; left: 40px; }
+.dk-num { position: absolute; z-index: 0; left: 26px; bottom: 6px; display: flex; align-items: flex-end; gap: 14px; font-family: var(--font-display); font-weight: 700; font-size: 120px; line-height: 0.8; color: rgba(224, 169, 58, 0.14); pointer-events: none; }
+.dk-num small { font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.3em; line-height: 1.5; text-transform: uppercase; color: rgba(19, 41, 91, 0.22); padding-bottom: 8px; }
+.dk-num--br { left: auto; right: 30px; color: rgba(19, 41, 91, 0.07); }
+.dk-num--br small { text-align: right; }
+.dk-num--bl { color: rgba(26, 86, 214, 0.08); }
+.dk-head { text-align: center; max-width: 760px; margin: 0 auto 26px; }
+.dk-head .dk-line { margin: 10px auto 12px; }
+.dk-head__title { font-size: clamp(24px, 3vw, 36px); color: #13295b; line-height: 1.25; margin-top: 14px; }
+.dk-head__sub { color: #4b587a; font-size: 15.5px; }
+
+/* ---- Thẻ nội dung ---- */
+.dk-cards { display: grid; gap: 22px; }
+.dk-cards--2 { grid-template-columns: 1fr 1fr; }
+.dk-cards--3 { grid-template-columns: repeat(3, 1fr); }
+.dk-card { background: rgba(255, 255, 255, 0.92); border: 1.5px solid #f0dfae; border-radius: var(--radius-md); padding: 24px 24px 20px; box-shadow: 0 8px 22px rgba(19, 41, 91, 0.06); }
+.dk-panel--blue .dk-card { border-color: #d6e2fb; }
+.dk-card__ic { width: 60px; height: 60px; border-radius: 14px; background: #fdf0cc; color: #13295b; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.dk-card__ic svg { width: 36px; height: 36px; }
+.dk-card__ic--round { width: 84px; height: 84px; border-radius: 50%; background: #e3ecff; margin: 0 auto 14px; }
+.dk-card__ic--round svg { width: 46px; height: 46px; }
+.dk-card h3 { font-size: 21px; color: #13295b; }
+.dk-card__lang { font-weight: 700; color: #13295b; font-size: 14.5px; margin-top: 2px; }
+.dk-card p { color: #4b587a; font-size: 14.5px; line-height: 1.6; }
+.dk-card--center { text-align: center; }
+.dk-card--center h3 { margin-bottom: 8px; }
+.dk-checks { list-style: none; margin: 14px 0 0; padding: 14px 16px; border-radius: 12px; background: #fff8e6; display: grid; gap: 8px; }
+.dk-checks li { position: relative; padding-left: 26px; font-size: 14px; color: #13295b; }
+.dk-checks li::before { content: ""; position: absolute; left: 0; top: 2px; width: 17px; height: 17px; border-radius: 50%; background: #f0b43c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 11px no-repeat; }
+
+/* ---- 01: cột giới thiệu + 2 thẻ ---- */
+.dk-split { display: grid; grid-template-columns: 0.85fr 2fr; gap: 30px; align-items: start; }
+.dk-intro { padding-bottom: 90px; }
+.dk-intro__title { font-size: clamp(30px, 3.6vw, 44px); color: #13295b; line-height: 1.12; margin-top: 16px; }
+.dk-intro__desc { color: #2b3a5c; font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+.dk-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.dk-points li { display: grid; grid-template-columns: 34px 1fr; column-gap: 12px; align-items: center; }
+.dk-points span { grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; background: #fdf0cc; color: #b8801c; display: flex; align-items: center; justify-content: center; }
+.dk-points svg { width: 19px; height: 19px; }
+.dk-points b { color: #13295b; font-size: 15px; }
+.dk-points small { color: #6b7690; font-size: 13px; }
+.dk-split .dk-cards { margin-top: 60px; }
+
+/* ---- 02: dòng lưu ý ---- */
+.dk-info { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 20px; padding: 14px 20px; border-radius: 12px; background: rgba(214, 228, 252, 0.6); color: #2b3a5c; font-size: 14.5px; }
+.dk-info span { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #1a3fa8; color: #fff; font-weight: 800; font-family: Georgia, serif; display: flex; align-items: center; justify-content: center; }
+
+/* ---- 03: thủ tục ---- */
+.dk-admin { display: grid; grid-template-columns: 0.8fr 2fr; gap: 30px; align-items: center; }
+.dk-admin__side .dk-script { position: static; display: block; margin: 0 0 22px; text-align: left; }
+.dk-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.dk-steps li { display: flex; align-items: center; gap: 24px; padding: 18px 24px; background: rgba(255, 255, 255, 0.95); border: 1.5px solid #efe3c4; border-radius: var(--radius-md); box-shadow: 0 6px 18px rgba(19, 41, 91, 0.05); }
+.dk-steps__no { flex-shrink: 0; width: 76px; padding-right: 22px; border-right: 1px solid #e3dccb; font-family: var(--font-display); font-size: 46px; line-height: 1; color: #c9d3e6; }
+.dk-steps li > div { flex: 1; min-width: 0; }
+.dk-steps h3 { font-size: 20px; color: #13295b; }
+.dk-steps h3 span { font-size: 15px; font-weight: 600; }
+.dk-steps p { color: #4b587a; font-size: 14.5px; margin-top: 4px; }
+.dk-steps__ic { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; background: #e3ecff; color: #13295b; display: flex; align-items: center; justify-content: center; }
+.dk-steps__ic svg { width: 34px; height: 34px; }
+
+/* ---- 04: Gino nhà hàng ---- */
+.dk-gino { display: grid; grid-template-columns: 1.05fr 1fr; gap: 30px; align-items: center; }
+.dk-gino__text { padding-bottom: 50px; }
+.dk-gino__desc { color: #2b3a5c; font-size: 16px; line-height: 1.6; margin: 10px 0 18px; }
+.dk-gino__feats { list-style: none; margin: 0 0 22px; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+.dk-gino__feats li { display: grid; grid-template-columns: 40px 1fr; column-gap: 10px; padding: 0 14px; }
+.dk-gino__feats li:first-child { padding-left: 0; }
+.dk-gino__feats li + li { border-left: 1px solid #c9d3e6; }
+.dk-gino__feats span { grid-row: span 2; width: 40px; height: 40px; border-radius: 10px; background: #fdf0cc; color: #b8801c; display: flex; align-items: center; justify-content: center; }
+.dk-gino__feats svg { width: 22px; height: 22px; }
+.dk-gino__feats b { color: #13295b; font-size: 14.5px; }
+.dk-gino__feats small { color: #6b7690; font-size: 12.5px; line-height: 1.4; }
+.dk-gino__actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.dk-btn { display: inline-flex; align-items: center; gap: 14px; padding: 12px 12px 12px 26px; border-radius: 999px; background: linear-gradient(135deg, #1c3f9e, #0f2a6b); color: #fff; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(15, 42, 107, 0.25); }
+.dk-btn span { width: 28px; height: 28px; border-radius: 50%; background: #f0b43c; color: #13295b; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.dk-gino__note { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #13295b; line-height: 1.4; }
+.dk-gino__note svg { width: 30px; height: 30px; flex-shrink: 0; color: #1a3fa8; }
+.dk-gino__visual { position: relative; min-height: 340px; display: flex; align-items: flex-end; justify-content: center; }
+.dk-gino__visual .dk-script { top: -26px; right: auto; left: -10px; }
+.dk-books { position: relative; width: 100%; max-width: 420px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 0 10px; align-items: end; }
+.dk-book { border-radius: 6px; box-shadow: 0 10px 22px rgba(19, 41, 91, 0.18); }
+.dk-book--cover { grid-row: span 1; background: #fff; padding: 16px 14px 12px; text-align: center; border: 1px solid #e4e8f0; transform: rotate(-2deg); }
+.dk-book--cover b { display: block; font-size: 26px; line-height: 1.2; color: #13295b; }
+.dk-book--cover small { display: block; margin: 6px auto 8px; padding: 2px 8px; background: #13295b; color: #fff; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; width: max-content; }
+.dk-book--cover span, .dk-book--side span { font-size: 44px; line-height: 1.2; }
+.dk-book--side { background: #fdf8ec; padding: 16px 12px; text-align: center; border: 1px solid #efe3c4; }
+.dk-book--side b { display: block; font-size: 17px; color: #13295b; line-height: 1.4; margin-bottom: 8px; }
+.dk-book--spine { grid-column: 1 / -1; margin-top: 6px; padding: 9px 16px; background: #fff; border: 1px solid #e4e8f0; border-left: 8px solid #13295b; font-weight: 700; font-size: 15px; color: #13295b; }
+.dk-badge { position: absolute; right: -34px; top: 38%; width: 118px; height: 118px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #2553c9, #0f2a6b); border: 3px solid #f0b43c; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 10px 24px rgba(15, 42, 107, 0.3); }
+.dk-badge b { font-family: var(--font-display); font-size: 17px; line-height: 1.15; }
+.dk-badge small { margin-top: 4px; font-size: 12px; color: #f6c94f; font-weight: 700; }
+
+/* ---- CTA cuối ---- */
+.dk-cta { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 30px 40px; border-radius: var(--radius-lg); background: linear-gradient(120deg, #0f2a6b, #1c50c8); box-shadow: var(--shadow-md); }
+.dk-cta h2 { color: #fff; font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 8px; }
+.dk-cta p { color: rgba(255, 255, 255, 0.85); font-size: 16px; }
+.dk-cta__actions { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; min-width: 270px; }
+.dk-cta__btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 18px; border-radius: 10px; background: #fff; color: #13295b; font-weight: 800; font-size: 16px; }
+.dk-cta__btn svg { width: 22px; height: 22px; }
+.dk-cta__btn--gold { background: linear-gradient(135deg, #fbd36b, #eeab2c); }
+
+@media (max-width: 1150px) {
+  .dk-script--tr, .dk-script--tl { display: none; }
+  .dk-split, .dk-admin, .dk-gino { grid-template-columns: 1fr; }
+  .dk-intro, .dk-gino__text { padding-bottom: 0; }
+  .dk-split .dk-cards { margin-top: 0; }
+  .dk-num { display: none; }
+  .dk-admin__side { display: none; }
+  .dk-quick__card { padding: 16px; }
+}
+@media (max-width: 1024px) {
+  .dk-quick__list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .dk-banner { padding: 16px 0 4px; }
+  /* ảnh mobile đã nới khoảng trời trống phía trên (0 -> ~42%) cho phần chữ */
+  /* ảnh mobile: vùng trời phía trên (0 -> ~50% chiều cao) đã làm sáng để đặt chữ */
+  .dk-banner__content { left: 6%; right: 6%; top: 3.5%; width: auto; transform: none; font-size: 2.1cqw; }
+  .dk-banner__title { font-size: 4.9em; margin: 0.2em 0 0.2em; }
+  .dk-banner__desc { font-size: 1.6em; line-height: 1.5; }
+  .dk-banner__brand { font-size: 1.15em; }
+  .dk-banner__feats { margin: 0.9em 0 1.1em; }
+  .dk-banner__feats li { font-size: 1.25em; padding: 0 0.7em; gap: 0.45em; }
+  .dk-banner__feats span { width: 2.3em; height: 2.3em; }
+  .dk-banner__feats li br { display: none; }
+  .dk-banner__cta { font-size: 1.75em; }
+  .dk-banner__script { left: auto; right: 7%; top: 51%; font-size: 6.2cqw; }
+  .dk-panel { padding: 26px 16px 22px; }
+  .dk-cards--2, .dk-cards--3 { grid-template-columns: 1fr; }
+  .dk-steps li { gap: 14px; padding: 14px; }
+  .dk-steps__no { width: auto; padding-right: 14px; font-size: 32px; }
+  .dk-steps__ic { width: 48px; height: 48px; }
+  .dk-steps__ic svg { width: 26px; height: 26px; }
+  .dk-steps h3 { font-size: 17px; }
+  .dk-steps h3 span { display: block; font-size: 13px; }
+  .dk-gino__feats { grid-template-columns: 1fr; gap: 12px; }
+  .dk-gino__feats li, .dk-gino__feats li + li { padding: 0; border: 0; }
+  .dk-gino__visual { min-height: 0; padding-top: 10px; }
+  .dk-badge { width: 84px; height: 84px; right: -4px; top: -34px; }
+  .dk-gino__visual { margin-top: 30px; }
+  .dk-badge b { font-size: 14px; }
+  .dk-cta { flex-direction: column; text-align: center; padding: 26px 20px; }
+  .dk-cta__actions { min-width: 0; width: 100%; }
+}
+@media (max-width: 560px) {
+  .dk-quick__list { gap: 10px; }
+  .dk-quick__card { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 14px 10px; gap: 8px; }
+  .dk-quick__ic { width: 46px; height: 46px; }
+  .dk-quick__ic svg { width: 24px; height: 24px; }
+  .dk-quick__name { font-size: 15px; }
+  .dk-card { padding: 20px 16px 16px; }
+  .dk-card h3 { font-size: 19px; }
+  .dk-book--cover b { font-size: 20px; }
+  .dk-book--spine { font-size: 13px; }
+}
