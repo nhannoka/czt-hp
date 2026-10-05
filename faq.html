@@ -11,9 +11,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Comfortaa:wght@500;600;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20261005b">
 </head>
-<body>
+<body class="fq-page">
 
 <!-- ============ HEADER / NAV ============ -->
 <header class="header" id="header">
@@ -50,7 +50,7 @@
 <!-- Floating action buttons -->
 <div class="floating-actions">
   <a href="https://zalo.me/g/d9w8djm0zfuvlax0gopg" target="_blank" rel="noopener" class="fab fab--zalo" title="Chat Zalo"><i data-icon="zalo"></i></a>
-  <a href="https://m.me/" target="_blank" rel="noopener" class="fab fab--mess" title="Messenger"><i data-icon="messenger"></i></a>
+  <a href="https://m.me/tokuteicozaotrang" target="_blank" rel="noopener" class="fab fab--mess" title="Messenger"><i data-icon="messenger"></i></a>
   <a href="https://www.tiktok.com/@tokuteicozaotrang?_r=1&amp;_t=ZS-99YONA8zto4" target="_blank" rel="noopener" class="fab fab--tiktok" title="TikTok" aria-label="TikTok">
     <svg viewBox="0 0 448 512" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
   </a>
@@ -58,47 +58,114 @@
   <button class="fab fab--top" id="backToTop" title="Lên đầu trang"><i data-icon="up"></i></button>
 </div>
 
-<!-- ============ FAQ ============ -->
-<section class="section section--gray">
+<!-- ============ FAQ HERO ============ -->
+<section class="fq-hero">
   <div class="container">
-    <div class="section__head">
-      <span class="tag">❓ FAQ</span>
-      <h2>Câu hỏi thường gặp</h2>
-      <p>Giải đáp các thắc mắc thường gặp về dịch vụ của CZT. Không thấy câu trả lời? Hãy liên hệ CZT để được tư vấn miễn phí.</p>
+    <div class="fq-hero__wrap">
+      <div class="fq-hero__content">
+        <nav class="fq-crumb" aria-label="Breadcrumb"><a href="index.html" aria-label="Trang chủ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 9.500V20h13V9.5"/></svg></a><span>/</span><strong>FAQ</strong></nav>
+        <h1 class="fq-hero__title">Câu hỏi <span>thường gặp</span></h1>
+        <span class="fq-hero__line" aria-hidden="true"></span>
+        <p class="fq-hero__desc">Giải đáp nhanh những thắc mắc thường gặp về các dịch vụ của CZT. Không tìm thấy câu trả lời? Hãy liên hệ để được tư vấn miễn phí.</p>
+      </div>
+      <div class="fq-hero__bubbles" aria-hidden="true"><span class="fq-bubble fq-bubble--q">?</span><span class="fq-bubble fq-bubble--d"><i></i><i></i><i></i></span></div>
     </div>
+  </div>
+</section>
 
-    <!-- Nenkin -->
-    <h3 class="faq-cat">🟦 Nenkin</h3>
-    <div class="accordion">
-      <div class="accordion__item is-open">
-        <button class="accordion__head">Điều kiện nhận Nenkin là gì? <span>+</span></button>
-        <div class="accordion__body"><p>Bạn cần đã đóng Nenkin trên 6 tháng, đã cắt địa chỉ cư trú và xuất cảnh khỏi Nhật, đã cắt bảo hiểm/nghỉ việc, và làm thủ tục trong vòng 2 năm kể từ khi xuất cảnh. CZT sẽ kiểm tra điều kiện cụ thể miễn phí cho bạn.</p></div>
+<!-- ============ FAQ NỘI DUNG ============ -->
+<section class="fq-main">
+  <div class="container fq-layout">
+    <div class="fq-tabs" role="tablist" aria-label="Nhóm câu hỏi">
+      <button type="button" class="fq-tab fq-tab--nenkin is-active" data-fq="nenkin" role="tab" aria-selected="true"><span class="fq-tab__ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 9.2c1.6 1.4 4.6 2.1 8 2.1s6.4-.7 8-2.1V12c0 1.7-3.6 3-8 3s-8-1.3-8-3z"/><path d="M4 15.2c1.6 1.4 4.6 2.1 8 2.1s6.4-.7 8-2.1V18c0 1.7-3.6 3-8 3s-8-1.3-8-3z"/></svg></span><span class="fq-tab__txt"><strong>Nenkin</strong><small>5 câu hỏi</small></span><span class="fq-tab__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></button>
+      <button type="button" class="fq-tab fq-tab--visa" data-fq="visa" role="tab" aria-selected="false"><span class="fq-tab__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="10.5" r="3.5"/><path d="M8.5 10.5h7M12 7c1.3 1 1.3 6 0 7M12 7c-1.3 1-1.3 6 0 7M9 18h6"/></svg></span><span class="fq-tab__txt"><strong>Visa Gino2</strong><small>5 câu hỏi</small></span><span class="fq-tab__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></button>
+      <button type="button" class="fq-tab fq-tab--thue" data-fq="thue" role="tab" aria-selected="false"><span class="fq-tab__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7M8.5 16h7"/></svg></span><span class="fq-tab__txt"><strong>Thuế</strong><small>5 câu hỏi</small></span><span class="fq-tab__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></button>
+    </div>
+    <div class="fq-panels">
+      <div class="fq-panel fq-panel--nenkin" id="fq-nenkin" role="tabpanel">
+        <div class="fq-panel__head"><span class="fq-panel__ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 9.2c1.6 1.4 4.6 2.1 8 2.1s6.4-.7 8-2.1V12c0 1.7-3.6 3-8 3s-8-1.3-8-3z"/><path d="M4 15.2c1.6 1.4 4.6 2.1 8 2.1s6.4-.7 8-2.1V18c0 1.7-3.6 3-8 3s-8-1.3-8-3z"/></svg></span><h2>Nenkin</h2><span class="fq-panel__count">5 câu hỏi</span></div>
+        <div class="fq-item is-open">
+          <button type="button" class="fq-item__q" aria-expanded="true"><span class="fq-item__no">01</span><span class="fq-item__txt">Điều kiện để nhận Nenkin là gì?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Bạn cần đáp ứng các điều kiện cơ bản sau: <strong>đã tham gia và đóng Nenkin từ 6 tháng trở lên, đã cắt địa chỉ cư trú tại Nhật và xuất cảnh, đã nghỉ việc/ngừng tham gia bảo hiểm</strong>, đồng thời làm thủ tục <strong>trong vòng 2 năm kể từ thời điểm không còn địa chỉ tại Nhật</strong>.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">02</span><span class="fq-item__txt">Thời gian nhận Nenkin lần 1 và lần 2 mất bao lâu?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Lần 1:</strong> Thông thường khoảng <strong>3–6 tháng</strong> kể từ khi hồ sơ đầy đủ được nộp đến Cơ quan Nenkin Nhật Bản.</p><p><strong>Lần 2:</strong> Thông thường khoảng <strong>1–3 tháng</strong> kể từ khi hồ sơ đầy đủ được nộp đến Cục Thuế Nhật Bản.</p><p><em>Thời gian thực tế có thể thay đổi tùy từng thời điểm và tình trạng xét duyệt hồ sơ.</em></p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">03</span><span class="fq-item__txt">Không nhớ hoặc không có số Nenkin thì có làm hồ sơ được không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Có thể xử lý trong nhiều trường hợp.</strong> Nếu không nhớ <span lang="ja">基礎年金番号</span>, hồ sơ có thể cung cấp các thông tin cần thiết để Cơ quan Nenkin xác minh. Tùy trường hợp, CZT sẽ hướng dẫn bổ sung giấy tờ hoặc giải trình phù hợp.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">04</span><span class="fq-item__txt">Chưa cắt địa chỉ ở Nhật có nhận được Nenkin không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Để nhận <strong>Nenkin (<span lang="ja">脱退一時金</span>)</strong>, anh chị cần <strong>không còn địa chỉ cư trú tại Nhật Bản</strong> theo quy định.</p><p>Nếu anh chị chưa hoàn tất thủ tục cắt địa chỉ, <strong>CZT có thể hỗ trợ thực hiện thủ tục cắt địa chỉ trước khi tiến hành hồ sơ nhận Nenkin.</strong></p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">05</span><span class="fq-item__txt">Từng cư trú bất hợp pháp tại Nhật, sau khi về Việt Nam có nhận được Nenkin không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Có thể.</strong> Việc từng cư trú bất hợp pháp tại Nhật không được Japan Pension Service liệt kê là điều kiện tự động mất quyền nhận Nenkin. Nếu anh chị đã về Việt Nam và <strong>đáp ứng đầy đủ các điều kiện nhận <span lang="ja">脱退一時金</span></strong>, vẫn có thể làm hồ sơ.</p><p><strong>CZT sẽ kiểm tra quá trình đóng Nenkin và tình trạng hồ sơ cụ thể trước khi tiến hành thủ tục.</strong></p></div></div>
+        </div>
       </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Thời gian nhận nenkin mất bao lâu? <span>+</span></button>
-        <div class="accordion__body"><p>Thông thường từ 3–6 tháng kể từ khi nộp hồ sơ đầy đủ lên Cơ quan Nenkin Nhật Bản, tùy vào thời điểm nộp và khối lượng hồ sơ đang xử lý.</p></div>
+      <div class="fq-panel fq-panel--visa" id="fq-visa" role="tabpanel" hidden>
+        <div class="fq-panel__head"><span class="fq-panel__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="10.5" r="3.5"/><path d="M8.5 10.5h7M12 7c1.3 1 1.3 6 0 7M12 7c-1.3 1-1.3 6 0 7M9 18h6"/></svg></span><h2>Visa Gino2</h2><span class="fq-panel__count">5 câu hỏi</span></div>
+        <div class="fq-item is-open">
+          <button type="button" class="fq-item__q" aria-expanded="true"><span class="fq-item__no">01</span><span class="fq-item__txt">Điều kiện để chuyển lên Visa Tokutei Gino 2 là gì?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Anh chị cần đáp ứng <strong>tiêu chuẩn kỹ năng của Tokutei Gino 2 trong ngành tương ứng</strong>, thông thường bao gồm <strong>đỗ kỳ thi/chứng chỉ được quy định và đáp ứng yêu cầu về kinh nghiệm thực tế</strong>. Nội dung và thời gian kinh nghiệm yêu cầu sẽ khác nhau tùy từng ngành.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">02</span><span class="fq-item__txt">Thi đỗ kỳ thi Tokutei Gino 2 là có thể xin Visa Gino 2 ngay không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Chưa chắc.</strong> Đỗ kỳ thi là một trong những điều kiện quan trọng, nhưng tùy ngành còn phải đáp ứng <strong>yêu cầu về kinh nghiệm thực tế, nội dung công việc và các điều kiện liên quan của hồ sơ</strong>.</p><p>Ví dụ, ngành <strong>xây dựng</strong> yêu cầu kinh nghiệm làm việc với vai trò hướng dẫn nhiều lao động kỹ năng và quản lý tiến độ tại công trường; ngành <strong>chế biến thực phẩm</strong> cũng yêu cầu kinh nghiệm vừa làm việc, vừa hướng dẫn nhiều nhân viên và quản lý công đoạn.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">03</span><span class="fq-item__txt">Kinh nghiệm làm việc để xin Visa Gino 2 được tính và chứng minh như thế nào?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Yêu cầu về kinh nghiệm <strong>khác nhau tùy từng ngành</strong>. Một số ngành yêu cầu kinh nghiệm ở vị trí có trách nhiệm <strong>hướng dẫn nhân viên, quản lý công việc hoặc quản lý công đoạn/tiến độ</strong>.</p><p>Khi làm hồ sơ, cần có tài liệu phù hợp để chứng minh <strong>thời gian, nội dung công việc và vai trò thực tế</strong> của anh chị.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">04</span><span class="fq-item__txt">Đã từng chuyển công ty thì kinh nghiệm ở công ty cũ có được tính không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Có thể được tính</strong>, nếu kinh nghiệm tại công ty cũ đáp ứng yêu cầu của ngành và <strong>có thể chứng minh được nội dung, thời gian cũng như vai trò công việc thực tế</strong>.</p><p>Do điều kiện kinh nghiệm của Gino 2 được quy định theo từng lĩnh vực, CZT sẽ kiểm tra quá trình làm việc tại <strong>công ty hiện tại và công ty cũ</strong> để xác định phần kinh nghiệm có thể sử dụng cho hồ sơ.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">05</span><span class="fq-item__txt">Visa Tokutei Gino 2 có thời hạn bao lâu và có thể bảo lãnh gia đình sang Nhật không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Tokutei Gino 2 <strong>không giới hạn tổng số năm lưu trú</strong> nếu tiếp tục đáp ứng điều kiện và được gia hạn. Theo quy định hiện hành, thời hạn lưu trú được cấp theo từng lần và có thể tiếp tục gia hạn.</p><p>Ngoài ra, người có Visa Tokutei Gino 2 <strong>có thể đưa vợ/chồng và con sang Nhật</strong> nếu đáp ứng các điều kiện về tư cách lưu trú dành cho gia đình.</p></div></div>
+        </div>
       </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Nên dùng ngân hàng nào để nhận Nenkin? <span>+</span></button>
-        <div class="accordion__body"><p>Bạn có thể nhận qua tài khoản ngân hàng Nhật Bản (giữ lại trước khi xuất cảnh) hoặc một số ngân hàng tại Việt Nam có hỗ trợ nhận ngoại tệ. CZT sẽ tư vấn phương án nhận tiền phù hợp và ít phí chuyển đổi nhất cho từng trường hợp.</p></div>
-      </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Không có số nenkin có nhận được Nenkin không? <span>+</span></button>
-        <div class="accordion__body"><p>Vẫn có thể được. Nếu bạn mất sổ Nenkin hoặc không nhớ số Nenkin, CZT có thể hỗ trợ tra cứu lại thông tin dựa trên các giấy tờ khác như hộ chiếu, thẻ cư trú, My Number.</p></div>
-      </div>
-      <div class="accordion__item">
-        <button class="accordion__head">Bất hợp pháp tại Nhật sau khi về có nhận được Nenkin không? <span>+</span></button>
-        <div class="accordion__body"><p>Từng trường hợp cư trú bất hợp pháp có thể vẫn được xét nhận Nenkin nếu đáp ứng điều kiện đóng bảo hiểm, nhưng hồ sơ sẽ phức tạp hơn và cần xác minh kỹ. Hãy liên hệ CZT để được tư vấn riêng và kiểm tra khả năng nhận tiền của bạn.</p></div>
+      <div class="fq-panel fq-panel--thue" id="fq-thue" role="tabpanel" hidden>
+        <div class="fq-panel__head"><span class="fq-panel__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V8.5z"/><path d="M14 2.5V8.5h5"/><path d="M8.5 12.5h7M8.5 16h7"/></svg></span><h2>Thuế</h2><span class="fq-panel__count">5 câu hỏi</span></div>
+        <div class="fq-item is-open">
+          <button type="button" class="fq-item__q" aria-expanded="true"><span class="fq-item__no">01</span><span class="fq-item__txt">Có thể làm hồ sơ hoàn thuế từ khi nào và trong thời hạn bao lâu?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Đối với hồ sơ <strong>hoàn thuế thu nhập</strong>, anh chị có thể làm thủ tục từ <strong>ngày 01/01 của năm tiếp theo</strong> và về nguyên tắc có thể làm trong <strong>tối đa 5 năm</strong>. Ví dụ, phần thuế của năm 2025 có thể làm thủ tục hoàn từ 01/01/2026 đến hết 31/12/2030.</p><p>Anh chị <strong>không nhất thiết phải chờ đến đợt khai thuế tháng 2–3</strong> nếu hồ sơ thuộc trường hợp hoàn thuế (<span lang="ja">還付申告</span>).</p><p><strong>CZT hỗ trợ kiểm tra miễn phí những năm anh chị còn có thể làm và tư vấn hồ sơ phù hợp trước khi tiến hành.</strong></p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">02</span><span class="fq-item__txt">Cần gửi bao nhiêu tiền phụng dưỡng cho người thân ở Việt Nam?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Mức chuyển tiền phụng dưỡng phụ thuộc vào <strong>độ tuổi và trường hợp của từng người thân</strong>:</p><ul><li><strong>Từ 16 đến dưới 30 tuổi:</strong> không có quy định bắt buộc phải chuyển đủ 38 man/năm, nhưng cần có <strong>chứng từ chuyển tiền</strong> để chứng minh việc phụng dưỡng.</li><li><strong>Từ 30 đến dưới 70 tuổi:</strong> về nguyên tắc cần chuyển <strong>từ 38 man/người/năm trở lên</strong> để được tính giảm trừ, trừ một số trường hợp đặc biệt như <strong>du học hoặc người khuyết tật</strong>.</li><li><strong>Từ 70 tuổi trở lên:</strong> không có yêu cầu bắt buộc phải chuyển đủ 38 man/năm, nhưng vẫn cần <strong>chứng từ chuyển tiền</strong> và đáp ứng các điều kiện phụng dưỡng theo quy định.</li></ul></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">03</span><span class="fq-item__txt">Có thể dùng những loại giấy tờ gì để chứng minh quan hệ nhân thân?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p>Có thể sử dụng các giấy tờ do <strong>cơ quan nhà nước có thẩm quyền cấp</strong> để chứng minh quan hệ với người phụng dưỡng, ví dụ:</p><ul><li><strong>Giấy khai sinh</strong></li><li><strong>Giấy đăng ký kết hôn</strong></li><li><strong>Trích lục hộ tịch</strong></li><li><strong>Giấy xác nhận nhân thân có xác nhận của cơ quan địa phương</strong></li><li>Hoặc các giấy tờ khác thể hiện rõ mối quan hệ gia đình.</li></ul><p><strong>Lưu ý:</strong> Đối với <strong>Giấy xác nhận nhân thân</strong>, tùy từng Cục Thuế và nội dung giấy tờ mà có thể được yêu cầu bổ sung hoặc thay thế bằng giấy tờ khác.</p><p>Các giấy tờ bằng tiếng Việt khi sử dụng để làm hồ sơ cần <strong>kèm bản dịch tiếng Nhật</strong>. Trường hợp anh chị chưa có bản dịch, <strong>CZT có hỗ trợ dịch thuật hồ sơ sang tiếng Nhật</strong>.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">04</span><span class="fq-item__txt">Đã về Việt Nam rồi có làm hoàn thuế được không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Có thể.</strong> Anh chị đã về Việt Nam vẫn có thể thực hiện thủ tục hoàn thuế nếu thuộc trường hợp đủ điều kiện và còn trong thời hạn làm thủ tục.</p><p><strong>CZT hỗ trợ kiểm tra hồ sơ và hướng dẫn thủ tục đối với cả khách đang ở Nhật và đã về Việt Nam.</strong></p></div></div>
+        </div>
+        <div class="fq-item">
+          <button type="button" class="fq-item__q" aria-expanded="false"><span class="fq-item__no">05</span><span class="fq-item__txt">Đang làm Nenkin lần 2 có làm hoàn thuế cùng lúc được không?</span><span class="fq-item__sign" aria-hidden="true"></span></button>
+          <div class="fq-item__a"><div class="fq-item__inner"><p><strong>Cần kiểm tra trước khi thực hiện.</strong> Nenkin lần 2 là thủ tục hoàn lại phần thuế đã khấu trừ từ khoản <span lang="ja">脱退一時金</span>, trong khi hoàn/giảm thuế hằng năm là một thủ tục thuế khác.</p><p>Nếu anh chị <strong>đang làm hoặc đã nộp hồ sơ Nenkin lần 2</strong>, hãy thông báo cho CZT trước khi làm hoàn thuế để bên em kiểm tra, tránh <strong>trùng hoặc ảnh hưởng đến quá trình xử lý hồ sơ tại Cục Thuế</strong>.</p></div></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Visa (sẽ cập nhật) -->
-    <h3 class="faq-cat">🟧 Visa Gino2</h3>
-    <p class="faq-empty">Câu hỏi về <strong>Visa</strong> đang được cập nhật. Vui lòng quay lại sau hoặc liên hệ CZT để được tư vấn.</p>
-
-    <!-- Thuế (sẽ cập nhật) -->
-    <h3 class="faq-cat">🟩 Hoàn / Giảm thuế</h3>
-    <p class="faq-empty">Câu hỏi về <strong>Thuế</strong> đang được cập nhật. Vui lòng quay lại sau hoặc liên hệ CZT để được tư vấn.</p>
+<!-- ============ FAQ CTA ============ -->
+<section class="fq-cta-sec">
+  <div class="container">
+    <div class="fq-cta">
+      <span class="fq-cta__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.3 7.600L3 21l1.4-5.300A8.5 8.5 0 1 1 21 12z"/><circle cx="8.5" cy="12" r=".8" fill="currentColor"/><circle cx="12" cy="12" r=".8" fill="currentColor"/><circle cx="15.5" cy="12" r=".8" fill="currentColor"/></svg></span>
+      <div class="fq-cta__text">
+        <h2>Bạn chưa tìm thấy <span>câu trả lời?</span></h2>
+        <p>CZT sẵn sàng hỗ trợ kiểm tra trường hợp cụ thể của bạn.</p>
+      </div>
+      <a class="fq-cta__btn" href="https://m.me/tokuteicozaotrang" target="_blank" rel="noopener">Tư vấn miễn phí <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -153,5 +220,27 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script>
+/* FAQ: đổi nhóm câu hỏi + mở/đóng từng câu (mỗi nhóm chỉ mở 1 câu) */
+(function () {
+  var tabs = document.querySelectorAll('.fq-tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { var on = t === tab; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', on); });
+      document.querySelectorAll('.fq-panel').forEach(function (p) { p.hidden = p.id !== 'fq-' + tab.dataset.fq; });
+      if (window.innerWidth <= 860) document.querySelector('.fq-panels').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  document.querySelectorAll('.fq-item__q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.parentNode, open = !item.classList.contains('is-open');
+      item.parentNode.querySelectorAll('.fq-item').forEach(function (el) {
+        el.classList.remove('is-open'); el.querySelector('.fq-item__q').setAttribute('aria-expanded', 'false');
+      });
+      if (open) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
