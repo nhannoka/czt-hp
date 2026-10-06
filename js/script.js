@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const msgEl = document.getElementById('nkLookupMsg');
 
       // Stepper "Quy trình xử lý hồ sơ" khớp đúng thứ tự NENKIN_STATUS_STEPS (8 trạng thái)
-      const steps = document.querySelectorAll('.nk-process__step');
+      const steps = document.querySelectorAll('.nn-step');
       const setStepper = (idx) => {
         steps.forEach((el, i) => {
           el.classList.remove('is-done', 'is-active');
