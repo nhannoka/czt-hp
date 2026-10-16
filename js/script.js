@@ -271,20 +271,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Deploy dạng Web app (Execute as: Me, Who has access: Anyone).
   // 4. Dán link "Web app URL" vào biến NENKIN_LOOKUP_API_URL bên dưới.
   // Apps Script chỉ trả về đúng 1 dòng khớp mã hồ sơ được hỏi, không lộ toàn bộ danh sách khách hàng.
-  const NENKIN_LOOKUP_API_URL = 'https://script.google.com/macros/s/AKfycbxOuDzHPn0_SP5lqu-QXlfamWIP4Cvi7yvVG37Gf3Wud1ZwuLlPECgPHGQEsXGDfWfRFg/exec'; // TODO: dán link Apps Script Web app URL vào đây
+  const NENKIN_LOOKUP_API_URL = 'https://script.google.com/macros/s/AKfycbyiNJZSoA-cYv6RbWoSBFiOyaag9tZXp6ijgxq-palTi3s9TiAo_DGf-oPScQg0aeYn/exec'; // TODO: dán link Apps Script Web app URL vào đây
 
+  // 6 trạng thái gõ trong cột trang_thai của Google Sheet (đúng thứ tự trên trang).
+  // So khớp bỏ qua hoa/thường, khoảng trắng thừa, emoji (VD "Hoàn tất hồ sơ ✅") và kiểu mã hoá dấu.
   const NENKIN_STATUS_STEPS = [
-    'Đã tiếp nhận hồ sơ',
-    'Đã gửi Cơ quan Nenkin',
-    'Đang xét duyệt',
+    'Đã nộp hồ sơ',
+    'Đang xét duyệt lần 1',
     'Có kết quả lần 1',
-    'Đang xử lý lần 2',
-    'Đã nộp lần 2',
-    // Giá trị trong Google Sheet, khác nhãn hiển thị ("Đang xét duyệt") vì nhãn đó
-    // đã trùng với bước 3 — đổi ở đây sẽ khiến indexOf khớp nhầm về bước 3.
-    'Đang bổ sung giấy tờ',
-    'Hoàn thành 2 lần',
+    'Đang xét duyệt lần 2',
+    'Chờ thanh toán',
+    'Hoàn tất hồ sơ',
   ];
+  const normStatus = (v) => String(v || '').normalize('NFC').replace(/[^\p{L}\p{N} ]/gu, '').replace(/\s+/g, ' ').trim().toLowerCase();
 
   const nkLookupBtn = document.getElementById('nkLookupBtn');
   if (nkLookupBtn) {
@@ -292,11 +291,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const code = document.getElementById('nkLookupCode').value.trim();
       const msgEl = document.getElementById('nkLookupMsg');
 
-      // Stepper "Quy trình xử lý hồ sơ" khớp đúng thứ tự NENKIN_STATUS_STEPS (8 trạng thái)
+      // Stepper "Quy trình xử lý hồ sơ" khớp đúng thứ tự NENKIN_STATUS_STEPS (6 trạng thái)
       const steps = document.querySelectorAll('.nn-step');
-      const setStepper = (idx) => {
+      // dates: mảng 6 ngày "dd/MM/yyyy" do Apps Script trả về (ô trống = '')
+      const setStepper = (idx, dates) => {
         steps.forEach((el, i) => {
           el.classList.remove('is-done', 'is-active');
+          let dateEl = el.querySelector('.nn-step__date');
+          const d = (dates && dates[i]) || '';
+          if (d) {
+            if (!dateEl) { dateEl = document.createElement('span'); dateEl.className = 'nn-step__date'; el.appendChild(dateEl); }
+            // "dd/MM/yyyy" -> 2 dòng nhỏ (ngày/tháng + năm) để vừa cột hẹp, không đè sang bước bên cạnh
+            const m = d.match(/^(\d{1,2}\/\d{1,2})\/(\d{4})$/);
+            dateEl.innerHTML = '';
+            if (m) {
+              const dm = document.createElement('span'); dm.className = 'nn-step__dm'; dm.textContent = m[1];
+              const yy = document.createElement('span'); yy.className = 'nn-step__yy'; yy.textContent = m[2];
+              dateEl.append(dm, yy);
+            } else dateEl.textContent = d;
+            dateEl.title = d;
+          } else if (dateEl) dateEl.remove();
           if (idx < 0) return;
           if (i < idx) el.classList.add('is-done');
           else if (i === idx) el.classList.add('is-active');
@@ -323,9 +337,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const currentStatus = data.trang_thai;
-        const idx = NENKIN_STATUS_STEPS.indexOf(currentStatus);
-        setStepper(idx);
-        msgEl.innerHTML = 'Mã <strong>' + code + '</strong> — Trạng thái hiện tại: <strong>' + currentStatus + '</strong>';
+        const idx = NENKIN_STATUS_STEPS.findIndex((st) => normStatus(st) === normStatus(currentStatus));
+        setStepper(idx, data.ngay);
+        const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        // chip màu theo từng trạng thái (giống màu nhãn trong Google Sheet)
+        msgEl.innerHTML = '<span>Mã <strong>' + esc(code.toUpperCase()) + '</strong> — Trạng thái hiện tại:</span><span class="nn-chip nn-chip--' + (idx + 1) + '">' + esc(currentStatus) + '</span>'
+          + (idx >= 0 && data.ngay && data.ngay[idx] ? '<span class="nn-lookup__date">· cập nhật ngày <strong>' + esc(data.ngay[idx]) + '</strong></span>' : '');
       } catch (err) {
         setStepper(-1);
         msgEl.textContent = 'Có lỗi khi tra cứu. Vui lòng thử lại sau hoặc liên hệ CZT.';

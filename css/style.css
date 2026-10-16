@@ -371,8 +371,6 @@ p { color: var(--color-text-light); }
   padding: 28px 26px; border-radius: var(--radius-lg);
   border: 1px solid var(--color-border); box-shadow: var(--shadow-md);
 }
-#ho-so-can-chuan-bi { background: linear-gradient(160deg, #f2fbf7 0%, #fbfefd 100%); border-color: rgba(15,157,120,0.14); }
-#tra-cuu-ho-so     { background: linear-gradient(160deg, #f8f4fe 0%, #fdfbff 100%); border-color: rgba(124,58,237,0.14); }
 .nenkin-tool-card__title {
   margin-bottom: 18px;
   font-family: var(--font-body);
@@ -904,13 +902,85 @@ body.is-modal-open { overflow: hidden; }
   width: 100%; height: auto; display: block;
   border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
 }
-/* Desktop: 3 nút đè lên khoảng trống cột trái của banner.
-   Khoảng trống đo được từ ảnh: 57.5% -> 70% chiều cao, ngang tới 44.7% (giữa dòng subtitle
-   và hàng 4 icon). Neo cả top/bottom + justify-content:center để nút luôn
-   cân giữa khoảng trống dù cỡ nút có thay đổi. */
-.nk-banner__actions {
-  position: absolute; left: 5.2%; top: 57.5%; bottom: 30%;
-  display: flex; flex-wrap: nowrap; align-items: center; gap: 0.5cqw;
+/* ===== Banner: nội dung phủ lên khoảng trống cột trái (theo mockup) =====
+   Ảnh 1774x760 (đã cắt bớt khoảng trắng đáy): cột trái trống ~0-46% bề ngang, sạch nhất ~9-80%
+   chiều cao (trên làn sóng xanh nhạt ở góc dưới trái). Neo top/bottom +
+   justify-content:center để khối luôn cân giữa khoảng trống dù cỡ chữ thay đổi. */
+.nk-banner__content {
+  position: absolute; left: 4%; top: 4.5%; bottom: 11%; width: 46%;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  gap: 1cqw; z-index: 2;
+}
+/* Badge vàng bo tròn */
+.nk-banner__badge {
+  align-self: flex-start;
+  display: inline-block; padding: 0.55em 1.4em; border-radius: 999px;
+  background: linear-gradient(135deg, #f7cd57, #e5a722);
+  color: #13295b; font-size: clamp(10px, 1.05cqw, 14px); font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(224, 169, 58, 0.35);
+}
+/* Tiêu đề serif, chữ "CZT" màu vàng gold */
+.nk-banner__title {
+  font-family: var(--font-display); font-weight: 700; color: var(--color-navy);
+  font-size: clamp(24px, 3.9cqw, 52px); line-height: 1.16; letter-spacing: -0.01em;
+}
+.nk-banner__title span { color: var(--color-gold); }
+/* 2 nhóm con (chữ / nút + số liệu): trên PC hoà vào cột nội dung như một khối */
+.nk-banner__top, .nk-banner__bottom { display: contents; }
+.nk-banner__sub {
+  font-size: clamp(13px, 1.65cqw, 22px); font-weight: 700;
+  color: var(--color-navy-soft); line-height: 1.35;
+}
+/* 3 dòng tick vàng */
+.nk-banner__checks { display: flex; flex-wrap: wrap; gap: 0.5cqw 1.5cqw; }
+.nk-banner__checks li {
+  display: flex; align-items: center; gap: 0.5em; white-space: nowrap;
+  font-size: clamp(11px, 1.1cqw, 15px); font-weight: 600; color: var(--color-navy-soft);
+}
+.nk-banner__chk {
+  flex-shrink: 0; width: 1.6em; height: 1.6em; border-radius: 50%;
+  background: linear-gradient(135deg, #f7cd57, #e0a92e); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.nk-banner__chk svg { width: 0.95em; height: 0.95em; display: block; }
+/* Nút CTA vàng: icon chat nền navy - chữ navy - mũi tên */
+.nk-banner .nk-cta--gold {
+  background: linear-gradient(135deg, #f7cd57, #e5a722);
+  color: #13295b; font-size: clamp(13px, 1.45cqw, 19px);
+  padding: 0.8em 0.75em; box-shadow: 0 0.4em 1.1em rgba(194, 138, 20, 0.35);
+}
+.nk-banner .nk-cta--gold .nk-cta__ic { background: #13295b; color: #fff; }
+.nk-banner .nk-cta--gold .nk-cta__ic svg { width: 1.3em; height: 1.3em; }
+/* Hàng số liệu: 2.000+ khách hàng | Tra cứu tiến độ online */
+.nk-banner__stats { display: flex; align-items: center; flex-wrap: wrap; gap: 0.8cqw 1.4cqw; }
+.nk-banner__stat { display: flex; align-items: center; gap: 0.5em; color: var(--color-navy); }
+.nk-banner__stat > svg { width: 1.8em; height: 1.8em; flex-shrink: 0; color: #1a3fa8; }
+.nk-banner__stat-txt strong {
+  display: block; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(15px, 1.85cqw, 26px); line-height: 1.1; color: var(--color-navy);
+}
+.nk-banner__stat-txt small {
+  display: block; font-size: clamp(10px, 1.05cqw, 14px); font-weight: 600;
+  color: #4b587a; line-height: 1.25;
+}
+.nk-banner__stat--link strong { font-size: clamp(13px, 1.5cqw, 20px); }
+.nk-banner__stat-div { width: 1px; height: 2.6em; background: rgba(18, 29, 58, 0.22); }
+/* Bubble thoại viết tay góc phải trên ảnh */
+.nk-banner__bubble {
+  position: absolute; right: 7%; top: 4.1%; z-index: 2;
+  background: #fff; border: 2px solid var(--color-navy); border-radius: 1em;
+  padding: 0.7em 1.1em; text-align: center;
+  font-family: 'Dancing Script', cursive; font-weight: 700;
+  font-size: clamp(11px, 1.45cqw, 19px); line-height: 1.25; color: var(--color-navy);
+  box-shadow: 0 8px 22px rgba(16, 25, 43, 0.22);
+  transform: rotate(-4deg);
+}
+.nk-banner__bubble::after {
+  content: ""; position: absolute; left: 24%; bottom: -9px;
+  width: 14px; height: 14px; background: #fff;
+  border-right: 2px solid var(--color-navy); border-bottom: 2px solid var(--color-navy);
+  transform: rotate(45deg);
 }
 /* Nút CTA dạng pill: badge icon tròn bên trái - chữ in hoa - mũi tên phải */
 .nk-cta {
@@ -931,11 +1001,15 @@ body.is-modal-open { overflow: hidden; }
 .nk-cta__label { flex: 1; text-align: center; }
 .nk-cta__arrow { flex-shrink: 0; display: inline-flex; opacity: 0.9; }
 .nk-cta__arrow svg { width: 0.8em; height: 0.8em; display: block; }
-/* 861-1150px: khoảng trống trên ảnh không đủ chỗ cho 3 nút (cỡ chữ đã chạm mức tối thiểu)
-   -> đưa hàng nút xuống ngay dưới banner, cỡ chữ đọc được */
+/* 861-1150px: cột trái trên ảnh không còn đủ chỗ cho cả khối nội dung
+   -> đưa khối xuống ngay dưới banner, cỡ chữ đọc được */
 @media (min-width: 861px) and (max-width: 1150px) {
-  .nk-banner__actions { position: static; justify-content: center; gap: 12px; margin-top: 14px; }
+  .nk-banner__content {
+    position: static; width: 100%; margin-top: 18px;
+    align-items: flex-start; gap: 12px;
+  }
   .nk-banner .nk-cta { font-size: 13px; }
+  .nk-banner .nk-cta--gold { font-size: 16px; }
 }
 
 .nk-cta--blue { background: linear-gradient(135deg, #2f63e0, #1a3fa8); color: #fff; }
@@ -953,12 +1027,31 @@ body.is-modal-open { overflow: hidden; }
       url('../assets/docs/nenkin/bg-mobile.png');
   }
   .nk-banner { padding: 16px 0 4px; }
-  /* Mobile: xếp dọc vào vùng trời trống giữa banner (dưới laptop, trên card 2000+).
-     Khoảng trống đo được từ ảnh: 36.6% -> 59.5% chiều cao. */
-  .nk-banner__actions {
-    left: 9%; right: 9%; top: 36.6%; bottom: 40.5%;
-    flex-direction: column; align-items: stretch; justify-content: center; gap: 1.9cqw;
+  /* Mobile: ảnh tỷ lệ 2:1 thu nhỏ (~187px cao trên 375px màn hình) -> đưa khối
+     nội dung + CTA xuống dưới ảnh, full-width, dấu tick được phép xuống dòng. */
+  .nk-banner__content {
+    position: static; width: 100%; margin-top: 16px;
+    align-items: stretch; gap: 12px;
   }
+  /* ảnh mobile 1024x1536: vùng trời trống phía trên (0 -> ~42% chiều cao) chứa
+     badge + tiêu đề + 3 tick; nút CTA và số liệu nằm ngay dưới ảnh */
+  .nk-banner__top {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 1.6cqw;
+    position: absolute; left: 6%; right: 6%; top: 3%; z-index: 2;
+  }
+  .nk-banner__bottom { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
+  .nk-banner__badge { font-size: clamp(10px, 3cqw, 13px); }
+  .nk-banner__title { font-size: clamp(19px, 6.3cqw, 30px); }
+  .nk-banner__sub { font-size: clamp(12px, 3.6cqw, 15px); }
+  .nk-banner__checks { gap: 1.2cqw 3.5cqw; }
+  .nk-banner__checks li { font-size: clamp(11.5px, 3.4cqw, 14px); white-space: normal; }
+  .nk-banner .nk-cta--gold { font-size: 15px; width: 100%; justify-content: center; }
+  .nk-banner__stats { gap: 12px 16px; }
+  .nk-banner__stat-txt strong { font-size: 20px; }
+  .nk-banner__stat-txt small { font-size: 12.5px; }
+  .nk-banner__stat--link strong { font-size: 15px; }
+  .nk-banner__stat-div { display: none; }
+  .nk-banner__bubble { display: none; }
   .nk-cta {
     width: 100%; font-size: clamp(13px, 3cqw, 17px);
     padding: 0.95em 0.72em;
@@ -2973,3 +3066,118 @@ body.is-modal-open { overflow: hidden; }
   .nn-head p br { display: none; }
   .nn-doc__btn { font-size: 12.5px; padding: 8px 4px; }
 }
+
+/* ---- Nenkin: quy trình 6 trạng thái + chip trạng thái + Vì sao chọn CZT (mockup 10/2026) ---- */
+.nn-steps { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.nn-step__label { font-size: 12.5px; }
+.nn-chip { display: inline-block; padding: 2px 12px; border-radius: 6px; font-weight: 700; line-height: 1.6; }
+.nn-chip--1 { background: #e6e9ef; color: #13295b; }
+.nn-chip--2 { background: #fde6a1; color: #6b4a00; }
+.nn-chip--3 { background: #0f6e3c; color: #fff; }
+.nn-chip--4 { background: #f28b82; color: #5a0f0b; }
+.nn-chip--5 { background: #e3d2f4; color: #4a2a72; }
+.nn-chip--6 { background: #c8efcf; color: #0f5a2a; }
+.nn-chip--0 { background: #e6e9ef; color: #13295b; }
+.nn-sec--last { padding-bottom: 60px; }
+.nn-why__grid { display: grid; grid-template-columns: 1fr 1fr 1.35fr 1fr 1fr; gap: 16px; } /* thẻ 3 nhiều chữ hơn nên rộng hơn một chút */
+.nn-why__grid > * { min-width: 0; }
+.nn-why__card { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 16px 22px; background: rgba(255, 255, 255, 0.75); border: 1.5px solid #f3dfa8; border-radius: var(--radius-md); box-shadow: 0 6px 18px rgba(19, 41, 91, 0.05); }
+.nn-why__no { position: absolute; left: 14px; top: 14px; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #fbd978, #eeb23c); color: #13295b; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.nn-why__ic { width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(circle, #fff3cf 0%, #fde9b4 100%); color: #1a3fa8; display: flex; align-items: center; justify-content: center; margin: 8px 0 14px; }
+.nn-why__ic svg { width: 54px; height: 54px; }
+.nn-why__card h3 { font-family: var(--font-body); font-weight: 800; font-size: 17px; line-height: 1.35; color: #13295b; }
+.nn-why__card > i { display: block; width: 30px; height: 3px; border-radius: 3px; background: #e0a93a; margin: 12px auto; }
+.nn-why__card p { font-size: 14.5px; line-height: 1.6; color: #2b3a5c; }
+.nn-why__note { align-self: stretch; text-align: left; padding: 7px 10px; background: #f1f5fc; border-radius: 10px; }
+.nn-why__note + .nn-why__note { margin-top: 6px; }
+.nn-why__note span { display: inline-block; padding: 2px 10px; border-radius: 6px; background: #d6e4ff; color: #13295b; font-size: 11px; font-weight: 800; margin-bottom: 2px; }
+.nn-why__note p { font-size: 11.5px; line-height: 1.4; }
+@media (max-width: 1150px) {
+  .nn-why__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .nn-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 16px; }
+  .nn-step:nth-child(4)::after { display: block; }
+  .nn-step:nth-child(3)::after { display: none; }
+  .nn-why__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .nn-why__card:nth-child(3) { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .nn-why__card { padding: 18px 10px 16px; }
+  .nn-why__ic { width: 70px; height: 70px; }
+  .nn-why__ic svg { width: 40px; height: 40px; }
+  .nn-why__card h3 { font-size: 15px; }
+  .nn-why__card p { font-size: 13px; }
+}
+
+/* Khối Giấy tờ & Tra cứu: nền trắng mờ bo góc trên ảnh nền trang */
+.nn-panel--soft { background: rgba(255, 255, 255, 0.72); border: 1.5px solid #e3eaf7; box-shadow: 0 10px 30px rgba(19, 41, 91, 0.06); }
+.nn-panel--soft .nn-doc { box-shadow: 0 8px 20px rgba(19, 41, 91, 0.09); border: 1.5px solid #e6ebf5; }
+.nn-panel--soft .nn-notice { background: #fffaf0; color: #13295b; border-color: #f0c765; }
+.nn-panel--soft .nn-notice p { color: #2b3a5c; }
+.nn-panel--soft .nn-notice strong { color: #c98a14; border-right-color: #e3dccb; }
+.nn-panel--soft .nn-lookup { background: rgba(255, 250, 238, 0.9); }
+/* Tính tiền: cột phải là ảnh minh hoạ (bấm để mở Messenger), kết quả hiện dưới nút */
+.nn-calc__art2 { display: block; border-radius: var(--radius-md); overflow: hidden; transition: transform .18s ease; }
+.nn-calc__art2:hover { transform: translateY(-2px); }
+.nn-calc__art2 img { width: 100%; height: auto; display: block; }
+.nn-calc__form .nn-calc__result { margin-top: 16px; }
+.nn-step__date { font-size: 11px; font-weight: 700; color: #1a56d6; background: #eef4ff; border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+.nn-step.is-done .nn-step__date { color: #17946f; background: #e3f6ee; }
+.nn-lookup__date { color: #4b587a; font-size: 13.5px; }
+
+/* ---- Quy trình xử lý hồ sơ: bố cục gọn (số / icon / nhãn / ngày thẳng hàng, nối bằng đường kẻ) ---- */
+.nn-process .nn-steps { align-items: stretch; margin-top: 4px; }
+.nn-process .nn-step { grid-template-rows: 22px 48px 1fr 34px; }
+.nn-process .nn-step {
+  display: grid; grid-template-rows: 22px 48px auto 34px; row-gap: 7px;
+  justify-items: center; align-items: start; padding: 0 4px;
+}
+/* bỏ dấu › cũ, thay bằng đường nối giữa các icon */
+.nn-process .nn-step::after { content: none; display: none; }
+.nn-process .nn-step:not(:last-child)::before {
+  content: ""; position: absolute; top: 53px; left: calc(50% + 28px); right: calc(-50% + 28px);
+  height: 2px; border-radius: 2px; background: #efd9a0;
+}
+.nn-process .nn-step.is-done::before { background: #7fd1ad; }
+.nn-process .nn-step > b { width: 22px; height: 22px; font-size: 11.5px; }
+.nn-process .nn-step.is-done b { background: #17946f; }
+.nn-process .nn-step.is-active b { background: #1a56d6; }
+.nn-process .nn-step__ic { width: 48px; height: 48px; }
+.nn-process .nn-step__label { font-size: 12.5px; line-height: 1.35; align-self: start; }
+.nn-process .nn-step.is-done .nn-step__label { color: #0f6e4c; }
+.nn-process .nn-step__date {
+  align-self: start; display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  min-width: 46px; max-width: 100%; padding: 3px 6px; line-height: 1.15; border-radius: 8px;
+  color: #17946f; background: #e3f6ee; border: 1px solid #bfe9d6;
+}
+.nn-process .nn-step__dm { font-size: 12px; font-weight: 800; }
+.nn-process .nn-step__yy { font-size: 10px; font-weight: 600; opacity: 0.85; }
+.nn-process .nn-step.is-active .nn-step__date { color: #fff; background: #1a56d6; border-color: #1a56d6; }
+/* dòng kết quả: trạng thái + ngày trên cùng một hàng, xuống dòng gọn khi hẹp */
+.nn-lookup__msg { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; line-height: 1.5; }
+.nn-lookup__date { font-size: 13px; color: #4b587a; }
+@media (max-width: 860px) {
+  .nn-process .nn-step:nth-child(3)::before { display: none; }
+}
+/* điện thoại: quy trình chuyển thành dòng thời gian dọc (icon trái, nhãn + ngày bên phải) */
+@media (max-width: 560px) {
+  .nn-process .nn-steps { grid-template-columns: 1fr; row-gap: 0; }
+  .nn-process .nn-step {
+    grid-template-columns: 44px 1fr; grid-template-rows: auto auto; column-gap: 12px; row-gap: 3px;
+    justify-items: start; align-items: center; padding: 6px 0; text-align: left;
+  }
+  .nn-process .nn-step b { display: none; }
+  .nn-process .nn-step__ic { width: 44px; height: 44px; grid-column: 1; grid-row: 1 / span 2; }
+  .nn-process .nn-step__label { grid-column: 2; grid-row: 1; align-self: end; font-size: 14px; }
+  .nn-process .nn-step:not(:has(.nn-step__date)) .nn-step__label { grid-row: 1 / span 2; align-self: center; }
+  .nn-process .nn-step__date { grid-column: 2; grid-row: 2; align-self: start; flex-direction: row; gap: 0; padding: 1px 8px; border-radius: 999px; }
+  .nn-process .nn-step__yy::before { content: '/'; }
+  .nn-process .nn-step__yy { font-size: 11px; }
+  .nn-process .nn-step:not(:last-child)::before,
+  .nn-process .nn-step:nth-child(3)::before {
+    display: block; top: 50px; bottom: -6px; left: 21px; right: auto; width: 2px; height: auto;
+  }
+}
+/* display:flex ở trên đè mất thuộc tính hidden -> ẩn lại khi chưa tra cứu */
+.nn-lookup__msg[hidden] { display: none; }
