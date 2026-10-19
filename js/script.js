@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Đang xét duyệt lần 1',
     'Có kết quả lần 1',
     'Đang xét duyệt lần 2',
-    'Chờ thanh toán',
+    'Có kết quả lần 2',
     'Hoàn tất hồ sơ',
   ];
   const normStatus = (v) => String(v || '').normalize('NFC').replace(/[^\p{L}\p{N} ]/gu, '').replace(/\s+/g, ' ').trim().toLowerCase();

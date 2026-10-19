@@ -41,7 +41,7 @@ const COL_NGAY = [
   'NgàyĐang xét duyệt lần 1',  // 2. Đang xét duyệt lần 1
   'Ngàycó kq l1',              // 3. Có kết quả lần 1
   'Ngày đang xét Lần 2',       // 4. Đang xét duyệt lần 2
-  'Chờ TT (Ngày xèng về',      // 5. Chờ thanh toán
+  'Có KQ L2',      // 5. Có kết quả lần 2
   'Hoàn tất HS',               // 6. Hoàn tất hồ sơ
 ];
 
@@ -51,7 +51,7 @@ const STATUS_STEPS = [
   'Đang xét duyệt lần 1',
   'Có kết quả lần 1',
   'Đang xét duyệt lần 2',
-  'Chờ thanh toán',
+  'Có kết quả lần 2',
   'Hoàn tất hồ sơ',
 ];
 // =========================================================
