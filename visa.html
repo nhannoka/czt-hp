@@ -247,7 +247,7 @@
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=10"></script>
 <script>
 /* Tự động nạp ảnh gallery: quét <prefix>1..MAX (mọi đuôi jpg/png/…), hiện mọi ảnh tồn tại
    theo đúng thứ tự số. Không giới hạn số lượng, không phụ thuộc đánh số liên tục. */
@@ -311,8 +311,11 @@
     car.querySelector('.vs-carousel__arrow--prev').addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
     car.querySelector('.vs-carousel__arrow--next').addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
     var render = function () {
-      var pages = Math.max(1, Math.round(track.scrollWidth / track.clientWidth));
-      var cur = Math.min(pages - 1, Math.round(track.scrollLeft / Math.max(1, track.scrollWidth - track.clientWidth) * (pages - 1)) || 0);
+      // vòng lặp vô hạn (js/script.js): tính chấm theo bộ thẻ gốc, bỏ qua bản sao 2 bên
+      var L = track._loop, W = L ? L.width : track.scrollWidth;
+      var pages = Math.max(1, Math.round(W / track.clientWidth));
+      var pos = L ? (((track.scrollLeft - L.start) % W) + W) % W : track.scrollLeft;
+      var cur = Math.round(pos / track.clientWidth) % pages;
       dots.innerHTML = '';
       for (var i = 0; i < pages; i++) { var d = document.createElement('span'); if (i === cur) d.className = 'is-active'; dots.appendChild(d); }
     };

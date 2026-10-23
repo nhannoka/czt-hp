@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Comfortaa:wght@500;600;700&family=Dancing+Script:wght@700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261020d">
+<link rel="stylesheet" href="css/style.css?v=20261023d">
 </head>
 <body class="nk-page">
 
@@ -188,7 +188,8 @@
         <div class="nn-doc"><b class="nn-doc__no">2</b><div class="nn-doc__img"><img src="assets/docs/samples/ho_chieu_trang_thong_tin.jpg" alt="Hộ chiếu trang thông tin cá nhân" loading="lazy"></div><h3>Hộ chiếu</h3><p>Trang thông tin cá nhân</p><button type="button" class="nn-doc__btn">Xem ảnh mẫu →</button></div>
         <div class="nn-doc"><b class="nn-doc__no">3</b><div class="nn-doc__img"><img src="assets/docs/samples/ho_chieu_co_dau.jpg" alt="Hộ chiếu trang có dấu xuất cảnh" loading="lazy"></div><h3>Hộ chiếu</h3><p>Trang có dấu xuất cảnh khỏi Nhật Bản</p><button type="button" class="nn-doc__btn">Xem ảnh mẫu →</button></div>
         <div class="nn-doc"><b class="nn-doc__no">4</b><div class="nn-doc__img"><img src="assets/docs/samples/so_nenkin.jpg" alt="Giấy tờ có ghi số Nenkin" loading="lazy"></div><h3>Giấy tờ có ghi số Nenkin</h3><p lang="ja">(基礎年金番号)</p><button type="button" class="nn-doc__btn">Xem ảnh mẫu →</button></div>
-        <div class="nn-doc"><b class="nn-doc__no">5</b><div class="nn-doc__img"><img src="assets/docs/samples/so_ngan_hang_vietcombank.jpg" alt="Giấy xác nhận mở tài khoản ngân hàng" loading="lazy"></div><h3>Giấy xác nhận mở tài khoản ngân hàng hoặc sổ ngân hàng</h3><button type="button" class="nn-doc__btn">Xem ảnh mẫu →</button></div>
+        <div class="nn-doc"><b class="nn-doc__no">5</b><div class="nn-doc__img nn-doc__img--pair"><img src="assets/docs/samples/so_ngan_hang_vietcombank.jpg" alt="Giấy xác nhận mở tài khoản Vietcombank" loading="lazy"><img src="assets/docs/samples/so_ngan_hang_vietinbank_2026.jpg?v=20261023" alt="Giấy xác nhận mở tài khoản Vietinbank" loading="lazy"></div><h3>Giấy xác nhận mở tài khoản ngân hàng</h3><p>(Nếu nhận tiền VNĐ)</p><button type="button" class="nn-doc__btn">Xem ảnh mẫu →</button></div>
+        <div class="nn-doc"><b class="nn-doc__no">6</b><div class="nn-doc__img"><img src="assets/docs/samples/so_ngan_hang_japan_katakana.jpg?v=20261023" alt="Sổ ngân hàng Nhật có tên Katakana" loading="lazy"></div><h3>Sổ ngân hàng có tên Katakana</h3><p>(Nếu nhận tiền JPY)</p><button type="button" class="nn-doc__btn">Xem ảnh mẫu →</button></div>
       </div>
       <div class="nn-notice">
         <span class="nn-notice__ic" aria-hidden="true">!</span>
@@ -341,7 +342,7 @@
   </div>
 </div>
 
-<script src="js/script.js?v=8"></script>
+<script src="js/script.js?v=10"></script>
 <script>
 /* Nenkin: nút "Xem ảnh mẫu" mở ảnh phóng to; carousel đánh giá (nạp fb-1..40, nút ‹ ›, nhấn để phóng to) */
 (function () {
@@ -349,8 +350,10 @@
   function zoom(src) {
     var box = document.createElement('div');
     box.className = 'img-lightbox is-open';
-    box.innerHTML = '<button class="img-lightbox__close" aria-label="Đóng">✕</button><div class="img-lightbox__inner"><img alt=""></div>';
-    box.querySelector('img').src = src;
+    // src có thể là 1 ảnh hoặc mảng nhiều ảnh (mục 5: Vietcombank + Vietinbank) -> hiện cạnh nhau
+    var list = [].concat(src);
+    box.innerHTML = '<button class="img-lightbox__close" aria-label="Đóng">✕</button><div class="img-lightbox__inner' + (list.length > 1 ? ' img-lightbox__inner--multi' : '') + '"></div>';
+    list.forEach(function (u) { var im = document.createElement('img'); im.alt = ''; im.src = u; box.querySelector('.img-lightbox__inner').appendChild(im); });
     var close = function () { box.remove(); document.body.style.overflow = ''; document.removeEventListener('keydown', onKey); };
     var onKey = function (ev) { if (ev.key === 'Escape') close(); };
     box.addEventListener('click', function (ev) { if (ev.target === box || ev.target.closest('.img-lightbox__close')) close(); });
@@ -358,10 +361,9 @@
     document.body.appendChild(box); document.body.style.overflow = 'hidden';
   }
   document.querySelectorAll('.nn-doc').forEach(function (card) {
-    var img = card.querySelector('.nn-doc__img img');
-    var open = function () { zoom(img.currentSrc || img.src); };
-    img.addEventListener('click', open);
-    card.querySelector('.nn-doc__btn').addEventListener('click', open);
+    var imgs = card.querySelectorAll('.nn-doc__img img');
+    imgs.forEach(function (img) { img.addEventListener('click', function () { zoom(img.currentSrc || img.src); }); });
+    card.querySelector('.nn-doc__btn').addEventListener('click', function () { zoom([].map.call(imgs, function (im) { return im.currentSrc || im.src; })); });
   });
   var EXTS = ['jpg', 'jpeg', 'png', 'webp'], MAX = 40;
   function tryLoad(base, i, cb) {

@@ -390,3 +390,68 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ---------- Carousel vòng lặp vô hạn (đánh giá / feedback / hồ sơ ở mọi trang) ----------
+   Nhân bản toàn bộ thẻ ra 2 bên (trước + sau). Khi cuộn/next tới vùng bản sao thì âm thầm
+   nhảy về vị trí tương ứng của bộ thẻ gốc -> bấm › hoặc vuốt mãi không bao giờ dừng.
+   Ảnh được nạp bất đồng bộ nên chờ danh sách thẻ ổn định rồi mới dựng vòng lặp. */
+(function () {
+  const SEL = '.vs-carousel__track, .tx-carousel__track, .nn-carousel__track, #hmReviews';
+  const originals = (t) => [...t.children].filter((el) => !el.classList.contains('is-clone'));
+
+  function build(track) {
+    track.querySelectorAll('.is-clone').forEach((el) => el.remove());
+    const items = originals(track);
+    track._loop = null;
+    if (items.length < 2) return;
+    const mk = (el) => { const c = el.cloneNode(true); c.classList.add('is-clone'); c.setAttribute('aria-hidden', 'true'); return c; };
+    const before = document.createDocumentFragment();
+    const after = document.createDocumentFragment();
+    items.forEach((el) => { before.appendChild(mk(el)); after.appendChild(mk(el)); });
+    track.insertBefore(before, items[0]);
+    track.appendChild(after);
+    const measure = () => {
+      const first = items[0];
+      const firstAfter = items[items.length - 1].nextElementSibling;
+      track._loop = { start: first.offsetLeft - track.offsetLeft, width: firstAfter.offsetLeft - first.offsetLeft };
+    };
+    measure();
+    jump(track, track._loop.start);
+    track._loopMeasure = measure;
+  }
+
+  function jump(track, left) {
+    const snap = track.style.scrollSnapType;
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+    track.scrollLeft = left;
+    // trả lại snap ở frame sau để không bị giật
+    setTimeout(() => { track.style.scrollSnapType = snap; track.style.scrollBehavior = ''; }, 30);
+  }
+
+  function wrap(track) {
+    const L = track._loop; if (!L || !L.width) return;
+    const x = track.scrollLeft;
+    // luôn đưa vị trí về dải của bộ thẻ gốc [start, start + width)
+    if (x < L.start - 1) jump(track, x + L.width);
+    else if (x >= L.start + L.width - 1) jump(track, x - L.width);
+  }
+
+  function init(track) {
+    if (track._loopInit) return; track._loopInit = true;
+    let settle;
+    const schedule = () => { clearTimeout(settle); settle = setTimeout(() => build(track), 500); };
+    // chỉ dựng lại khi danh sách thẻ GỐC thay đổi (ảnh mới nạp xong), bỏ qua thay đổi do chính bản sao
+    const mo = new MutationObserver((muts) => {
+      if (muts.some((m) => [...m.addedNodes, ...m.removedNodes].some((n) => n.nodeType === 1 && !n.classList.contains('is-clone')))) schedule();
+    });
+    mo.observe(track, { childList: true });
+    schedule();
+    let t;
+    track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(() => wrap(track), 120); }, { passive: true });
+    window.addEventListener('resize', () => { if (track._loopMeasure) { const off = track.scrollLeft - track._loop.start; track._loopMeasure(); jump(track, track._loop.start + ((off % track._loop.width) + track._loop.width) % track._loop.width); } });
+  }
+
+  const run = () => document.querySelectorAll(SEL).forEach(init);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
