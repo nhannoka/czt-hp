@@ -1019,6 +1019,11 @@ body.is-modal-open { overflow: hidden; }
 .nk-cta--white { background: #fff; color: #1a3fa8; box-shadow: 0 0.3em 0.8em rgba(16, 25, 43, 0.16); }
 .nk-cta--white .nk-cta__ic { background: linear-gradient(135deg, #00b2ff, #006aff); color: #fff; }
 .nk-cta--white .nk-cta__ic svg { width: 1.35em; height: 1.35em; }
+.nk-cta--gold { background: linear-gradient(135deg, #f7cd57, #e5a722); color: #13295b; }
+.nk-cta--gold .nk-cta__ic { background: #13295b; color: #fff; }
+.nk-cta--blue .nk-cta__ic svg { width: 1.35em; height: 1.35em; }
+/* Nút "Tư vấn miễn phí" trên banner: giữ xanh gốc, chỉ sáng hơn một chút */
+.hm-banner .nk-cta--blue { background: linear-gradient(135deg, #3a72f0, #2149bf); }
 
 /* ============ Nút "Nhận tư vấn miễn phí ngay" trên hình minh họa nenkin ============ */
 .nk-nenkin-cta {
@@ -1754,10 +1759,11 @@ body.is-modal-open { overflow: hidden; }
 /* ảnh PC 1916x821 — khoảng trống đo từ ảnh: dọc 60% -> 78.6% (giữa checklist và dải số liệu),
    ngang từ 11.6% (thẳng mép checklist) tới mép vùng xanh ~57% */
 .hm-banner__actions {
-  position: absolute; left: 11.6%; top: 60.5%; bottom: 22%;
-  display: flex; align-items: center; gap: 0.8cqw;
+  position: absolute; left: 11.6%; right: 43%; top: 60.5%; bottom: 22%;
+  display: flex; align-items: center; gap: 1cqw;
 }
-.hm-banner .nk-cta { font-size: clamp(8px, 0.98cqw, 15px); padding: 0.85em 0.7em; }
+.hm-banner__actions .nk-cta { flex: 1 1 0; }
+.hm-banner .nk-cta { font-size: clamp(9px, 1.15cqw, 18px); padding: 1em 0.7em; }
 /* 4 ô dịch vụ: vùng kem bên phải banner (vùng xanh + viền vàng chỉ lấn tới ~60.8%) */
 .hm-banner__cards {
   position: absolute; left: 63%; right: 3%; top: 8%; bottom: 8%;
@@ -1978,10 +1984,11 @@ body.is-modal-open { overflow: hidden; }
   /* ảnh mobile 853x1844 — 3 nút vào khoảng trống phía trên: 33.6% -> 51.4% (giữa checklist và dải số liệu) */
   .hm-banner__actions {
     left: 9%; right: 9%; top: 34.5%; bottom: 49.5%;
-    flex-direction: column; align-items: stretch; justify-content: center; gap: 1.6cqw;
+    flex-direction: column; align-items: stretch; justify-content: center; gap: 2.6cqw;
   }
+  .hm-banner__actions .nk-cta { flex: 0 0 auto; }
   .hm-banner .nk-cta {
-    width: 100%; font-size: clamp(11px, 3cqw, 17px); padding: 0.5em 0.5em;
+    width: 100%; font-size: clamp(12.5px, 3.5cqw, 20px); padding: 0.72em 0.6em;
   }
   /* 4 ô vào vùng kem trống phía dưới ảnh mobile: 59% -> 98% (dưới dải số liệu) */
   .hm-banner__cards { left: 8.5%; right: 8.5%; top: 60%; bottom: 2%; gap: 3cqw; }
@@ -3094,9 +3101,17 @@ body.is-modal-open { overflow: hidden; }
 .nn-doc > h3:last-of-type { margin-bottom: 12px; }
 .nn-doc > p { margin-bottom: 12px; margin-top: -9px; }
 .nn-doc__btn:hover { background: #fde9b4; }
-.nn-notice { display: flex; align-items: center; gap: 18px; margin-top: 18px; padding: 14px 24px; border-radius: var(--radius-md); border: 1.5px solid rgba(240, 199, 101, 0.8); background: rgba(8, 26, 74, 0.45); color: #fff; }
-.nn-notice__ic { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #fbd978, #eeb23c); color: #13295b; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
-.nn-notice strong { flex-shrink: 0; font-size: 22px; font-weight: 800; color: #f6c94f; text-transform: uppercase; letter-spacing: 0.04em; padding-right: 22px; border-right: 1px solid rgba(255, 255, 255, 0.35); }
+.nn-notice { display: flex; align-items: center; gap: 18px; margin-top: 18px; padding: 16px 24px; border-radius: var(--radius-md); border: 1.5px solid rgba(240, 199, 101, 0.8); background: rgba(8, 26, 74, 0.45); color: #fff; }
+.nn-notice:has(.nn-notice__list) { align-items: stretch; }
+.nn-notice__ic { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #fbd978, #eeb23c); color: #13295b; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; align-self: center; }
+.nn-notice strong { flex-shrink: 0; display: flex; align-items: center; font-size: 22px; font-weight: 800; color: #f6c94f; text-transform: uppercase; letter-spacing: 0.04em; padding-right: 22px; border-right: 1px solid rgba(255, 255, 255, 0.35); }
+.nn-notice__list { flex: 1; min-width: 0; list-style: none; counter-reset: nn; display: flex; flex-direction: column; gap: 9px; font-size: 15px; line-height: 1.5; color: #fff; }
+.nn-notice__list > li { position: relative; padding-left: 36px; counter-increment: nn; }
+.nn-notice__list > li::before { content: counter(nn); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid rgba(246, 201, 79, 0.85); color: #f6c94f; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.nn-notice__list ul { list-style: none; margin-top: 5px; display: flex; flex-direction: column; gap: 3px; }
+.nn-notice__list ul li { position: relative; padding-left: 16px; font-size: 14.5px; color: rgba(255, 255, 255, 0.92); }
+.nn-notice__list ul li::before { content: ""; position: absolute; left: 3px; top: 0.6em; width: 5px; height: 5px; border-radius: 50%; background: #f6c94f; }
+.nn-notice__list b { color: #ffe08a; }
 .nn-notice p { font-size: 15.5px; line-height: 1.55; color: #fff; }
 
 /* ---- Tra cứu ---- */
@@ -3159,8 +3174,10 @@ body.is-modal-open { overflow: hidden; }
   .nn-calc { grid-template-columns: 1fr; gap: 22px; }
   .nn-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 10px; }
   .nn-notice { flex-wrap: wrap; gap: 12px; padding: 14px 16px; }
+  .nn-notice:has(.nn-notice__list) { align-items: flex-start; }
   .nn-notice strong { border-right: 0; padding-right: 0; }
   .nn-notice p { flex-basis: 100%; font-size: 14.5px; }
+  .nn-notice__list { flex-basis: 100%; font-size: 14px; }
   .nn-lookup { padding: 16px 14px; }
   .nn-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 16px; }
   .nn-step:nth-child(4)::after { display: none; }
