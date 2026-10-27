@@ -3424,3 +3424,47 @@ body.is-modal-open { overflow: hidden; }
 .img-lightbox__inner--multi { display: flex; flex-direction: row; gap: 16px; width: 94vw; align-items: flex-start; max-width: 94vw; }
 .img-lightbox__inner--multi img { flex: 1 1 0; min-width: 0; width: auto; max-width: none; height: 86vh; max-height: 86vh; object-fit: contain; }
 @media (max-width: 860px) { .img-lightbox__inner--multi { flex-direction: column; overflow-y: auto; max-height: 90vh; } .img-lightbox__inner--multi img { max-height: none; width: 100%; } }
+
+/* ===== Header: dòng thương hiệu "— Cô Záo Trang —" dưới slogan (để nhận diện + SEO) ===== */
+.logo__brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 2px; font-family: 'Dancing Script', cursive; font-style: normal; font-weight: 700; font-size: 17px; line-height: 1.2; color: #d49521; }
+.logo__brand::before, .logo__brand::after { content: ""; flex: 0 1 46px; height: 1.5px; background: linear-gradient(90deg, rgba(212,149,33,0), #e0a93a); }
+.logo__brand::after { transform: scaleX(-1); }
+@media (max-width: 860px) { .logo__brand { font-size: 13px; gap: 6px; margin-top: 0; } .logo__brand::before, .logo__brand::after { flex-basis: 22px; } }
+
+/* ===== Trang chủ banner (10/2026): tiêu đề 2 dòng + mô tả + 2 nút + dải số liệu liền ===== */
+.hm-bt { pointer-events: auto; width: 50%; top: 10%; }
+.hm-bt__badge { font-size: 1.35cqw; letter-spacing: 0.04em; }
+.hm-bt__title { font-size: 3.25cqw; line-height: 1.22; white-space: normal; margin-top: 1.2cqw; }
+.hm-bt__title span { font-size: 1.12em; }
+.hm-bt__sub { font-family: var(--font-display); color: #f6c94f; text-transform: none; letter-spacing: 0; font-size: 1.95cqw; font-weight: 700; margin-top: 1cqw; }
+.hm-bt__desc { color: #fff; font-size: 1.05cqw; line-height: 1.6; margin-top: 1.1cqw; opacity: 0.95; text-shadow: 0 1px 4px rgba(5, 18, 60, 0.6); }
+.hm-banner__actions { top: 63.5%; bottom: auto; right: auto; gap: 1.2cqw; }
+.hm-btn { display: inline-flex; align-items: center; gap: 0.7em; padding: 0.9em 1.5em; border-radius: 999px; font-weight: 800; font-size: 1.15cqw; white-space: nowrap; transition: transform .18s ease, box-shadow .18s ease; }
+.hm-btn:hover { transform: translateY(-2px); }
+.hm-btn svg { width: 1.45em; height: 1.45em; flex-shrink: 0; }
+.hm-btn b { font-weight: 800; }
+.hm-btn--gold { background: linear-gradient(135deg, #fbd978, #eaa82a); color: #13295b; box-shadow: 0 0.4em 1.2em rgba(234, 168, 42, 0.35); }
+.hm-btn--line { color: #fff; border: 1.5px solid rgba(255,255,255,0.75); background: rgba(8, 24, 80, 0.3); font-weight: 700; }
+.hm-btn--line:hover { background: rgba(255,255,255,0.12); }
+/* dải số liệu: 1 thẻ trắng liền, ngăn bằng vạch mảnh */
+.hm-bs { top: 80%; left: 9.2%; gap: 0; background: #fff; border-radius: 1.2cqw; box-shadow: 0 0.6cqw 1.8cqw rgba(19,41,91,0.16); padding: 0.6cqw 0.6cqw; }
+.hm-bs__item { background: none; box-shadow: none; border-radius: 0; padding: 0.6cqw 2cqw 0.6cqw 1.4cqw; }
+.hm-bs__item + .hm-bs__item { border-left: 1px solid #e3e8f2; }
+@media (max-width: 860px) {
+  .hm-bt { width: auto; top: 2.4%; }
+  .hm-bt__badge { font-size: 3cqw; }
+  .hm-bt__title { font-size: 6.6cqw; line-height: 1.2; margin-top: 2cqw; }
+  .hm-bt__title br { display: none; }
+  .hm-bt__title span { display: inline; }
+  .hm-bt__sub { font-size: 4.2cqw; margin-top: 1.6cqw; }
+  .hm-bt__desc { font-size: 2.95cqw; margin-top: 1.8cqw; }
+  .hm-bt__desc br { display: none; }
+  .hm-banner__actions { left: 9%; right: 9%; top: 36%; bottom: auto; flex-direction: column; align-items: stretch; gap: 2.4cqw; }
+  .hm-btn { justify-content: center; font-size: 3.6cqw; padding: 0.8em 1em; }
+  .hm-btn span { flex: 1; text-align: center; }
+  .hm-bs { left: 8.5%; right: 8.5%; top: 51%; padding: 1cqw; border-radius: 2.6cqw; }
+  .hm-bs__item { padding: 1.2cqw 0.6cqw; }
+}
+.hm-bt__title { font-size: 2.65cqw; white-space: nowrap; }
+.hm-bt__title br { display: inline; }
+@media (max-width: 860px) { .hm-bt__title { font-size: 6.2cqw; white-space: normal; } .hm-bt__title br { display: none; } }
