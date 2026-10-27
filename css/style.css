@@ -3468,3 +3468,12 @@ body.is-modal-open { overflow: hidden; }
 .hm-bt__title { font-size: 2.65cqw; white-space: nowrap; }
 .hm-bt__title br { display: inline; }
 @media (max-width: 860px) { .hm-bt__title { font-size: 6.2cqw; white-space: normal; } .hm-bt__title br { display: none; } }
+
+/* ===== Banner trang chủ: tăng tương phản chữ (10/2026) =====
+   Vùng sau chữ được phủ một quầng xanh đậm mờ để nền sáng phía sau không làm chìm chữ. */
+.hm-bt { isolation: isolate; }
+.hm-bt__title { color: #fff; text-shadow: 0 2px 12px rgba(3, 12, 45, 0.85), 0 1px 2px rgba(3, 12, 45, 0.7); }
+.hm-bt__title span { color: #ffd966; text-shadow: 0 2px 12px rgba(3, 12, 45, 0.9), 0 1px 2px rgba(3, 12, 45, 0.8); }
+.hm-bt__sub { color: #ffd966; text-shadow: 0 2px 10px rgba(3, 12, 45, 0.9), 0 1px 2px rgba(3, 12, 45, 0.8); }
+.hm-bt__desc { color: #fff; font-weight: 500; opacity: 1; text-shadow: 0 1px 6px rgba(3, 12, 45, 0.95), 0 0 2px rgba(3, 12, 45, 0.8); }
+.hm-btn--line { background: rgba(6, 20, 72, 0.55); border-color: #fff; }
