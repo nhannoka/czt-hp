@@ -2896,7 +2896,7 @@ body.is-modal-open { overflow: hidden; }
 .ab-founder { display: grid; grid-template-columns: 0.78fr 1fr; align-items: stretch; background: linear-gradient(120deg, #eef4ff, #f7faff 55%, #eaf1ff); border: 1.5px solid #dde7fa; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 30px rgba(19, 41, 91, 0.07); }
 .ab-founder__photo { position: relative; min-height: 380px; }
 /* ảnh phủ kín cả chiều cao cột trái (cắt nhẹ 2 bên nếu thẻ cao hơn ảnh), mép phải mờ dần vào nền thẻ */
-.ab-founder__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% center; -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 10%); mask-image: linear-gradient(270deg, transparent 0, #000 10%); }
+.ab-founder__photo img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% center; -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 10%); mask-image: linear-gradient(270deg, transparent 0, #000 10%); }
 .ab-founder__text { padding: 34px 40px 32px 30px; color: #2b3a5c; font-size: 17px; line-height: 1.7; }
 .ab-founder__text h2 { font-family: var(--font-body); font-weight: 800; font-size: clamp(21px, 2.3vw, 28px); color: #1a3fa8; margin: 22px 0 14px; }
 .ab-founder__text p + p { margin-top: 12px; }
@@ -2983,8 +2983,11 @@ body.is-modal-open { overflow: hidden; }
   .ab-banner__brand { left: 50%; top: 66.5%; font-size: 2.1cqw; }
   .ab-sec { padding: 18px 0; }
   .ab-founder { grid-template-columns: 1fr; }
-  .ab-founder__photo { min-height: 0; aspect-ratio: 1; }
-  .ab-founder__photo img { -webkit-mask-image: none; mask-image: none; }
+  /* Mobile: ảnh nằm trong luồng bình thường (không absolute + aspect-ratio).
+     Trình duyệt cũ (iOS Safari < 15, một số Android) không hỗ trợ aspect-ratio/inset
+     -> khung cao 0px nên ảnh biến mất trên một số máy. */
+  .ab-founder__photo { min-height: 0; }
+  .ab-founder__photo img { position: static; height: auto; -webkit-mask-image: none; mask-image: none; }
   .ab-founder__text { padding: 22px 18px 24px; font-size: 15.5px; }
   .ab-founder__text h2 { margin-top: 14px; }
   .ab-founder__sign { font-size: 32px; }
