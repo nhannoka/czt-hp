@@ -3480,3 +3480,6 @@ body.is-modal-open { overflow: hidden; }
 .hm-bt__sub { color: #ffd966; text-shadow: 0 2px 10px rgba(3, 12, 45, 0.9), 0 1px 2px rgba(3, 12, 45, 0.8); }
 .hm-bt__desc { color: #fff; font-weight: 500; opacity: 1; text-shadow: 0 1px 6px rgba(3, 12, 45, 0.95), 0 0 2px rgba(3, 12, 45, 0.8); }
 .hm-btn--line { background: rgba(6, 20, 72, 0.55); border-color: #fff; }
+
+/* Thuế: nút CTA cuối khối Vì sao chọn CZT rộng hết khung */
+.tx-more--wide { width: 100%; max-width: 760px; justify-content: center; position: relative; z-index: 1; }
